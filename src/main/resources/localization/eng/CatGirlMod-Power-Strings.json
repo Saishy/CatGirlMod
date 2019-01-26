@@ -1,0 +1,22 @@
+{
+        "theCatGirl:Gash": {
+                "NAME": "Gash",
+                "DESCRIPTIONS": ["Increase all Claw damage received by "]
+        },
+        "theCatGirl:Striken": {
+                "NAME": "Striken",
+                "DESCRIPTIONS": ["Increase all Strike damage received by "]
+        },
+        "theCatGirl:Evade": {
+                "NAME": "Evade",
+                "DESCRIPTIONS": ["Increase your next block by ", ". Lose half stacks at the end of your turn."]
+        },
+        "theCatGirl:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+        },
+        "theCatGirl:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
+        }
+}

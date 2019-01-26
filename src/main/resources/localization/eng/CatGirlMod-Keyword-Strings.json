@@ -1,0 +1,26 @@
+[
+  {
+    "PROPER_NAME": "Placeholder",
+    "NAMES": [
+      "keyword",
+      "keywords",
+      "Keyword",
+      "Keywords",
+      "Keyword:"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Evade",
+    "NAMES": [
+      "evade",
+      "evade",
+      "Evade",
+      "Evade",
+      "Evade:"
+    ],
+    "DESCRIPTION": "Increases your block by 1 per stack, lose stacks upon use. NL At the end of your turn, lose half your stacks of Evade."
+  }
+]
+
+

@@ -1,0 +1,97 @@
+{
+  "theCatGirl:CatGirlAttack_Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theCatGirl:CatGirlSkill_Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theCatGirl:CatGirlAttack_ClawStrike": {
+    "NAME": "Claw Strike",
+    "DESCRIPTION": "Deal !D! Damage !M! times."
+  },
+  "theCatGirl:CatGirlSkill_Evasion": {
+    "NAME": "Evasion",
+    "DESCRIPTION": "Gain !M! Evade."
+  },
+  "theCatGirl:CatGirlAttack_Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Gain !B! Block. Deal !D! Damage. NL If the enemy intends to attack, gain !M! Evade."
+  },
+  "theCatGirl:CatGirlAttack_PlayAround": {
+    "NAME": "Play Around",
+    "DESCRIPTION": "Deal !D! Damage. Strikes deal 2 more damage to this enemy."
+  },
+  "theCatGirl:CatGirlAttack_Claws": {
+    "NAME": "Claws",
+    "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."
+  },
+  "theCatGirl:CatGirlCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theCatGirl:CatGirlCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theCatGirl:CatGirlCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Keywords."
+  },
+  "theCatGirl:CatGirlUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theCatGirl:CatGirlUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theCatGirl:CatGirlUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 Keywords."
+  },
+  "theCatGirl:CatGirlRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theCatGirl:CatGirlRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "theCatGirl:CatGirlRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theCatGirl:CatGirlAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [R] times. NL (Deal !theCatGirl:ENERGY_DAMAGE! damage total.)"
+  },
+  "theCatGirl:CatGirlSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !theCatGirl:SecondMagic! poison to an enemy."
+  },
+  "theCatGirl:CatGirlOrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theCatGirl:CatGirlSkill_MultiHitGashTest": {
+    "NAME": "MultiHit Gash Apply Test",
+    "DESCRIPTION": "Applies !M! Gash to everyone."
+  },
+  "theCatGirl:CatGirlSkill_MultiHitStrikenTest": {
+    "NAME": "MultiHit Striken Apply Test",
+    "DESCRIPTION": "Applies !M! Striken to everyone."
+  },
+  "theCatGirl:CatGirlAttack_AllEnemyStrike": {
+    "NAME": "All Strike",
+    "DESCRIPTION": "Do !D! Damage to ALL enemies."
+  },
+  "theCatGirl:CatGirlAttack_AllEnemyClaw": {
+    "NAME": "All Claw",
+    "DESCRIPTION": "Do !D! Damage to ALL enemies."
+  }
+}
