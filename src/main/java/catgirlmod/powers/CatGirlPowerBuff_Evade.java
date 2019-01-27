@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class CatGirlPower_Evade extends AbstractPower {
+public class CatGirlPowerBuff_Evade extends AbstractPower {
 
     public static final String POWER_ID = CatGirlMod.makeID("Evade");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -19,7 +19,7 @@ public class CatGirlPower_Evade extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = "images/powers/catgirl_evade.png";
 
-    public CatGirlPower_Evade(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public CatGirlPowerBuff_Evade(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -32,7 +32,7 @@ public class CatGirlPower_Evade extends AbstractPower {
 
     @Override
     public float modifyBlock(float blockAmount) {
-        //CatGirlMod.logger.debug("CatGirlPower_Evade::modifyBlock " + blockAmount);
+        //CatGirlMod.logger.debug("CatGirlPowerBuff_Evade::modifyBlock " + blockAmount);
 
         if (blockAmount <= 0.0f) {
             return blockAmount;
@@ -55,13 +55,23 @@ public class CatGirlPower_Evade extends AbstractPower {
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.baseBlock > -1) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, CatGirlPower_Evade.POWER_ID, amount));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, CatGirlPowerBuff_Evade.POWER_ID, amount));
         }
     }
 
     @Override
     public void atEndOfTurn(boolean bIsPlayer) {
-        if(!bIsPlayer) {
+        /*if (!bIsPlayer) {
+            return;
+        }*/
+
+        AbstractPower keepEvade = this.owner.getPower(CatGirlPowerBuff_EvadeDontDecay.POWER_ID);
+
+        if (keepEvade != null) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ReducePowerAction(this.owner, this.owner, CatGirlPowerBuff_EvadeDontDecay.POWER_ID, 1)
+            );
+
             return;
         }
 
@@ -71,7 +81,9 @@ public class CatGirlPower_Evade extends AbstractPower {
         }
 
         flash();
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, CatGirlPower_Evade.POWER_ID, reduction));
+        AbstractDungeon.actionManager.addToBottom(
+                new ReducePowerAction(this.owner, this.owner, CatGirlPowerBuff_Evade.POWER_ID, reduction)
+        );
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

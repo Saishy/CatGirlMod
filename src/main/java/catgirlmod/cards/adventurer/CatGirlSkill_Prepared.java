@@ -12,9 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class CatGirlAttack_AllIn extends AbstractDefaultCard {
+public class CatGirlSkill_Prepared extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -23,7 +22,7 @@ public class CatGirlAttack_AllIn extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlAttack_AllIn
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlSkill_Prepared
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -34,14 +33,15 @@ public class CatGirlAttack_AllIn extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CatGirlAttack_AllIn");
+    public static final String ID = CatGirlMod.makeID("CatGirlSkill_Prepared");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_AllIn.png"
+    public static final String IMG = "images/cards/Skill.png"; // "images/cards/CatGirlSkill_Prepared.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -49,44 +49,31 @@ public class CatGirlAttack_AllIn extends AbstractDefaultCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 4;
-
-    private static final int VULNERABLE = 1;
-    private static final int UPGRADE_VULNERABLE = 1;
+    private static final int SKILLS_PLAYED = 1;
+    private static final int UPGRADED_PLUS_SKILLS_PLAYED = 1;
 
     // /STAT DECLARATION/
 
-    public CatGirlAttack_AllIn() {
+    public CatGirlSkill_Prepared() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = baseMagicNumber = VULNERABLE;
+        this.magicNumber = this.baseMagicNumber = SKILLS_PLAYED;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY)
+                new ApplyPowerAction(
+                        p, p, new com.megacrit.cardcrawl.powers.BurstPower(p, this.magicNumber), this.magicNumber
+                )
         );
-
-        if ( m.intent == AbstractMonster.Intent.ATTACK ||
-        m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(
-                            m, p, new VulnerablePower(m, magicNumber, false), magicNumber
-                    )
-            );
-        }
     }
 
     // Upgraded stats.
@@ -94,8 +81,8 @@ public class CatGirlAttack_AllIn extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_VULNERABLE);
+            upgradeMagicNumber(UPGRADED_PLUS_SKILLS_PLAYED);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

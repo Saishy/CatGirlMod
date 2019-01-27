@@ -3,11 +3,8 @@ package catgirlmod.cards.adventurer;
 import catgirlmod.CatGirlMod;
 import catgirlmod.actions.CatGirlAction_IncreaseMagicNumber;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,7 +35,7 @@ public class CatGirlSkill_DefensiveStance extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("CatGirlSkill_DefensiveStance");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlSkill_DefensiveStance.png"
+    public static final String IMG = "images/cards/Skill.png"; // "images/cards/CatGirlSkill_DefensiveStance.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -49,9 +46,9 @@ public class CatGirlSkill_DefensiveStance extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 2;
@@ -74,7 +71,7 @@ public class CatGirlSkill_DefensiveStance extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new CatGirlPower_Evade(p, p, magicNumber), magicNumber
+                        p, p, new CatGirlPowerBuff_Evade(p, p, magicNumber), magicNumber
                 )
         );
         AbstractDungeon.actionManager.addToBottom(

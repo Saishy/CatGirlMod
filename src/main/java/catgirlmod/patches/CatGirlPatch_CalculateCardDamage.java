@@ -1,8 +1,7 @@
 package catgirlmod.patches;
 
-import catgirlmod.CatGirlMod;
-import catgirlmod.powers.CatGirlPower_IncreaseClawDamage;
-import catgirlmod.powers.CatGirlPower_IncreaseStrikeDamage;
+import catgirlmod.powers.CatGirlPowerBuff_IncreaseClawDamage;
+import catgirlmod.powers.CatGirlPowerBuff_IncreaseStrikeDamage;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,26 +21,26 @@ public class CatGirlPatch_CalculateCardDamage {
     @SpireInsertPatch(
             //rloc=69,
             locator = LocatorSingleEnemy.class,
-            localvars = {"tmp"}
+            localvars = {"p", "tmp"}
     )
-    public static void CalculateCardDamage(AbstractCard __instance, AbstractMonster mo, @ByRef float[] tmp) {
+    public static void CalculateCardDamage(AbstractCard __instance, AbstractMonster mo, AbstractPower p, @ByRef float[] tmp) {
 
-        AbstractPower strikenPower = mo.getPower(CatGirlPower_IncreaseStrikeDamage.POWER_ID);
+        CatGirlPowerBuff_IncreaseStrikeDamage strikenPower = (p instanceof CatGirlPowerBuff_IncreaseStrikeDamage ? (CatGirlPowerBuff_IncreaseStrikeDamage)p : null);
 
         if (strikenPower != null && __instance.hasTag(AbstractCard.CardTags.STRIKE)) {
-            //CatGirlMod.logger.debug(mo.name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
-            tmp[0] += strikenPower.amount * CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
+            //CatGirlMod.logger.debug(mo.name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPowerBuff_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
+            tmp[0] += strikenPower.amount * CatGirlPowerBuff_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
 
             if (__instance.baseDamage != (int)tmp[0]) {
                 __instance.isDamageModified = true;
             }
         }
 
-        AbstractPower gashPower = mo.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
+        CatGirlPowerBuff_IncreaseClawDamage gashPower = (p instanceof CatGirlPowerBuff_IncreaseClawDamage ? (CatGirlPowerBuff_IncreaseClawDamage)p : null);
 
         if (gashPower != null && __instance.hasTag(AbstractCardEnum.CLAW)) {
-            //CatGirlMod.logger.debug(mo.name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
-            tmp[0] += gashPower.amount * CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
+            //CatGirlMod.logger.debug(mo.name + " have gashPower: " + gashPower.amount + "/" + CatGirlPowerBuff_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
+            tmp[0] += gashPower.amount * CatGirlPowerBuff_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
 
             if (__instance.baseDamage != (int)tmp[0]) {
                 __instance.isDamageModified = true;
@@ -75,31 +74,29 @@ public class CatGirlPatch_CalculateCardDamage {
     @SpireInsertPatch(
             //rloc=134,
             locator = LocatorMultiEnemy.class,
-            localvars = {"m", "tmp"}
+            localvars = {"p", "i", "tmp"}
     )
-    public static void CalculateCardDamage(AbstractCard __instance, AbstractMonster mo, ArrayList<AbstractMonster> m, float[] tmp) {
+    public static void CalculateCardDamage(AbstractCard __instance, AbstractMonster mo, AbstractPower p, int i, float[] tmp) {
 
-        for (int i = 0; i < tmp.length; i++) {
-            AbstractPower strikenPower = ((AbstractMonster) m.get(i)).getPower(CatGirlPower_IncreaseStrikeDamage.POWER_ID);
+        CatGirlPowerBuff_IncreaseStrikeDamage strikenPower = (p instanceof CatGirlPowerBuff_IncreaseStrikeDamage ? (CatGirlPowerBuff_IncreaseStrikeDamage)p : null);
 
-            if (strikenPower != null && __instance.hasTag(AbstractCard.CardTags.STRIKE)) {
-                //CatGirlMod.logger.debug(m.get(i).name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
-                tmp[i] += strikenPower.amount * CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
+        if (strikenPower != null && __instance.hasTag(AbstractCard.CardTags.STRIKE)) {
+            //CatGirlMod.logger.debug(m.get(i).name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPowerBuff_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
+            tmp[i] += strikenPower.amount * CatGirlPowerBuff_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
 
-                if (__instance.baseDamage != (int) tmp[i]) {
-                    __instance.isDamageModified = true;
-                }
+            if (__instance.baseDamage != (int) tmp[i]) {
+                __instance.isDamageModified = true;
             }
+        }
 
-            AbstractPower gashPower = ((AbstractMonster) m.get(i)).getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
+        CatGirlPowerBuff_IncreaseClawDamage gashPower = (p instanceof CatGirlPowerBuff_IncreaseClawDamage ? (CatGirlPowerBuff_IncreaseClawDamage)p : null);
 
-            if (gashPower != null && __instance.hasTag(AbstractCardEnum.CLAW)) {
-                //CatGirlMod.logger.debug(m.get(i).name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
-                tmp[i] += gashPower.amount * CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
+        if (gashPower != null && __instance.hasTag(AbstractCardEnum.CLAW)) {
+            //CatGirlMod.logger.debug(m.get(i).name + " have gashPower: " + gashPower.amount + "/" + CatGirlPowerBuff_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
+            tmp[i] += gashPower.amount * CatGirlPowerBuff_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
 
-                if (__instance.baseDamage != (int) tmp[i]) {
-                    __instance.isDamageModified = true;
-                }
+            if (__instance.baseDamage != (int) tmp[i]) {
+                __instance.isDamageModified = true;
             }
         }
     }

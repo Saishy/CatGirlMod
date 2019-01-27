@@ -2,10 +2,9 @@ package catgirlmod.relics;
 
 import basemod.abstracts.CustomRelic;
 import catgirlmod.CatGirlMod;
-import catgirlmod.powers.CatGirlPower_Evade;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -31,7 +30,7 @@ public class CatGirlRelic_Trained extends CustomRelic {
         if (info.output > 0 && info.type == DamageInfo.DamageType.NORMAL) {
             AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        AbstractDungeon.player, AbstractDungeon.player, new CatGirlPower_Evade(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
+                        AbstractDungeon.player, AbstractDungeon.player, new CatGirlPowerBuff_Evade(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
                 )
             );
         }

@@ -68,20 +68,35 @@
   },
   "theCatGirl:CatGirlSkill_Prepared": {
     "NAME": "Prepared",
-    "DESCRIPTION": "This turn, your next Skill is played twice."
+    "DESCRIPTION": "This turn, your next Skill is played twice.",
+    "UPGRADE_DESCRIPTION": "This turn, your next !M! Skills are played twice."
   },
   "theCatGirl:CatGirlSkill_EmergencyParry": {
     "NAME": "Emergency Parry",
     "DESCRIPTION": "Lose all your Evade and gain Block equal to it.",
-    "UPGRADE_DESCRIPTION": "Lose all your Evade and gain Block equal to twice the amount."
+    "UPGRADE_DESCRIPTION": "Lose all your Evade and gain Block equal to !M! times the amount."
   },
   "theCatGirl:CatGirlSkill_ChangeOfPlans": {
     "NAME": "Change Of Plans",
-    "DESCRIPTION": "Draw !M! card. Put a card from your hand onto the top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card. NL Put a card from your hand onto the top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Put a card from your hand onto the top of your draw pile. NL Exhaust."
   },
   "theCatGirl:CatGirlSkill_KeepAlert": {
     "NAME": "Keep Alert",
     "DESCRIPTION": "Your Evade is not lost at the end this turn."
+  },
+  "theCatGirl:CatGirlPower_AdventurersInsight": {
+    "NAME": "Adventurer's Insight",
+    "DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade.",
+    "UPGRADE_DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade. NL Innate."
+  },
+  "theCatGirl:CatGirlPower_PoiseStance": {
+    "NAME": "Poise Stance",
+    "DESCRIPTION": "At the beginning of your turn, gain !M! Evade."
+  },
+  "theCatGirl:CatGirlPower_Counterattack": {
+    "NAME": "Counterattack",
+    "DESCRIPTION": "Whenever you gain Evade, deal !M! damage to all enemies."
   },
   "theCatGirl:CatGirlAttack_Claws": {
     "NAME": "Claws",

@@ -2,7 +2,7 @@ package catgirlmod.cards.adventurer;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -76,7 +76,7 @@ public class CatGirlAttack_FocusedStrike extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
         );
-        if (p.hasPower(CatGirlPower_Evade.POWER_ID)) {
+        if (p.hasPower(CatGirlPowerBuff_Evade.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(
                     new com.megacrit.cardcrawl.actions.common.GainEnergyAction(magicNumber)
             );

@@ -2,7 +2,7 @@ package catgirlmod.cards.adventurer;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -91,7 +91,7 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
         m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
-                            p, p, new CatGirlPower_Evade(p, p, magicNumber), magicNumber
+                            p, p, new CatGirlPowerBuff_Evade(p, p, magicNumber), magicNumber
                     )
             );
         }

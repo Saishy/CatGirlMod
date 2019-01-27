@@ -3,8 +3,7 @@ package catgirlmod.cards.beast;
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.patches.AbstractCardEnum;
-import catgirlmod.powers.CatGirlPower_IncreaseClawDamage;
-import catgirlmod.powers.CatGirlPower_IncreaseStrikeDamage;
+import catgirlmod.powers.CatGirlPowerBuff_IncreaseClawDamage;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,7 +13,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
@@ -74,7 +72,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        //AbstractPower gashPower = m.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
+        //AbstractPower gashPower = m.getPower(CatGirlPowerBuff_IncreaseClawDamage.POWER_ID);
 
         calculateCardDamage(m);
 
@@ -86,7 +84,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        m, p, new CatGirlPower_IncreaseClawDamage(m, p, 1), 1
+                        m, p, new CatGirlPowerBuff_IncreaseClawDamage(m, p, 1), 1
                 )
         );
     }

@@ -2,11 +2,8 @@ package catgirlmod.cards.basic;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -70,7 +67,7 @@ public class CatGirlSkill_Evasion extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                    p, p, new CatGirlPower_Evade(p, p, magicNumber), magicNumber
+                    p, p, new CatGirlPowerBuff_Evade(p, p, magicNumber), magicNumber
                 )
         );
     }

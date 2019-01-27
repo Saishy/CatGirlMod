@@ -2,12 +2,8 @@ package catgirlmod.cards.test;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_IncreaseClawDamage;
-import catgirlmod.powers.CatGirlPower_IncreaseStrikeDamage;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import catgirlmod.powers.CatGirlPowerBuff_IncreaseClawDamage;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,7 +34,7 @@ public class CatGirlSkill_MultiHitGashTest extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("CatGirlSkill_MultiHitGashTest");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlSkill_MultiHitGashTest.png"
+    public static final String IMG = "images/cards/Test_Skill.png"; // "images/cards/CatGirlSkill_MultiHitGashTest.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -70,7 +66,7 @@ public class CatGirlSkill_MultiHitGashTest extends AbstractDefaultCard {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
-                            mo, p, new CatGirlPower_IncreaseClawDamage(mo, p, 1), 1
+                            mo, p, new CatGirlPowerBuff_IncreaseClawDamage(mo, p, 1), 1
                     )
             );
         }

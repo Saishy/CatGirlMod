@@ -2,8 +2,7 @@ package catgirlmod.cards.adventurer;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
-import catgirlmod.powers.CatGirlPower_IncreaseStrikeDamage;
+import catgirlmod.powers.CatGirlPowerBuff_IncreaseStrikeDamage;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -75,7 +74,7 @@ public class CatGirlAttack_PlayAround extends AbstractDefaultCard {
         );
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        m, p, new CatGirlPower_IncreaseStrikeDamage(m, p, 1), 1
+                        m, p, new CatGirlPowerBuff_IncreaseStrikeDamage(m, p, 1), 1
                 )
         );
     }

@@ -237,6 +237,20 @@ public class CatGirlMod implements
         BaseMod.addCard(new CatGirlAttack_PoisedAttack());
         BaseMod.addCard(new CatGirlAttack_SpinningStrike());
 
+        BaseMod.addCard(new CatGirlSkill_AdaptivePacing());
+        BaseMod.addCard(new CatGirlSkill_ChangeOfPlans());
+        BaseMod.addCard(new CatGirlSkill_DefensiveStance());
+        BaseMod.addCard(new CatGirlSkill_EmergencyParry());
+        BaseMod.addCard(new CatGirlSkill_KeepAlert());
+        BaseMod.addCard(new CatGirlSkill_LearnThePattern());
+        BaseMod.addCard(new CatGirlSkill_PerfectBlock());
+        BaseMod.addCard(new CatGirlSkill_Prepared());
+        BaseMod.addCard(new CatGirlSkill_TwoStep());
+
+        BaseMod.addCard(new CatGirlPower_AdventurersInsight());
+        BaseMod.addCard(new CatGirlPower_Counterattack());
+        BaseMod.addCard(new CatGirlPower_PoiseStance());
+
         // Beast
         BaseMod.addCard(new CatGirlAttack_Claws());
 

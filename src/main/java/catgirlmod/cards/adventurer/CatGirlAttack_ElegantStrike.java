@@ -2,7 +2,7 @@ package catgirlmod.cards.adventurer;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPower_Evade;
+import catgirlmod.powers.CatGirlPowerBuff_Evade;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -70,7 +70,7 @@ public class CatGirlAttack_ElegantStrike extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower absPower = p.getPower(CatGirlPower_Evade.POWER_ID);
+        AbstractPower absPower = p.getPower(CatGirlPowerBuff_Evade.POWER_ID);
         int evadeStack = absPower != null ? absPower.amount : 0;
 
         AbstractDungeon.actionManager.addToBottom(

@@ -11,6 +11,29 @@
                 "NAME": "Evade",
                 "DESCRIPTIONS": ["Increase your next block by ", ". Lose half stacks at the end of your turn."]
         },
+        "theCatGirl:NextTurnEvade": {
+                "NAME": "Next Turn Evade",
+                "DESCRIPTIONS": ["Gain #b", " #yEvade next turn."]
+        },
+        "theCatGirl:EvadeDontDecay": {
+                "NAME": "Keep Evade",
+                "DESCRIPTIONS": ["Evade is not lost at the end of your turn."]
+        },
+        "theCatGirl:AdventurersInsightBuff": {
+                "NAME": "Adventurer's Insight",
+                "DESCRIPTIONS": ["At the start of your turn, gain #b%s Evade."]
+        },
+        "theCatGirl:PoisedBuff": {
+                "NAME": "Poised",
+                "DESCRIPTIONS": ["At the start of your turn, gain #b%s Evade."]
+        },
+        "theCatGirl:CounterattackBuff": {
+                "NAME": "Counterattack",
+                "DESCRIPTIONS": [
+                        "Whenever you gain #yEvade, deal #b",
+                        " damage to ALL enemies."
+                ]
+        },
         "theCatGirl:CommonPower": {
                 "NAME": "Placeholder Power",
                 "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
