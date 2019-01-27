@@ -1,22 +1,19 @@
-package catgirlmod.cards.beast;
+package catgirlmod.cards.adventurer;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.patches.AbstractCardEnum;
-import catgirlmod.powers.CatGirlPower_IncreaseClawDamage;
-import catgirlmod.powers.CatGirlPower_IncreaseStrikeDamage;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import catgirlmod.patches.AbstractCardEnum;
 
-public class CatGirlAttack_Claws extends AbstractDefaultCard {
+public class CatGirlAttack_SpinningStrike extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -25,7 +22,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlAttack_Claws
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlAttack_SpinningStrike
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -36,10 +33,10 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CatGirlAttack_Claws");
+    public static final String ID = CatGirlMod.makeID("CatGirlAttack_SpinningStrike");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_Claws.png"
+    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_SpinningStrike.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -57,34 +54,24 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 4;
-    private static final int UPGRADED_DAMAGE = 4;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
 
-    public CatGirlAttack_Claws() {
+    public CatGirlAttack_SpinningStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.tags.add(AbstractCardEnum.CLAW);
+        this.isMultiDamage = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-
-        AbstractPower gashPower = m.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
-
-        CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + "gash amount.");
-
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        m, p, new CatGirlPower_IncreaseClawDamage(m, p, 1), 1
+                new DamageAllEnemiesAction(
+                        p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY
                 )
         );
     }
@@ -94,7 +81,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADED_DAMAGE);
+            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }

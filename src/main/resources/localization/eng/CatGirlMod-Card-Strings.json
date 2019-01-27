@@ -23,6 +23,62 @@
     "NAME": "Play Around",
     "DESCRIPTION": "Deal !D! Damage. Strikes deal 2 more damage to this enemy."
   },
+  "theCatGirl:CatGirlAttack_ElegantStrike": {
+    "NAME": "Elegant Strike",
+    "DESCRIPTION": "Deal !D! damage for each Evade. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage for each Evade."
+  },
+  "theCatGirl:CatGirlAttack_AllIn": {
+    "NAME": "All In",
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, apply !M! Vulnerable."
+  },
+  "theCatGirl:CatGirlAttack_FocusedStrike": {
+    "NAME": "Focused Strike",
+    "DESCRIPTION": "Deal !D! Damage. If you have Evade, gain !M! [R] and draw !theCatGirl:SecondMagic! card."
+  },
+  "theCatGirl:CatGirlAttack_SpinningStrike": {
+    "NAME": "Spinning Strike",
+    "DESCRIPTION": "Deal !D! damage to all enemies."
+  },
+  "theCatGirl:CatGirlAttack_PoisedAttack": {
+    "NAME": "Poised Attack",
+    "DESCRIPTION": "Deal !D! damage. Upgrade a random Skill in your hand for the rest of the combat.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Upgrade all Skills in your hand for the rest of the combat."
+  },
+  "theCatGirl:CatGirlSkill_DefensiveStance": {
+    "NAME": "Defensive Stance",
+    "DESCRIPTION": "Gain !M! Evade. Increase the Evade gained by this card by !theCatGirl:SecondMagic!."
+  },
+  "theCatGirl:CatGirlSkill_TwoStep": {
+    "NAME": "Two-Step",
+    "DESCRIPTION": "Gain !B! Block. At your next turn, gain !M! Evade."
+  },
+  "theCatGirl:CatGirlSkill_AdaptivePacing": {
+    "NAME": "Adaptive Pacing",
+    "DESCRIPTION": "Gain !B! Block. Reduce this card's cost by !M! this combat."
+  },
+  "theCatGirl:CatGirlSkill_LearnThePattern": {
+    "NAME": "Learn The Pattern",
+    "DESCRIPTION": "Double your Evade. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your Evade."
+  },
+  "theCatGirl:CatGirlSkill_PerfectBlock": {
+    "NAME": "Perfect Block",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theCatGirl:CatGirlSkill_Prepared": {
+    "NAME": "Prepared",
+    "DESCRIPTION": "This turn, your next Skill is played twice."
+  },
+  "theCatGirl:CatGirlSkill_EmergencyParry": {
+    "NAME": "Emergency Parry",
+    "DESCRIPTION": "Lose all your Evade and gain Block equal to it.",
+    "UPGRADE_DESCRIPTION": "Lose all your Evade and gain Block equal to twice the amount."
+  },
+  "theCatGirl:CatGirlSkill_ChangeOfPlans": {
+    "NAME": "Change Of Plans",
+    "DESCRIPTION": "Draw !M! card. Put a card from your hand onto the top of your draw pile. NL Exhaust."
+  },
   "theCatGirl:CatGirlAttack_Claws": {
     "NAME": "Claws",
     "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."

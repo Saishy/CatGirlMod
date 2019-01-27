@@ -56,13 +56,13 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 6;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     private static final int BLOCK = 4;
-    private static final int UPGRADE_PLUS_BLOCK = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int EVADE = 4;
-    private static final int UPGRADE_PLUS_EVADE = 6;
+    private static final int UPGRADE_PLUS_EVADE = 2;
 
     // /STAT DECLARATION/
 

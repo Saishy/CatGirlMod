@@ -5,17 +5,11 @@ import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import catgirlmod.cards.*;
-import catgirlmod.cards.adventurer.CatGirlAttack_Parry;
-import catgirlmod.cards.adventurer.CatGirlAttack_PlayAround;
 import catgirlmod.cards.basic.*;
-//import catgirlmod.cards.adventurer.*;
-//import catgirlmod.cards.clumsy.*;
-//import catgirlmod.cards.beast.*;
-import catgirlmod.cards.beast.CatGirlAttack_Claws;
-import catgirlmod.cards.test.CatGirlAttack_AllEnemyClaw;
-import catgirlmod.cards.test.CatGirlAttack_AllEnemyStrike;
-import catgirlmod.cards.test.CatGirlSkill_MultiHitGashTest;
-import catgirlmod.cards.test.CatGirlSkill_MultiHitStrikenTest;
+import catgirlmod.cards.adventurer.*;
+import catgirlmod.cards.clumsy.*;
+import catgirlmod.cards.beast.*;
+import catgirlmod.cards.test.*;
 import catgirlmod.relics.CatGirlRelic_Trained;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -229,14 +223,19 @@ public class CatGirlMod implements
         logger.info("Adding cards");
         // Add the cards
         // Basic
-        BaseMod.addCard(new CatGirlAttack_Strike());
         BaseMod.addCard(new CatGirlAttack_ClawStrike());
+        BaseMod.addCard(new CatGirlAttack_Strike());
         BaseMod.addCard(new CatGirlSkill_Defend());
         BaseMod.addCard(new CatGirlSkill_Evasion());
 
         // Adventurer
+        BaseMod.addCard(new CatGirlAttack_AllIn());
+        BaseMod.addCard(new CatGirlAttack_ElegantStrike());
+        BaseMod.addCard(new CatGirlAttack_FocusedStrike());
         BaseMod.addCard(new CatGirlAttack_Parry());
         BaseMod.addCard(new CatGirlAttack_PlayAround());
+        BaseMod.addCard(new CatGirlAttack_PoisedAttack());
+        BaseMod.addCard(new CatGirlAttack_SpinningStrike());
 
         // Beast
         BaseMod.addCard(new CatGirlAttack_Claws());
@@ -265,9 +264,9 @@ public class CatGirlMod implements
         logger.info("Making sure the basic cards are unlocked.");
         // Unlock the cards
         // Basic
+        UnlockTracker.unlockCard(CatGirlAttack_ClawStrike.ID);
         UnlockTracker.unlockCard(CatGirlAttack_Strike.ID);
         UnlockTracker.unlockCard(CatGirlSkill_Defend.ID);
-        UnlockTracker.unlockCard(CatGirlAttack_ClawStrike.ID);
         UnlockTracker.unlockCard(CatGirlSkill_Evasion.ID);
 
         // Adventurer
@@ -280,7 +279,6 @@ public class CatGirlMod implements
         // Clumsy
 
         // Test
-        UnlockTracker.unlockCard(CatGirlSkill_MultiHitGashTest.ID);
 
         /*UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
