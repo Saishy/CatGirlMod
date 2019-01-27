@@ -79,6 +79,10 @@
     "NAME": "Change Of Plans",
     "DESCRIPTION": "Draw !M! card. Put a card from your hand onto the top of your draw pile. NL Exhaust."
   },
+  "theCatGirl:CatGirlSkill_KeepAlert": {
+    "NAME": "Keep Alert",
+    "DESCRIPTION": "Your Evade is not lost at the end this turn."
+  },
   "theCatGirl:CatGirlAttack_Claws": {
     "NAME": "Claws",
     "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."
