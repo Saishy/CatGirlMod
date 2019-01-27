@@ -74,9 +74,11 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        AbstractPower gashPower = m.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
+        //AbstractPower gashPower = m.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
 
-        CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + "gash amount.");
+        calculateCardDamage(m);
+
+        //CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + " gash amount.");
 
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)

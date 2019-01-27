@@ -29,7 +29,7 @@ public class CatGirlPatch_CalculateCardDamage {
         AbstractPower strikenPower = mo.getPower(CatGirlPower_IncreaseStrikeDamage.POWER_ID);
 
         if (strikenPower != null && __instance.hasTag(AbstractCard.CardTags.STRIKE)) {
-            CatGirlMod.logger.debug(mo.name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
+            //CatGirlMod.logger.debug(mo.name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
             tmp[0] += strikenPower.amount * CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
 
             if (__instance.baseDamage != (int)tmp[0]) {
@@ -40,7 +40,7 @@ public class CatGirlPatch_CalculateCardDamage {
         AbstractPower gashPower = mo.getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
 
         if (gashPower != null && __instance.hasTag(AbstractCardEnum.CLAW)) {
-            CatGirlMod.logger.debug(mo.name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
+            //CatGirlMod.logger.debug(mo.name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
             tmp[0] += gashPower.amount * CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
 
             if (__instance.baseDamage != (int)tmp[0]) {
@@ -83,7 +83,7 @@ public class CatGirlPatch_CalculateCardDamage {
             AbstractPower strikenPower = ((AbstractMonster) m.get(i)).getPower(CatGirlPower_IncreaseStrikeDamage.POWER_ID);
 
             if (strikenPower != null && __instance.hasTag(AbstractCard.CardTags.STRIKE)) {
-                CatGirlMod.logger.debug(m.get(i).name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
+                //CatGirlMod.logger.debug(m.get(i).name + " have strikenPower: " + strikenPower.amount + "/" + CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK);
                 tmp[i] += strikenPower.amount * CatGirlPower_IncreaseStrikeDamage.DAMAGE_INCREASE_PER_STACK;
 
                 if (__instance.baseDamage != (int) tmp[i]) {
@@ -94,7 +94,7 @@ public class CatGirlPatch_CalculateCardDamage {
             AbstractPower gashPower = ((AbstractMonster) m.get(i)).getPower(CatGirlPower_IncreaseClawDamage.POWER_ID);
 
             if (gashPower != null && __instance.hasTag(AbstractCardEnum.CLAW)) {
-                CatGirlMod.logger.debug(m.get(i).name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
+                //CatGirlMod.logger.debug(m.get(i).name + " have gashPower: " + gashPower.amount + "/" + CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK);
                 tmp[i] += gashPower.amount * CatGirlPower_IncreaseClawDamage.DAMAGE_INCREASE_PER_STACK;
 
                 if (__instance.baseDamage != (int) tmp[i]) {
