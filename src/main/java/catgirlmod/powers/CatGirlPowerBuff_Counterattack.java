@@ -1,6 +1,7 @@
 package catgirlmod.powers;
 
 import catgirlmod.CatGirlMod;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-public class CatGirlPowerBuff_Counterattack extends AbstractPower {
+public class CatGirlPowerBuff_Counterattack extends AbstractPower implements OnReceivePowerPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = CatGirlMod.makeID("CounterattackBuff");
@@ -35,7 +36,7 @@ public class CatGirlPowerBuff_Counterattack extends AbstractPower {
     }
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
 
         if (power.ID.equals(CatGirlPowerBuff_Evade.POWER_ID)) {
             flash();
@@ -60,6 +61,8 @@ public class CatGirlPowerBuff_Counterattack extends AbstractPower {
                     )
             );
         }
+
+        return true;
     }
 
     @Override

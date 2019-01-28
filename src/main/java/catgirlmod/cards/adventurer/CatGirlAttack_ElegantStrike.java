@@ -54,7 +54,7 @@ public class CatGirlAttack_ElegantStrike extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int DAMAGE = 1;
 
@@ -63,8 +63,10 @@ public class CatGirlAttack_ElegantStrike extends AbstractDefaultCard {
     public CatGirlAttack_ElegantStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        this.baseMagicNumber = magicNumber = DAMAGE;
         this.exhaust = true;
+
+        this.tags.add(CardTags.STRIKE);
     }
 
     // Actions the card should do.
@@ -74,7 +76,7 @@ public class CatGirlAttack_ElegantStrike extends AbstractDefaultCard {
         int evadeStack = absPower != null ? absPower.amount : 0;
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage * evadeStack, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
+                new DamageAction(m, new DamageInfo(p, baseMagicNumber * evadeStack, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
         );
     }
 
@@ -84,8 +86,8 @@ public class CatGirlAttack_ElegantStrike extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
             this.exhaust = false;
+            initializeDescription();
         }
     }
 }

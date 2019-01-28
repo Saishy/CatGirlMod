@@ -64,6 +64,8 @@ public class CatGirlSkill_DefensiveStance extends AbstractDefaultCard {
 
         this.magicNumber = this.baseMagicNumber = EVADE;
         this.secondMagicNumber = this.baseSecondMagicNumber = EVADE_INCREASE;
+
+        this.exhaust = true;
     }
 
     // Actions the card should do.

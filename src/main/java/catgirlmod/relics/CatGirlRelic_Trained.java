@@ -27,7 +27,7 @@ public class CatGirlRelic_Trained extends CustomRelic {
     public int onAttacked(DamageInfo info, int damageAmount) {
         //CatGirlMod.logger.info("Catgirl info output: " + info.output);
         //CatGirlMod.logger.info("Catgirl type output: " + info.type);
-        if (info.output > 0 && info.type == DamageInfo.DamageType.NORMAL) {
+        if (info.output > 0 && info.type == DamageInfo.DamageType.NORMAL && (damageAmount > AbstractDungeon.player.currentBlock)) {
             AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
                         AbstractDungeon.player, AbstractDungeon.player, new CatGirlPowerBuff_Evade(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
@@ -36,6 +36,11 @@ public class CatGirlRelic_Trained extends CustomRelic {
         }
 
         return super.onAttacked(info, damageAmount);
+    }
+
+    @Override
+    public int onAttackedMonster(DamageInfo info, int damageAmount) {
+        return super.onAttackedMonster(info, damageAmount);
     }
 
     // Description

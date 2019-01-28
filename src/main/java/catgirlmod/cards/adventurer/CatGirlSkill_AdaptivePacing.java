@@ -72,7 +72,7 @@ public class CatGirlSkill_AdaptivePacing extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
+                new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block)
         );
 
         AbstractDungeon.actionManager.addToBottom(

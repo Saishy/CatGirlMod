@@ -68,6 +68,8 @@ public class CatGirlAttack_FocusedStrike extends AbstractDefaultCard {
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = ENERGY_GAIN;
         this.secondMagicNumber = this.baseSecondMagicNumber = CARD_DRAW;
+
+        this.tags.add(CardTags.STRIKE);
     }
 
     // Actions the card should do.

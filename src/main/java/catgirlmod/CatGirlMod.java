@@ -3,6 +3,7 @@ package catgirlmod;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import catgirlmod.cards.*;
 import catgirlmod.cards.basic.*;
@@ -10,7 +11,7 @@ import catgirlmod.cards.adventurer.*;
 import catgirlmod.cards.clumsy.*;
 import catgirlmod.cards.beast.*;
 import catgirlmod.cards.test.*;
-import catgirlmod.relics.CatGirlRelic_Trained;
+import catgirlmod.relics.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -198,10 +199,16 @@ public class CatGirlMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new CatGirlRelic_Trained(), AbstractCardEnum.CATGIRL_TEAL);
+
+        BaseMod.addRelicToCustomPool(new CatGirlRelic_LostAndFound(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new CatGirlRelic_MonsterGuide(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new CatGirlRelic_ThrowingDagger(), AbstractCardEnum.CATGIRL_TEAL);
       //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        BaseMod.addRelic(new CatGirlRelic_Ambush(), RelicType.SHARED);
+        BaseMod.addRelic(new CatGirlRelic_DriedFish(), RelicType.SHARED);
 
         logger.info("Done adding relics!");
     }

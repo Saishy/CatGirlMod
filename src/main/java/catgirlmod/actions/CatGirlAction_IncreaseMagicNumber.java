@@ -20,10 +20,12 @@ public class CatGirlAction_IncreaseMagicNumber extends AbstractGameAction {
         for (AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.group)
             if (c.uuid.equals(this.uuid)) {
                 c.baseMagicNumber += this.increase;
+                c.magicNumber = c.baseMagicNumber;
                 c.applyPowers();
             }
         for (AbstractCard c : GetAllInBattleInstances.get(this.uuid)) {
             c.baseMagicNumber += this.increase;
+            c.magicNumber = c.baseMagicNumber;
             c.applyPowers();
         }
 

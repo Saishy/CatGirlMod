@@ -25,8 +25,8 @@
   },
   "theCatGirl:CatGirlAttack_ElegantStrike": {
     "NAME": "Elegant Strike",
-    "DESCRIPTION": "Deal !D! damage for each Evade. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage for each Evade."
+    "DESCRIPTION": "Deal !M! damage for each Evade. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade."
   },
   "theCatGirl:CatGirlAttack_AllIn": {
     "NAME": "All In",
@@ -47,7 +47,7 @@
   },
   "theCatGirl:CatGirlSkill_DefensiveStance": {
     "NAME": "Defensive Stance",
-    "DESCRIPTION": "Gain !M! Evade. Increase the Evade gained by this card by !theCatGirl:SecondMagic!."
+    "DESCRIPTION": "Gain !M! Evade. Increase the Evade gained by this card by !theCatGirl:SecondMagic!. NL Exhaust."
   },
   "theCatGirl:CatGirlSkill_TwoStep": {
     "NAME": "Two-Step",

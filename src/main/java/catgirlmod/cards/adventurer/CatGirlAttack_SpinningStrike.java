@@ -64,6 +64,8 @@ public class CatGirlAttack_SpinningStrike extends AbstractDefaultCard {
 
         this.baseDamage = DAMAGE;
         this.isMultiDamage = true;
+
+        this.tags.add(CardTags.STRIKE);
     }
 
     // Actions the card should do.

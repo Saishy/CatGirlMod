@@ -64,7 +64,7 @@ public class CatGirlSkill_KeepAlert extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new CatGirlPowerBuff_EvadeDontDecay(p, p, magicNumber), 1
+                        p, p, new CatGirlPowerBuff_EvadeDontDecay(p, p, 1), 1
                 )
         );
     }
