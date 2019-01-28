@@ -67,10 +67,12 @@ public class CatGirlSkill_LearnThePattern extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower evadePower = p.getPower(CatGirlPowerBuff_Evade.POWER_ID);
 
+        int evadeAmount = evadePower.amount;
+
         if (evadePower != null) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
-                            p, p, new CatGirlPowerBuff_Evade(p, p, evadePower.amount), evadePower.amount
+                            p, p, new CatGirlPowerBuff_Evade(p, p, evadeAmount), evadeAmount
                     )
             );
         }

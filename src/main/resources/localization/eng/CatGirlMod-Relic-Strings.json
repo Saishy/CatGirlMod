@@ -4,7 +4,7 @@
 		"FLAVOR": "I've never saw a monster yelling 'unfair'.",
 		"DESCRIPTIONS": [
 			"At the start of the combat, remove #b",
-			" Artifact from enemies."
+			" #yArtifact from enemies."
 		]
 	},
 	"theCatGirl:DriedFish": {
@@ -12,21 +12,21 @@
 		"FLAVOR": "The perfect snack for a long adventure.",
 		"DESCRIPTIONS": [
 			"Every time you play #b",
-			" Attacks, gain [E] ."
+			" #yAttacks, gain [E] ."
 		]
 	},
 	"theCatGirl:LostAndFound": {
 		"NAME": "Lost and Found",
 		"FLAVOR": "I've never saw a monster yelling 'unfair'.",
 		"DESCRIPTIONS": [
-			"Whenever you Exhaust a card, gain Evade equal to it's cost."
+			"Whenever you #yExhaust a card, gain #yEvade equal to it's cost."
 		]
 	},
 	"theCatGirl:MonsterGuide": {
 		"NAME": "Monster Guide",
 		"FLAVOR": "Contains detailed information about every monster.",
 		"DESCRIPTIONS": [
-			"The first time you would gain a Debuff in each combat, reflect it."
+			"The first time you would gain a #yDebuff in each combat, reflect it."
 		]
 	},
 	"theCatGirl:ThrowingDagger": {
@@ -35,14 +35,14 @@
 		"DESCRIPTIONS": [
 			"Every time you play #b",
 			" #yAttacks in a single turn, gain #b",
-			" #Evade."
+			" #yEvade."
 		]
 	},
 	"theCatGirl:TrainedRelic": {
 		"NAME": "Trained",
 		"FLAVOR": "An adventurer never takes the same attack twice.",
 		"DESCRIPTIONS": [
-			"When you take damage, gain 2 Evade."
+			"Whenever you take damage, gain 2 #yEvade."
 		]
 	},
 	"theCatGirl:PlaceholderRelic": {

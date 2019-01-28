@@ -22,28 +22,42 @@ public class CatGirlRelic_MonsterGuide extends CustomRelic implements OnReceiveP
     public static final String IMG = "images/relics/placeholder_relic2.png";
     public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
 
+    private boolean bHasTriggered = false;
+
     public CatGirlRelic_MonsterGuide() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.FLAT);
+
+        this.bHasTriggered = false;
     }
 
     @Override
     public void atBattleStart() {
-        this.counter = 1;
+        bHasTriggered = false;
     }
 
     @Override
     public void onVictory() {
-        this.counter = -1;
+        bHasTriggered = false;
     }
 
     @Override
     public boolean onReceivePower(AbstractPower abstractPower, AbstractCreature abstractCreature) {
-        if (this.counter <= 0) {
+        if (bHasTriggered) {
             return true;
         }
 
         if (abstractPower.type == AbstractPower.PowerType.DEBUFF) {
-            switch ((abstractPower.ID)) {
+            this.flash();
+
+            if (abstractCreature instanceof AbstractMonster) {
+                abstractPower.owner = abstractCreature;
+                AbstractDungeon.actionManager.addToBottom(
+                        new ApplyPowerAction(
+                                abstractCreature, AbstractDungeon.player, abstractPower, abstractPower.amount
+                        )
+                );
+            }
+            /*switch ((abstractPower.ID)) {
                 case VulnerablePower.POWER_ID:
                 case WeakPower.POWER_ID:
                 case StrengthPower.POWER_ID:
@@ -56,11 +70,11 @@ public class CatGirlRelic_MonsterGuide extends CustomRelic implements OnReceiveP
                             )
                     );
                     break;
-            }
+            }*/
 
-            this.counter -= 1;
+            bHasTriggered = true;
 
-            return true;
+            return false;
         }
 
         return true;
@@ -69,7 +83,7 @@ public class CatGirlRelic_MonsterGuide extends CustomRelic implements OnReceiveP
     // Description
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 1 + this.DESCRIPTIONS[1];
+        return this.DESCRIPTIONS[0];
     }
 
     // Which relic to return on making a copy of this relic.
