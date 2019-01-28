@@ -55,10 +55,10 @@ public class CatGirlAttack_AllIn extends AbstractDefaultCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
-    private static final int VULNERABLE = 1;
+    private static final int VULNERABLE = 2;
     private static final int UPGRADE_VULNERABLE = 1;
 
     // /STAT DECLARATION/

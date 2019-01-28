@@ -7,6 +7,14 @@
 			" #yArtifact from enemies."
 		]
 	},
+	"theCatGirl:BeginnersLuck": {
+		"NAME": "Beginner's Luck",
+		"FLAVOR": "I'm really good at dices!",
+		"DESCRIPTIONS": [
+			"Replaces #rTrained. Start each turn with #b",
+			" stacks. NL Whenever you discard a card, lose one stack and draw a card."
+		]
+	},
 	"theCatGirl:DriedFish": {
 		"NAME": "Dried Fish",
 		"FLAVOR": "The perfect snack for a long adventure.",
@@ -15,9 +23,18 @@
 			" #yAttacks, gain [E] ."
 		]
 	},
+	"theCatGirl:Instincts": {
+		"NAME": "Instincts",
+		"FLAVOR": "You're slowly losing sanity.",
+		"DESCRIPTIONS": [
+			"Replaces #rTrained. At the start of combat, gain #b",
+			" #yStrength, lose #b.",
+			" #yStrength at the end of your first turn."
+		]
+	},
 	"theCatGirl:LostAndFound": {
 		"NAME": "Lost and Found",
-		"FLAVOR": "I've never saw a monster yelling 'unfair'.",
+		"FLAVOR": "I've never heard a monster yelling 'unfair'.",
 		"DESCRIPTIONS": [
 			"Whenever you #yExhaust a card, gain #yEvade equal to it's cost."
 		]
@@ -27,6 +44,14 @@
 		"FLAVOR": "Contains detailed information about every monster.",
 		"DESCRIPTIONS": [
 			"The first time you would gain a #yDebuff in each combat, reflect it."
+		]
+	},
+	"theCatGirl:SRank": {
+		"NAME": "S-Rank",
+		"FLAVOR": "You're in the top 1% of adventurers.",
+		"DESCRIPTIONS": [
+			"Replaces #rTrained. Whenever you are attacked, gain #b",
+			" #yEvade."
 		]
 	},
 	"theCatGirl:ThrowingDagger": {

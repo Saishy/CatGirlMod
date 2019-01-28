@@ -203,6 +203,11 @@ public class CatGirlMod implements
         BaseMod.addRelicToCustomPool(new CatGirlRelic_LostAndFound(), AbstractCardEnum.CATGIRL_TEAL);
         BaseMod.addRelicToCustomPool(new CatGirlRelic_MonsterGuide(), AbstractCardEnum.CATGIRL_TEAL);
         BaseMod.addRelicToCustomPool(new CatGirlRelic_ThrowingDagger(), AbstractCardEnum.CATGIRL_TEAL);
+        //Boss Relics
+        //BaseMod.addRelicToCustomPool(new CatGirlRelic_BeginnersLuck(), AbstractCardEnum.CATGIRL_TEAL);
+        //BaseMod.addRelicToCustomPool(new CatGirlRelic_Instincts(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new CatGirlRelic_SRank(), AbstractCardEnum.CATGIRL_TEAL);
+
       //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
         // This adds a relic to the Shared pool. Every character can find this relic.

@@ -38,11 +38,6 @@ public class CatGirlRelic_Trained extends CustomRelic {
         return super.onAttacked(info, damageAmount);
     }
 
-    @Override
-    public int onAttackedMonster(DamageInfo info, int damageAmount) {
-        return super.onAttackedMonster(info, damageAmount);
-    }
-
     // Description
     @Override
     public String getUpdatedDescription() {
