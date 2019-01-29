@@ -5,10 +5,8 @@ import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
-import catgirlmod.cards.*;
 import catgirlmod.cards.basic.*;
 import catgirlmod.cards.adventurer.*;
-import catgirlmod.cards.clumsy.*;
 import catgirlmod.cards.beast.*;
 import catgirlmod.cards.test.*;
 import catgirlmod.relics.*;
@@ -198,22 +196,22 @@ public class CatGirlMod implements
         logger.info("Adding relics");
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new CatGirlRelic_Trained(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new TrainedRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
-        BaseMod.addRelicToCustomPool(new CatGirlRelic_LostAndFound(), AbstractCardEnum.CATGIRL_TEAL);
-        BaseMod.addRelicToCustomPool(new CatGirlRelic_MonsterGuide(), AbstractCardEnum.CATGIRL_TEAL);
-        BaseMod.addRelicToCustomPool(new CatGirlRelic_ThrowingDagger(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new LostAndFoundRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new MonsterGuideRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new ThrowingDaggerRelic(), AbstractCardEnum.CATGIRL_TEAL);
         //Boss Relics
-        //BaseMod.addRelicToCustomPool(new CatGirlRelic_BeginnersLuck(), AbstractCardEnum.CATGIRL_TEAL);
-        //BaseMod.addRelicToCustomPool(new CatGirlRelic_Instincts(), AbstractCardEnum.CATGIRL_TEAL);
-        BaseMod.addRelicToCustomPool(new CatGirlRelic_SRank(), AbstractCardEnum.CATGIRL_TEAL);
+        //BaseMod.addRelicToCustomPool(new BeginnersLuckRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        //BaseMod.addRelicToCustomPool(new InstinctsRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new SRankRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
       //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
-        BaseMod.addRelic(new CatGirlRelic_Ambush(), RelicType.SHARED);
-        BaseMod.addRelic(new CatGirlRelic_DriedFish(), RelicType.SHARED);
+        BaseMod.addRelic(new AmbushRelic(), RelicType.SHARED);
+        BaseMod.addRelic(new DriedFishRelic(), RelicType.SHARED);
 
         logger.info("Done adding relics!");
     }
@@ -235,45 +233,45 @@ public class CatGirlMod implements
         logger.info("Adding cards");
         // Add the cards
         // Basic
-        BaseMod.addCard(new CatGirlAttack_ClawStrike());
-        BaseMod.addCard(new CatGirlAttack_Strike());
-        BaseMod.addCard(new CatGirlSkill_Defend());
-        BaseMod.addCard(new CatGirlSkill_Evasion());
+        BaseMod.addCard(new ClawStrike());
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Evasion());
 
         // Adventurer
-        BaseMod.addCard(new CatGirlAttack_AllIn());
-        BaseMod.addCard(new CatGirlAttack_ElegantStrike());
-        BaseMod.addCard(new CatGirlAttack_FocusedStrike());
-        BaseMod.addCard(new CatGirlAttack_Parry());
-        BaseMod.addCard(new CatGirlAttack_PlayAround());
-        BaseMod.addCard(new CatGirlAttack_PoisedAttack());
-        BaseMod.addCard(new CatGirlAttack_SpinningStrike());
+        BaseMod.addCard(new AllIn());
+        BaseMod.addCard(new ElegantStrike());
+        BaseMod.addCard(new FocusedStrike());
+        BaseMod.addCard(new Parry());
+        BaseMod.addCard(new PlayAround());
+        BaseMod.addCard(new PoisedAttack());
+        BaseMod.addCard(new SpinningStrike());
 
-        BaseMod.addCard(new CatGirlSkill_AdaptivePacing());
-        BaseMod.addCard(new CatGirlSkill_ChangeOfPlans());
-        BaseMod.addCard(new CatGirlSkill_DefensiveStance());
-        BaseMod.addCard(new CatGirlSkill_EmergencyParry());
-        BaseMod.addCard(new CatGirlSkill_KeepAlert());
-        BaseMod.addCard(new CatGirlSkill_LearnThePattern());
-        BaseMod.addCard(new CatGirlSkill_PerfectBlock());
-        BaseMod.addCard(new CatGirlSkill_Prepared());
-        BaseMod.addCard(new CatGirlSkill_TwoStep());
+        BaseMod.addCard(new AdaptivePacing());
+        BaseMod.addCard(new ChangeOfPlans());
+        BaseMod.addCard(new DefensiveStance());
+        BaseMod.addCard(new EmergencyParry());
+        BaseMod.addCard(new KeepAlert());
+        BaseMod.addCard(new LearnThePattern());
+        BaseMod.addCard(new PerfectBlock());
+        BaseMod.addCard(new Prepared());
+        BaseMod.addCard(new TwoStep());
 
-        BaseMod.addCard(new CatGirlPower_AdventurersInsight());
-        BaseMod.addCard(new CatGirlPower_Counterattack());
-        BaseMod.addCard(new CatGirlPower_PoiseStance());
+        BaseMod.addCard(new AdventurersInsight());
+        BaseMod.addCard(new Counterattack());
+        BaseMod.addCard(new PoiseStance());
 
         // Beast
-        BaseMod.addCard(new CatGirlAttack_Claws());
+        BaseMod.addCard(new Claws());
 
         // Clumsy
 
 
         // Test
-        BaseMod.addCard(new CatGirlSkill_MultiHitStrikenTest());
-        BaseMod.addCard(new CatGirlSkill_MultiHitGashTest());
-        BaseMod.addCard(new CatGirlAttack_AllEnemyStrike());
-        BaseMod.addCard(new CatGirlAttack_AllEnemyClaw());
+        BaseMod.addCard(new MultiHitStrikenTest());
+        BaseMod.addCard(new MultiHitGashTest());
+        BaseMod.addCard(new AllEnemyStrike());
+        BaseMod.addCard(new AllEnemyClaw());
 
         /*BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         //BaseMod.addCard(new DefaultCommonAttack());
@@ -290,17 +288,17 @@ public class CatGirlMod implements
         logger.info("Making sure the basic cards are unlocked.");
         // Unlock the cards
         // Basic
-        UnlockTracker.unlockCard(CatGirlAttack_ClawStrike.ID);
-        UnlockTracker.unlockCard(CatGirlAttack_Strike.ID);
-        UnlockTracker.unlockCard(CatGirlSkill_Defend.ID);
-        UnlockTracker.unlockCard(CatGirlSkill_Evasion.ID);
+        UnlockTracker.unlockCard(ClawStrike.ID);
+        UnlockTracker.unlockCard(Strike.ID);
+        UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(Evasion.ID);
 
         // Adventurer
-        //UnlockTracker.unlockCard(CatGirlAttack_Parry.ID);
-        //UnlockTracker.unlockCard(CatGirlAttack_PlayAround.ID);
+        //UnlockTracker.unlockCard(Parry.ID);
+        //UnlockTracker.unlockCard(PlayAround.ID);
 
         // Beast
-        //UnlockTracker.unlockCard(CatGirlAttack_Claws.ID);
+        //UnlockTracker.unlockCard(Claws.ID);
 
         // Clumsy
 

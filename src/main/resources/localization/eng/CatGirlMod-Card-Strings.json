@@ -1,108 +1,108 @@
 {
-  "theCatGirl:CatGirlAttack_Strike": {
+  "theCatGirl:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theCatGirl:CatGirlSkill_Defend": {
+  "theCatGirl:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "theCatGirl:CatGirlAttack_ClawStrike": {
+  "theCatGirl:ClawStrike": {
     "NAME": "Claw Strike",
     "DESCRIPTION": "Deal !D! Damage !M! times."
   },
-  "theCatGirl:CatGirlSkill_Evasion": {
+  "theCatGirl:Evasion": {
     "NAME": "Evasion",
     "DESCRIPTION": "Gain !M! Evade."
   },
-  "theCatGirl:CatGirlAttack_Parry": {
+  "theCatGirl:Parry": {
     "NAME": "Parry",
     "DESCRIPTION": "Gain !B! Block. Deal !D! Damage. NL If the enemy intends to attack, gain !M! Evade."
   },
-  "theCatGirl:CatGirlAttack_PlayAround": {
+  "theCatGirl:PlayAround": {
     "NAME": "Play Around",
     "DESCRIPTION": "Deal !D! Damage. Strikes deal 2 more damage to this enemy."
   },
-  "theCatGirl:CatGirlAttack_ElegantStrike": {
+  "theCatGirl:ElegantStrike": {
     "NAME": "Elegant Strike",
     "DESCRIPTION": "Deal !M! damage for each Evade. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade."
   },
-  "theCatGirl:CatGirlAttack_AllIn": {
+  "theCatGirl:AllIn": {
     "NAME": "All In",
     "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, apply !M! Vulnerable."
   },
-  "theCatGirl:CatGirlAttack_FocusedStrike": {
+  "theCatGirl:FocusedStrike": {
     "NAME": "Focused Strike",
     "DESCRIPTION": "Deal !D! Damage. If you have Evade, gain !M! [R] and draw !theCatGirl:SecondMagic! card."
   },
-  "theCatGirl:CatGirlAttack_SpinningStrike": {
+  "theCatGirl:SpinningStrike": {
     "NAME": "Spinning Strike",
     "DESCRIPTION": "Deal !D! damage to all enemies."
   },
-  "theCatGirl:CatGirlAttack_PoisedAttack": {
+  "theCatGirl:PoisedAttack": {
     "NAME": "Poised Attack",
     "DESCRIPTION": "Deal !D! damage. Upgrade a random Skill in your hand for the rest of the combat.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Upgrade all Skills in your hand for the rest of the combat."
   },
-  "theCatGirl:CatGirlSkill_DefensiveStance": {
+  "theCatGirl:DefensiveStance": {
     "NAME": "Defensive Stance",
     "DESCRIPTION": "Gain !M! Evade. Increase the Evade gained by this card by !theCatGirl:SecondMagic!. NL Exhaust."
   },
-  "theCatGirl:CatGirlSkill_TwoStep": {
+  "theCatGirl:TwoStep": {
     "NAME": "Two-Step",
     "DESCRIPTION": "Gain !B! Block. At your next turn, gain !M! Evade."
   },
-  "theCatGirl:CatGirlSkill_AdaptivePacing": {
+  "theCatGirl:AdaptivePacing": {
     "NAME": "Adaptive Pacing",
     "DESCRIPTION": "Gain !B! Block. Reduce this card's cost by !M! this combat."
   },
-  "theCatGirl:CatGirlSkill_LearnThePattern": {
+  "theCatGirl:LearnThePattern": {
     "NAME": "Learn The Pattern",
     "DESCRIPTION": "Double your Evade. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Double your Evade."
   },
-  "theCatGirl:CatGirlSkill_PerfectBlock": {
+  "theCatGirl:PerfectBlock": {
     "NAME": "Perfect Block",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "theCatGirl:CatGirlSkill_Prepared": {
+  "theCatGirl:Prepared": {
     "NAME": "Prepared",
     "DESCRIPTION": "This turn, your next Skill is played twice.",
     "UPGRADE_DESCRIPTION": "This turn, your next !M! Skills are played twice."
   },
-  "theCatGirl:CatGirlSkill_EmergencyParry": {
+  "theCatGirl:EmergencyParry": {
     "NAME": "Emergency Parry",
     "DESCRIPTION": "Lose all your Evade and gain Block equal to it.",
     "UPGRADE_DESCRIPTION": "Lose all your Evade and gain Block equal to !M! times the amount."
   },
-  "theCatGirl:CatGirlSkill_ChangeOfPlans": {
+  "theCatGirl:ChangeOfPlans": {
     "NAME": "Change Of Plans",
     "DESCRIPTION": "Draw !M! card. NL Put a card from your hand onto the top of your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Put a card from your hand onto the top of your draw pile. NL Exhaust."
   },
-  "theCatGirl:CatGirlSkill_KeepAlert": {
+  "theCatGirl:KeepAlert": {
     "NAME": "Keep Alert",
     "DESCRIPTION": "Your Evade is not lost at the end this turn."
   },
-  "theCatGirl:CatGirlPower_AdventurersInsight": {
+  "theCatGirl:AdventurersInsight": {
     "NAME": "Adventurer's Insight",
     "DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade.",
     "UPGRADE_DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade. NL Innate."
   },
-  "theCatGirl:CatGirlPower_PoiseStance": {
+  "theCatGirl:PoiseStance": {
     "NAME": "Poise Stance",
     "DESCRIPTION": "At the beginning of your turn, gain !M! Evade."
   },
-  "theCatGirl:CatGirlPower_Counterattack": {
+  "theCatGirl:Counterattack": {
     "NAME": "Counterattack",
     "DESCRIPTION": "Whenever you gain Evade, deal !M! damage to all enemies."
   },
-  "theCatGirl:CatGirlAttack_Claws": {
+  "theCatGirl:Claws": {
     "NAME": "Claws",
     "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."
   },
-  "theCatGirl:CatGirlAttack_ClawScratch": {
+  "theCatGirl:ClawScratch": {
     "NAME": "Claw Scratch",
     "DESCRIPTION": "Deal !D! damage for each Attack played this turn.",
     "EXTENDED_DESCRIPTION": [
@@ -162,19 +162,19 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
-  "theCatGirl:CatGirlSkill_MultiHitGashTest": {
+  "theCatGirl:MultiHitGashTest": {
     "NAME": "MultiHit Gash Apply Test",
     "DESCRIPTION": "Applies !M! Gash to everyone."
   },
-  "theCatGirl:CatGirlSkill_MultiHitStrikenTest": {
+  "theCatGirl:MultiHitStrikenTest": {
     "NAME": "MultiHit Striken Apply Test",
     "DESCRIPTION": "Applies !M! Striken to everyone."
   },
-  "theCatGirl:CatGirlAttack_AllEnemyStrike": {
+  "theCatGirl:AllEnemyStrike": {
     "NAME": "All Strike",
     "DESCRIPTION": "Do !D! Damage to ALL enemies."
   },
-  "theCatGirl:CatGirlAttack_AllEnemyClaw": {
+  "theCatGirl:AllEnemyClaw": {
     "NAME": "All Claw",
     "DESCRIPTION": "Do !D! Damage to ALL enemies."
   }

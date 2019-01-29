@@ -1,14 +1,12 @@
 package catgirlmod.characters;
 
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import catgirlmod.CatGirlMod;
-import catgirlmod.cards.basic.CatGirlAttack_ClawStrike;
-import catgirlmod.cards.basic.CatGirlAttack_Strike;
-import catgirlmod.cards.basic.CatGirlSkill_Defend;
-import catgirlmod.cards.basic.CatGirlSkill_Evasion;
-import catgirlmod.relics.CatGirlRelic_Trained;
+import catgirlmod.cards.basic.ClawStrike;
+import catgirlmod.cards.basic.Defend;
+import catgirlmod.cards.basic.Strike;
+import catgirlmod.cards.basic.Evasion;
+import catgirlmod.relics.TrainedRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -26,9 +24,6 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import catgirlmod.cards.*;
 import catgirlmod.patches.AbstractCardEnum;
-import catgirlmod.relics.DefaultClickableRelic;
-import catgirlmod.relics.PlaceholderRelic;
-import catgirlmod.relics.PlaceholderRelic2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -143,18 +138,18 @@ public class TheCatGirl extends CustomPlayer {
 
         logger.info("CatGirl: Begin loading starter Deck Strings");
 
-        retVal.add(CatGirlAttack_Strike.ID);
-        retVal.add(CatGirlAttack_Strike.ID);
-        retVal.add(CatGirlAttack_Strike.ID);
-        retVal.add(CatGirlAttack_Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
 
-        retVal.add(CatGirlSkill_Defend.ID);
-        retVal.add(CatGirlSkill_Defend.ID);
-        retVal.add(CatGirlSkill_Defend.ID);
-        retVal.add(CatGirlSkill_Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
 
-        retVal.add(CatGirlAttack_ClawStrike.ID);
-        retVal.add(CatGirlSkill_Evasion.ID);
+        retVal.add(ClawStrike.ID);
+        retVal.add(Evasion.ID);
 
         return retVal;
     }
@@ -163,11 +158,11 @@ public class TheCatGirl extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(CatGirlRelic_Trained.ID);
+        retVal.add(TrainedRelic.ID);
         //retVal.add(PlaceholderRelic2.ID);
         //retVal.add(DefaultClickableRelic.ID);
 
-        UnlockTracker.markRelicAsSeen(CatGirlRelic_Trained.ID);
+        UnlockTracker.markRelicAsSeen(TrainedRelic.ID);
         //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
