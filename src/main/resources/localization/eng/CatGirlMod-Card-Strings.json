@@ -102,6 +102,15 @@
     "NAME": "Claws",
     "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."
   },
+  "theCatGirl:CatGirlAttack_ClawScratch": {
+    "NAME": "Claw Scratch",
+    "DESCRIPTION": "Deal !D! damage for each Attack played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Attack played.)",
+      " Attacks played.)"
+    ]
+  },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"

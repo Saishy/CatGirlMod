@@ -83,7 +83,7 @@ public class CatGirlPower_AdventurersInsight extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             isInnate = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
