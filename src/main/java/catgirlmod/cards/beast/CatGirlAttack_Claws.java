@@ -4,7 +4,9 @@ import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.patches.AbstractCardEnum;
 import catgirlmod.powers.CatGirlPowerBuff_IncreaseClawDamage;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -74,12 +76,16 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
         //AbstractPower gashPower = m.getPower(CatGirlPowerBuff_IncreaseClawDamage.POWER_ID);
 
+        if (m != null) {
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new com.megacrit.cardcrawl.vfx.combat.ClawEffect(m.hb.cX, m.hb.cY, Color.TEAL, Color.WHITE), 0.1F));
+        }
+
         calculateCardDamage(m);
 
         //CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + " gash amount.");
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE)
         );
 
         AbstractDungeon.actionManager.addToBottom(

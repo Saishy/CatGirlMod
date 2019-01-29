@@ -1,10 +1,10 @@
-package catgirlmod.cards.adventurer;
+package catgirlmod.cards.beast;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.CatGirlPowerBuff_Evade;
+import catgirlmod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.vfx.combat.ScrapeEffect;
 
-public class CatGirlAttack_Parry extends AbstractDefaultCard {
+public class CatGirlAttack_BloodyClaws extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -23,7 +23,7 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlAttack_Parry
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CatGirlAttack_Claws
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -34,10 +34,10 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CatGirlAttack_Parry");
+    public static final String ID = CatGirlMod.makeID("CatGirlAttack_BloodyClaws");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_Parry.png"
+    public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_Claws.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -48,51 +48,45 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE = 4;
 
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-
-    private static final int EVADE = 4;
-    private static final int UPGRADE_PLUS_EVADE = 2;
+    private static final int ATTACK_TIMES = 3;
+    private static final int UPGRADE_PLUS_ATTACK_TIMES = 1;
 
     // /STAT DECLARATION/
 
-    public CatGirlAttack_Parry() {
+    public CatGirlAttack_BloodyClaws() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        baseDamage = DAMAGE;
-        baseBlock = BLOCK;
-        baseMagicNumber = magicNumber = EVADE;
+        this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = ATTACK_TIMES;
+        this.tags.add(AbstractCardEnum.CLAW);
+
+        this.exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block)
-        );
 
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT)
-        );
+        for (int i = 0; i < magicNumber; i ++) {
+            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        if ( m.intent == AbstractMonster.Intent.ATTACK ||
-        m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
+            calculateCardDamage(m);
+
+            if (m != null) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ScrapeEffect(m.hb.cX, m.hb.cY), 0.1F));
+            }
+
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(
-                            p, p, new CatGirlPowerBuff_Evade(p, p, magicNumber), magicNumber
-                    )
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
             );
         }
     }
@@ -102,9 +96,7 @@ public class CatGirlAttack_Parry extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_EVADE);
+            upgradeMagicNumber(UPGRADE_PLUS_ATTACK_TIMES);
             initializeDescription();
         }
     }
