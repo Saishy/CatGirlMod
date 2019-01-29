@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CatGirlAttack_Claws extends AbstractDefaultCard {
+public class CatGirlAttack_RageClaws extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -34,7 +34,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CatGirlAttack_Claws");
+    public static final String ID = CatGirlMod.makeID("CatGirlAttack_RageClaws");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_Claws.png"
@@ -54,39 +54,35 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 3;
+
+    private static final int ATTACK_TIMES = 4;
+    private static final int UPGRADE_PLUS_ATTACK_TIMES = 1;
 
     // /STAT DECLARATION/
 
-    public CatGirlAttack_Claws() {
+    public CatGirlAttack_RageClaws() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = ATTACK_TIMES;
         this.tags.add(AbstractCardEnum.CLAW);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        //AbstractPower gashPower = m.getPower(CatGirlPowerBuff_IncreaseClawDamage.POWER_ID);
+        for (int i = 0; i < magicNumber; i ++) {
+            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        calculateCardDamage(m);
+            calculateCardDamage(m);
 
-        //CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + " gash amount.");
-
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        m, p, new CatGirlPowerBuff_IncreaseClawDamage(m, p, 1), 1
-                )
-        );
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
+            );
+        }
     }
 
     // Upgraded stats.
@@ -94,7 +90,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_ATTACK_TIMES);
             initializeDescription();
         }
     }

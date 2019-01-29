@@ -4,6 +4,7 @@ import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.patches.AbstractCardEnum;
 import catgirlmod.powers.CatGirlPowerBuff_IncreaseClawDamage;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CatGirlAttack_Claws extends AbstractDefaultCard {
+public class CatGirlAttack_FinishingMove extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -34,7 +35,7 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CatGirlAttack_Claws");
+    public static final String ID = CatGirlMod.makeID("CatGirlAttack_FinishingMove");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "images/cards/Attack.png"; // "images/cards/CatGirlAttack_Claws.png"
@@ -48,38 +49,39 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 2;
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 20;
+    private static final int BIG_DAMAGE = 30;
+
+    private static final int DAMAGE_BONUS_HP_PERCENTAGE = 40;
+    private static final int UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE = 10;
 
     // /STAT DECLARATION/
 
-    public CatGirlAttack_Claws() {
+    public CatGirlAttack_FinishingMove() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.tags.add(AbstractCardEnum.CLAW);
+        this.magicNumber = this.baseMagicNumber = DAMAGE_BONUS_HP_PERCENTAGE;
+
+        this.isEthereal = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-
-        //AbstractPower gashPower = m.getPower(CatGirlPowerBuff_IncreaseClawDamage.POWER_ID);
-
         calculateCardDamage(m);
 
         //CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + " gash amount.");
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY)
         );
 
         AbstractDungeon.actionManager.addToBottom(
@@ -89,12 +91,37 @@ public class CatGirlAttack_Claws extends AbstractDefaultCard {
         );
     }
 
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        int originalBaseDamage = baseDamage;
+
+        float tmp = baseDamage;
+
+        if (((float)mo.currentHealth / (float)mo.maxHealth) <= ((float)magicNumber / 100.0f)) {
+            tmp = BIG_DAMAGE;
+        }
+
+        if (tmp < 0.0F) {
+            tmp = 0.0f;
+        }
+
+        if (baseDamage != (int)tmp) {
+            isDamageModified = true;
+        }
+
+        damage = MathUtils.floor(tmp);
+
+        super.calculateCardDamage(mo);
+
+        baseDamage = originalBaseDamage;
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE);
             initializeDescription();
         }
     }
