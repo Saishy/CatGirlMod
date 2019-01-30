@@ -42,6 +42,7 @@ public class Stalk extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -80,7 +81,7 @@ public class Stalk extends AbstractDefaultCard {
         }
 
         AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, block * count)
+                new GainBlockAction(p, p, upgraded ? (block * count) + 4 : block * count)
         );
     }
 
@@ -89,6 +90,7 @@ public class Stalk extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

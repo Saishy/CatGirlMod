@@ -34,7 +34,7 @@ public class EnragePower extends AbstractPower {
         this.amount = amount;
         updateDescription();
         this.type = PowerType.BUFF;
-        this.isTurnBased = true;
+        this.isTurnBased = false;
         this.img = ImageMaster.loadImage(IMG);
         this.source = source;
     }
@@ -48,7 +48,7 @@ public class EnragePower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
+        if (isPlayer && counter > 0) {
             AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
             AbstractDungeon.actionManager.addToBottom(

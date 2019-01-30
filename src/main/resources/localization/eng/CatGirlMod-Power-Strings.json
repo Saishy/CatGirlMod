@@ -34,9 +34,21 @@
                         " damage to ALL enemies."
                 ]
         },
+        "theCatGirl:BeastificationPower": {
+                "NAME": "Beastification",
+                "DESCRIPTIONS": ["Start your next turn with #b%s less Energy."]
+        },
         "theCatGirl:EnragePower": {
                 "NAME": "Enrage",
                 "DESCRIPTIONS": ["At the end of your turn, deal #b%s Damage for each Attack played, to a random enemy."]
+        },
+        "theCatGirl:InsanePower": {
+                "NAME": "Insane",
+                "DESCRIPTIONS": ["Whenever you play an Attack, Exhaust it."]
+        },
+        "theCatGirl:SevenLivesPower": {
+                "NAME": "Seven Lives",
+                "DESCRIPTIONS": ["If you would die to the next damage taken, ignore it. NL Lose upon taking damage."]
         },
         "theCatGirl:CommonPower": {
                 "NAME": "Placeholder Power",

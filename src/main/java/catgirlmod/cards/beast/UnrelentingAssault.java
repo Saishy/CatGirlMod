@@ -55,12 +55,14 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int DRAW_CARDS = 6;
 
-    private int attackDraws = 0;
+    //private int attackDraws = 0;
+
+    private AbstractMonster lastTarget;
 
     // /STAT DECLARATION/
 
@@ -74,7 +76,7 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        attackDraws = 0;
+        //attackDraws = 0;
 
         if (AbstractDungeon.player.drawPile.size() < DRAW_CARDS) {
             AbstractDungeon.actionManager.addToBottom(
@@ -82,21 +84,31 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
             );
         }
 
+        lastTarget = m;
+
         AbstractDungeon.actionManager.addToBottom(
                 new DrawCardsAndDoAction(this, DRAW_CARDS)
         );
+
+        /*CatGirlMod.logger.debug("Finished Drawing, attacks draw is: " + attackDraws);
 
         for (int i = 0; i < attackDraws; i++) {
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), (i % 2 == 0) ? AbstractGameAction.AttackEffect.SLASH_VERTICAL : AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
             );
-        }
+        }*/
     }
 
     @Override
     public void Execute(AbstractCard cardDraw) {
-        if (cardDraw.type == CardType.ATTACK) {
-            attackDraws++;
+        //CatGirlMod.logger.debug("CardDraw is: " + cardDraw.type);
+
+        if (cardDraw.type == CardType.ATTACK && lastTarget != null) {
+            //attackDraws++;
+            //CatGirlMod.logger.debug("Attack Draws is: " + attackDraws);
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(lastTarget, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), (Math.random() < 0.5f) ? AbstractGameAction.AttackEffect.SLASH_VERTICAL : AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
+            );
         }
     }
 

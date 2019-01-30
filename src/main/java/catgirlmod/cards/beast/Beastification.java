@@ -65,7 +65,7 @@ public class Beastification extends AbstractDefaultCard {
     private static final int STRENGTH = 3;
     private static final int UPGRADE_PLUS_STRENGTH = 1;
 
-    private static final int DEXTERITY = 2;
+    private static final int DEXTERITY = 3;
     private static final int UPGRADE_PLUS_DEXTERITY = 1;
     // /STAT DECLARATION/
 
@@ -88,7 +88,7 @@ public class Beastification extends AbstractDefaultCard {
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new DexterityPower(p, magicNumber), magicNumber
+                        p, p, new DexterityPower(p, secondMagicNumber), secondMagicNumber
                 )
         );
 

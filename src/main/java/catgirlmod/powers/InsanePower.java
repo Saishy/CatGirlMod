@@ -78,6 +78,6 @@ public class InsanePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        this.description = DESCRIPTIONS[0];
     }
 }

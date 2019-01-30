@@ -72,6 +72,7 @@ public class BloodBath extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int secondDamageToApply = magicNumber;
         int savedBaseDamage = baseDamage;
+        int firstDamage = damage;
 
         AbstractMonster secondTarget = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
@@ -81,7 +82,7 @@ public class BloodBath extends AbstractDefaultCard {
         }
 
         AbstractDungeon.actionManager.addToBottom(
-                new BloodBathAction(m, secondTarget, new DamageInfo(p, damage, damageTypeForTurn), secondDamageToApply)
+                new BloodBathAction(m, secondTarget, new DamageInfo(p, firstDamage, damageTypeForTurn), damage)
         );
 
         baseDamage = savedBaseDamage;

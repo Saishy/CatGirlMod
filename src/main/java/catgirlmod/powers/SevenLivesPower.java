@@ -16,7 +16,7 @@ public class SevenLivesPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = "images/powers/catgirl_poised.png";
+    public static final String IMG = "images/powers/catgirl_sevenlives.png";
 
     public SevenLivesPower(final AbstractCreature owner) {
         this.name = NAME;
@@ -41,5 +41,10 @@ public class SevenLivesPower extends AbstractPower {
         );
 
         return damageAmount;
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
     }
 }

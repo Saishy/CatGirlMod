@@ -27,7 +27,7 @@ public class BeastificationPower extends AbstractPower {
         this.amount = amount;
         updateDescription();
         this.type = PowerType.DEBUFF;
-        this.isTurnBased = false;
+        this.isTurnBased = true;
         this.img = ImageMaster.loadImage(IMG);
         this.source = source;
     }

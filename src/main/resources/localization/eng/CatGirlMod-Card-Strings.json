@@ -141,7 +141,7 @@
   },
   "theCatGirl:FinishingMove": {
     "NAME": "Finishing Move",
-    "DESCRIPTION": "Deal !D! damage. If the target have less than !M!% HP, deal !theCatGirl:SecondMagic! damage instead. NL Ethereal."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. If the target has less than !M!% HP, NL deal !theCatGirl:SecondMagic! damage instead."
   },
   "theCatGirl:Growl": {
     "NAME": "Growl",
@@ -158,7 +158,7 @@
   },
   "theCatGirl:Insane": {
     "NAME": "Insane",
-    "DESCRIPTION": "Attacks costs 0 [R] this turn. Whenever you play an Attack, discard it."
+    "DESCRIPTION": "Attacks costs 0 [R] this turn. Whenever you play an Attack, Exhaust it."
   },
   "theCatGirl:RageClaws": {
     "NAME": "Rage Claws",

@@ -57,10 +57,13 @@ public class FinishingMove extends AbstractDefaultCard {
     private static final int COST = 2;
 
     private static final int DAMAGE = 20;
-    private static final int BIG_DAMAGE = 30;
+    private static final int UPGRADE_PLUS_DAMAGE = 5;
 
-    private static final int DAMAGE_BONUS_HP_PERCENTAGE = 40;
-    private static final int UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE = 10;
+    private static final int BIG_DAMAGE = 30;
+    private static final int UPGRADE_PLUS_BIG_DAMAGE = 5;
+
+    private static final int DAMAGE_BONUS_HP_PERCENTAGE = 50;
+    private static final int UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE = 60;
 
     // /STAT DECLARATION/
 
@@ -105,7 +108,7 @@ public class FinishingMove extends AbstractDefaultCard {
             isDamageModified = true;
         }
 
-        damage = MathUtils.floor(tmp);
+        baseDamage = MathUtils.floor(tmp);
 
         super.calculateCardDamage(mo);
 
@@ -117,6 +120,8 @@ public class FinishingMove extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_BIG_DAMAGE);
             upgradeMagicNumber(UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE);
             initializeDescription();
         }

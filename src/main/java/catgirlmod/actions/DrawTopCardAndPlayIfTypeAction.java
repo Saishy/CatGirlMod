@@ -48,8 +48,11 @@ public class DrawTopCardAndPlayIfTypeAction extends AbstractGameAction {
                 AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
 
                 if (card.type != cardType) {
-                    AbstractDungeon.actionManager.addToTop(
+                    AbstractDungeon.actionManager.addToBottom(
                             new DrawCardAction(AbstractDungeon.player, 1)
+                    );
+                    AbstractDungeon.actionManager.addToBottom(
+                            new DiscardSpecificCardAction(card, AbstractDungeon.player.hand)
                     );
 
                     isDone = true;
