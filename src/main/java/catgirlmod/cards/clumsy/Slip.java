@@ -5,6 +5,7 @@ import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.powers.EvadePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,7 +36,7 @@ public class Slip extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("Slip");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/Slip.png"
+    public static final String IMG = "images/cards/Skill.png"; // "images/cards/Slip.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -76,6 +77,12 @@ public class Slip extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DiscardAction(p, p, 1, false)
         );
+
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new MakeTempCardInHandAction(new Stumble(), 1)
+            );
+        }
     }
 
     // Upgraded stats.

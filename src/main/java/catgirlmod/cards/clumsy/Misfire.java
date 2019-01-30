@@ -1,18 +1,22 @@
-package catgirlmod.cards.beast;
+package catgirlmod.cards.clumsy;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 
-public class RageClaws extends AbstractDefaultCard {
+public class Misfire extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -21,7 +25,7 @@ public class RageClaws extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with Claws
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with Misfire
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -32,10 +36,10 @@ public class RageClaws extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("RageClaws");
+    public static final String ID = CatGirlMod.makeID("Misfire");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/Claws.png"
+    public static final String IMG = "images/cards/Attack.png"; // "images/cards/Misfire.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -47,40 +51,43 @@ public class RageClaws extends AbstractDefaultCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 9;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int ATTACK_TIMES = 4;
-    private static final int UPGRADE_PLUS_ATTACK_TIMES = 1;
+    private static final int DRAW = 1;
+    private static final int DISCARD = 1;
 
     // /STAT DECLARATION/
 
-    public RageClaws() {
+    public Misfire() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = ATTACK_TIMES;
-        this.tags.add(AbstractCardEnum.CLAW);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        for (int i = 0; i < magicNumber; i ++) {
-            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-
-            calculateCardDamage(m);
-
+        if (m != null) {
             AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
+                    new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY))
             );
         }
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn))
+        );
+        AbstractDungeon.actionManager.addToBottom(
+                new DrawCardAction(p, DRAW)
+        );
+        AbstractDungeon.actionManager.addToBottom(
+                new DiscardAction(p, p, DISCARD, false)
+        );
     }
 
     // Upgraded stats.
@@ -88,7 +95,7 @@ public class RageClaws extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_ATTACK_TIMES);
+            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }
