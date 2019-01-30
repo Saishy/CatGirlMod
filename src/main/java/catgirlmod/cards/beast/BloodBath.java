@@ -63,27 +63,28 @@ public class BloodBath extends AbstractDefaultCard {
     public BloodBath() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.magicNumber = this.baseMagicNumber = SECONDARY_DAMAGE;
         this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int secondDamageToApply = damage;
+        int secondDamageToApply = magicNumber;
+        int savedBaseDamage = baseDamage;
 
         AbstractMonster secondTarget = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
         if (secondTarget != null) {
+            baseDamage = secondDamageToApply;
             calculateCardDamage(secondTarget);
-            secondDamageToApply = damage;
-            calculateCardDamage(m);
         }
 
         AbstractDungeon.actionManager.addToBottom(
                 new BloodBathAction(m, secondTarget, new DamageInfo(p, damage, damageTypeForTurn), secondDamageToApply)
         );
 
-
+        baseDamage = savedBaseDamage;
     }
 
     // Upgraded stats.
@@ -92,6 +93,7 @@ public class BloodBath extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_SECONDARY_DAMAGE);
             initializeDescription();
         }
     }

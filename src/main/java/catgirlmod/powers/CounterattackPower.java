@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 public class CounterattackPower extends AbstractPower implements OnReceivePowerPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = CatGirlMod.makeID("CounterattackBuff");
+    public static final String POWER_ID = CatGirlMod.makeID("CounterattackPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

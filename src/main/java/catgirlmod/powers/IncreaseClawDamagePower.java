@@ -14,7 +14,7 @@ import catgirlmod.CatGirlMod;
 
 public class IncreaseClawDamagePower extends AbstractPower {
 
-    public static final String POWER_ID = CatGirlMod.makeID("Gash");
+    public static final String POWER_ID = CatGirlMod.makeID("GashPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

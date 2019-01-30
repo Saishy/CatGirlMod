@@ -98,9 +98,29 @@
     "NAME": "Counterattack",
     "DESCRIPTION": "Whenever you gain Evade, deal !M! damage to all enemies."
   },
+  "theCatGirl:Beastification": {
+    "NAME": "Beastification",
+    "DESCRIPTION": "Gain !M! Strength. !theCatGirl:SecondMagic! Dexterity. NL Gain !B! Block. Lose 2 [R] at your next turn."
+  },
+  "theCatGirl:BleedingWounds": {
+    "NAME": "Bleeding Wounds",
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply 1 Poison."
+  },
+  "theCatGirl:BloodBath": {
+    "NAME": "Blood Bath",
+    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, deal !M! damage to a random enemy."
+  },
+  "theCatGirl:BloodScent": {
+    "NAME": "Blood Scent",
+    "DESCRIPTION": "Gain !M! Strength. Lose all Block and Evade."
+  },
+  "theCatGirl:BloodyClaws": {
+    "NAME": "Bloody Claws",
+    "DESCRIPTION": "Deal !D! damage !M! times to random enemies. Heal HP equal to unblocked damage. NL Exhaust."
+  },
   "theCatGirl:Claws": {
     "NAME": "Claws",
-    "DESCRIPTION": "Deal !D! Damage to a random enemy. Claws deal 2 more damage to that enemy."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. Claws deal 2 more damage to that enemy."
   },
   "theCatGirl:ClawScratch": {
     "NAME": "Claw Scratch",
@@ -110,6 +130,57 @@
       " Attack played.)",
       " Attacks played.)"
     ]
+  },
+  "theCatGirl:ComboAttack": {
+    "NAME": "Combo Attack",
+    "DESCRIPTION": "Deal !D! damage and play the top card of your draw pile if it's an Attack, if not, discard it."
+  },
+  "theCatGirl:Enrage": {
+    "NAME": "Enrage",
+    "DESCRIPTION": "At the end of your turn deal !M! damage for each Attack played, to a random enemy."
+  },
+  "theCatGirl:FinishingMove": {
+    "NAME": "Finishing Move",
+    "DESCRIPTION": "Deal !D! damage. If the target have less than !M!% HP, deal !theCatGirl:SecondMagic! damage instead. NL Ethereal."
+  },
+  "theCatGirl:Growl": {
+    "NAME": "Growl",
+    "DESCRIPTION": "Apply 1 Vulnerable !M! times to random enemies."
+  },
+  "theCatGirl:Howl": {
+    "NAME": "Howl",
+    "DESCRIPTION": "Double your Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your Strength."
+  },
+  "theCatGirl:HungerClaw": {
+    "NAME": "Hunger Claw",
+    "DESCRIPTION": "Deal !D! damage to the enemy with most stacks of Gash. NL If this kills a non-minion enemy, raise your Max HP by !M!. Exhaust."
+  },
+  "theCatGirl:Insane": {
+    "NAME": "Insane",
+    "DESCRIPTION": "Attacks costs 0 [R] this turn. Whenever you play an Attack, discard it."
+  },
+  "theCatGirl:RageClaws": {
+    "NAME": "Rage Claws",
+    "DESCRIPTION": "Deal !D! damage !M! times to random enemies."
+  },
+  "theCatGirl:SevenLives": {
+    "NAME": "Seven Lives",
+    "DESCRIPTION": "Ignores the next damage if it would kill you. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ignores the next damage if it would kill you. NL Shuffle a Seven Lives into your deck. NL Exhaust."
+  },
+  "theCatGirl:SmellFear": {
+    "NAME": "Smell Fear",
+    "DESCRIPTION": "If the target don't intend to Attack, gain !M! Strength."
+  },
+  "theCatGirl:Stalk": {
+    "NAME": "Stalk",
+    "DESCRIPTION": "Gain !B! Block for each debuff on enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block for each debuff on enemies + 4."
+  },
+  "theCatGirl:UnrelentingAssault": {
+    "NAME": "Unrelenting Assault",
+    "DESCRIPTION": "Draw !M! cards and deal !D! Damage for each Attack draw."
   },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",

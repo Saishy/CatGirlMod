@@ -1,38 +1,42 @@
 {
-        "theCatGirl:Gash": {
+        "theCatGirl:GashPower": {
                 "NAME": "Gash",
                 "DESCRIPTIONS": ["Increase all Claw damage received by "]
         },
-        "theCatGirl:Striken": {
+        "theCatGirl:StrikenPower": {
                 "NAME": "Striken",
                 "DESCRIPTIONS": ["Increase all Strike damage received by "]
         },
-        "theCatGirl:Evade": {
+        "theCatGirl:EvadePower": {
                 "NAME": "Evade",
                 "DESCRIPTIONS": ["Increase your next block by ", ". Lose half stacks at the end of your turn."]
         },
-        "theCatGirl:NextTurnEvade": {
+        "theCatGirl:NextTurnEvadePower": {
                 "NAME": "Next Turn Evade",
                 "DESCRIPTIONS": ["Gain #b", " #yEvade next turn."]
         },
-        "theCatGirl:EvadeDontDecay": {
+        "theCatGirl:EvadeDontDecayPower": {
                 "NAME": "Keep Evade",
                 "DESCRIPTIONS": ["Evade is not lost at the end of your turn."]
         },
-        "theCatGirl:AdventurersInsightBuff": {
+        "theCatGirl:AdventurersInsightPower": {
                 "NAME": "Adventurer's Insight",
                 "DESCRIPTIONS": ["At the start of your turn, gain #b%s Evade."]
         },
-        "theCatGirl:PoisedBuff": {
+        "theCatGirl:PoisedPower": {
                 "NAME": "Poised",
                 "DESCRIPTIONS": ["At the start of your turn, gain #b%s Evade."]
         },
-        "theCatGirl:CounterattackBuff": {
+        "theCatGirl:CounterattackPower": {
                 "NAME": "Counterattack",
                 "DESCRIPTIONS": [
                         "Whenever you gain #yEvade, deal #b",
                         " damage to ALL enemies."
                 ]
+        },
+        "theCatGirl:EnragePower": {
+                "NAME": "Enrage",
+                "DESCRIPTIONS": ["At the end of your turn, deal #b%s Damage for each Attack played, to a random enemy."]
         },
         "theCatGirl:CommonPower": {
                 "NAME": "Placeholder Power",

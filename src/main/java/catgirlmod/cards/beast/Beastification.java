@@ -1,20 +1,23 @@
-package catgirlmod.cards.basic;
+package catgirlmod.cards.beast;
 
-import basemod.helpers.BaseModCardTags;
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import catgirlmod.patches.AbstractCardEnum;
+import catgirlmod.powers.BeastificationPower;
+import catgirlmod.powers.EvadePower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Defend extends AbstractDefaultCard {
+public class Beastification extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -23,7 +26,7 @@ public class Defend extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with Defend
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with BloodScent
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -34,10 +37,10 @@ public class Defend extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("Defend");
+    public static final String ID = CatGirlMod.makeID("Beastification");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Skill.png"; // "images/cards/Defend.png"
+    public static final String IMG = "images/cards/Power.png"; // "images/cards/BloodScent.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -48,30 +51,55 @@ public class Defend extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.BASIC; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
+    private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
 
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK = 15;
 
+    private static final int ENERGY_LOST = 2;
+
+    private static final int STRENGTH = 3;
+    private static final int UPGRADE_PLUS_STRENGTH = 1;
+
+    private static final int DEXTERITY = 2;
+    private static final int UPGRADE_PLUS_DEXTERITY = 1;
     // /STAT DECLARATION/
 
-    public Defend() {
+    public Beastification() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
 
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        this.baseBlock = BLOCK;
+        this.magicNumber = this.baseMagicNumber = STRENGTH;
+        this.secondMagicNumber = this.baseSecondMagicNumber = DEXTERITY;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-            new GainBlockAction(p, p, block)
+                new ApplyPowerAction(
+                        p, p, new StrengthPower(p, magicNumber), magicNumber
+                )
+        );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(
+                        p, p, new DexterityPower(p, magicNumber), magicNumber
+                )
+        );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new GainBlockAction(p, p, block)
+        );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(
+                        p, p, new BeastificationPower(p, p, ENERGY_LOST), ENERGY_LOST
+                )
         );
     }
 
@@ -80,7 +108,8 @@ public class Defend extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_DEXTERITY);
             initializeDescription();
         }
     }

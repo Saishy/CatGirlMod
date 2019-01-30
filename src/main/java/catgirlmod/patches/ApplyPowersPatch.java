@@ -1,7 +1,12 @@
 package catgirlmod.patches;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+
 /*@SpirePatch(
-        clz=AbstractCard.class,
+        clz= AbstractCard.class,
         method="applyPowers"
 )*/
 public class ApplyPowersPatch {
@@ -31,9 +36,9 @@ public class ApplyPowersPatch {
                 __instance.isDamageModified = true;
             }
         }
-    }
+    }*/
 
-    @SpireInsertPatch(
+    /*@SpireInsertPatch(
             rloc=97,
             localvars = {"m", "tmp"}
     )

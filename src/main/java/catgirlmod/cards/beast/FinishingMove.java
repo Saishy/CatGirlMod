@@ -70,6 +70,8 @@ public class FinishingMove extends AbstractDefaultCard {
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = DAMAGE_BONUS_HP_PERCENTAGE;
 
+        this.secondMagicNumber = this.baseSecondMagicNumber = BIG_DAMAGE;
+
         this.isEthereal = true;
     }
 
@@ -83,12 +85,6 @@ public class FinishingMove extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY)
         );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        m, p, new IncreaseClawDamagePower(m, p, 1), 1
-                )
-        );
     }
 
     @Override
@@ -98,7 +94,7 @@ public class FinishingMove extends AbstractDefaultCard {
         float tmp = baseDamage;
 
         if (((float)mo.currentHealth / (float)mo.maxHealth) <= ((float)magicNumber / 100.0f)) {
-            tmp = BIG_DAMAGE;
+            tmp = secondMagicNumber;
         }
 
         if (tmp < 0.0F) {

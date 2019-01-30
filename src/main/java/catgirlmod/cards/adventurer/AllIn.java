@@ -77,10 +77,10 @@ public class AllIn extends AbstractDefaultCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY)
         );
 
-        if ( m.intent == AbstractMonster.Intent.ATTACK ||
-        m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
+        if (    m.intent == AbstractMonster.Intent.ATTACK ||
+                m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
                             m, p, new VulnerablePower(m, magicNumber, false), magicNumber

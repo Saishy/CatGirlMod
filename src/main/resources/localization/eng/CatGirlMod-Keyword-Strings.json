@@ -19,7 +19,29 @@
       "Evade",
       "Evade:"
     ],
-    "DESCRIPTION": "Increases your block by 1 per stack, lose stacks upon use. NL At the end of your turn, lose half your stacks of Evade."
+    "DESCRIPTION": "Increases your block."
+  },
+  {
+    "PROPER_NAME": "Gash",
+    "NAMES": [
+      "gash",
+      "gashes",
+      "Gash",
+      "Gashes",
+      "Gash:"
+    ],
+    "DESCRIPTION": "Increases the damage done by Claw cards."
+  },
+  {
+    "PROPER_NAME": "Striken",
+    "NAMES": [
+      "striken",
+      "strikens",
+      "Striken",
+      "Strikens",
+      "Striken:"
+    ],
+    "DESCRIPTION": "Increases the damage done by Strike cards."
   }
 ]
 

@@ -262,7 +262,27 @@ public class CatGirlMod implements
         BaseMod.addCard(new PoiseStance());
 
         // Beast
+        BaseMod.addCard(new BloodBath());
+        BaseMod.addCard(new BloodyClaws());
         BaseMod.addCard(new Claws());
+        BaseMod.addCard(new ClawScratch());
+        BaseMod.addCard(new ComboAttack());
+        BaseMod.addCard(new FinishingMove());
+        BaseMod.addCard(new HungerClaw());
+        BaseMod.addCard(new RageClaws());
+        BaseMod.addCard(new UnrelentingAssault());
+
+        BaseMod.addCard(new Growl());
+        BaseMod.addCard(new Howl());
+        BaseMod.addCard(new Insane());
+        BaseMod.addCard(new SevenLives());
+        BaseMod.addCard(new SmellFear());
+        BaseMod.addCard(new Stalk());
+
+        BaseMod.addCard(new Beastification());
+        BaseMod.addCard(new BleedingWounds());
+        BaseMod.addCard(new BloodScent());
+        BaseMod.addCard(new Enrage());
 
         // Clumsy
 

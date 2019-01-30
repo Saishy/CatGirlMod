@@ -58,9 +58,3 @@ public class BloodBathAction extends com.megacrit.cardcrawl.actions.AbstractGame
         tickDuration();
     }
 }
-
-
-/* Location:              D:\Steam\steamapps\common\SlayTheSpire\desktop-1.0.jar!\com\megacrit\cardcrawl\actions\unique\FeedAction.class
-* Java compiler version: 8 (52.0)
-* JD-Core Version:       0.7.1
-*/

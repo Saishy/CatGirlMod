@@ -2,6 +2,7 @@ package catgirlmod.powers;
 
 import catgirlmod.CatGirlMod;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class EvadePower extends AbstractPower {
 
-    public static final String POWER_ID = CatGirlMod.makeID("Evade");
+    public static final String POWER_ID = CatGirlMod.makeID("EvadePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -55,7 +56,9 @@ public class EvadePower extends AbstractPower {
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.baseBlock > -1) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, EvadePower.POWER_ID, amount));
+            AbstractDungeon.actionManager.addToBottom(
+                    new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
+            );
         }
     }
 
