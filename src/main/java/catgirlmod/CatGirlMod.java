@@ -61,7 +61,7 @@ public class CatGirlMod implements
     public static final Logger logger = LogManager.getLogger(CatGirlMod.class.getName());
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "CatGirl Mod";
+    private static final String MODNAME = "Catgirl Mod";
     private static final String AUTHOR = "Saishy";
     private static final String DESCRIPTION = "Adds a catgirl adventurer as a playable character.";
 

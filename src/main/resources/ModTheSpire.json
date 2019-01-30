@@ -1,9 +1,9 @@
 {
   "modid": "catgirlmod",
-  "name": "CatGirl Mod",
+  "name": "Catgirl Mod",
   "author_list": ["saishy"],
   "description": "Adds a new playable cat girl as a character.",
-  "version": "0.2",
+  "version": "0.3",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],
