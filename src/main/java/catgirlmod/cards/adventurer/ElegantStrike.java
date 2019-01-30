@@ -63,7 +63,7 @@ public class ElegantStrike extends AbstractDefaultCard {
     public ElegantStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseMagicNumber = magicNumber = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = DAMAGE;
         this.exhaust = true;
 
         this.tags.add(CardTags.STRIKE);

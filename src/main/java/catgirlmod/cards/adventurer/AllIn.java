@@ -67,7 +67,7 @@ public class AllIn extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.magicNumber = baseMagicNumber = VULNERABLE;
+        this.magicNumber = this.baseMagicNumber = VULNERABLE;
     }
 
     // Actions the card should do.

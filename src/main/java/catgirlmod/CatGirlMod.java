@@ -99,6 +99,8 @@ public class CatGirlMod implements
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "images/Badge.png";
 
+    public static int totalDiscardedThisCombat = 0;
+
     // =============== /INPUT TEXTURE LOCATION/ =================
 
 
@@ -181,7 +183,8 @@ public class CatGirlMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheCatGirlEnum.THE_CATGIRL".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheCatGirlEnum.THE_CATGIRL);
+
+        //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheCatGirlEnum.THE_CATGIRL);
 
         logger.info("Done editing potions");
     }
@@ -245,6 +248,7 @@ public class CatGirlMod implements
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new PlayAround());
         BaseMod.addCard(new PoisedAttack());
+        BaseMod.addCard(new QuickStrike());
         BaseMod.addCard(new SpinningStrike());
 
         BaseMod.addCard(new AdaptivePacing());
@@ -346,6 +350,17 @@ public class CatGirlMod implements
 
     // ================ /ADD CARDS/ ===================
 
+    // ================ HOOKS =====================
+
+    public static void incrementDiscardHook(boolean endOfTurn) {
+        totalDiscardedThisCombat++;
+    }
+
+    public static void clearHook() {
+        totalDiscardedThisCombat = 0;
+    }
+
+    // ================ /HOOKS/ ===================
 
     // ================ LOAD THE TEXT ===================
 

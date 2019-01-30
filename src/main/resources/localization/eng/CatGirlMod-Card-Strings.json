@@ -1,7 +1,7 @@
 {
   "theCatGirl:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage."
+    "DESCRIPTION": "Deal !D! damage."
   },
   "theCatGirl:Defend": {
     "NAME": "Defend",
@@ -9,7 +9,7 @@
   },
   "theCatGirl:ClawStrike": {
     "NAME": "Claw Strike",
-    "DESCRIPTION": "Deal !D! Damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times."
   },
   "theCatGirl:Evasion": {
     "NAME": "Evasion",
@@ -17,45 +17,49 @@
   },
   "theCatGirl:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !B! Block. Deal !D! Damage. NL If the enemy intends to attack, gain !M! Evade."
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL If the enemy intends to attack, gain !M! Evade."
   },
   "theCatGirl:PlayAround": {
     "NAME": "Play Around",
-    "DESCRIPTION": "Deal !D! Damage. Strikes deal 2 more damage to this enemy."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy receives 2 additional damage from Strikes."
   },
   "theCatGirl:ElegantStrike": {
     "NAME": "Elegant Strike",
-    "DESCRIPTION": "Deal !M! damage for each Evade. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade."
+    "DESCRIPTION": "Deal !M! damage for each Evade you have. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade you have."
   },
   "theCatGirl:AllIn": {
     "NAME": "All In",
-    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, apply !M! Vulnerable."
   },
   "theCatGirl:FocusedStrike": {
     "NAME": "Focused Strike",
     "DESCRIPTION": "Deal !D! Damage. If you have Evade, gain !M! [R] and draw !theCatGirl:SecondMagic! card."
   },
+  "theCatGirl:QuickStrike": {
+    "NAME": "Quick Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card."
+  },
   "theCatGirl:SpinningStrike": {
     "NAME": "Spinning Strike",
-    "DESCRIPTION": "Deal !D! damage to all enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "theCatGirl:PoisedAttack": {
     "NAME": "Poised Attack",
-    "DESCRIPTION": "Deal !D! damage. Upgrade a random Skill in your hand for the rest of the combat.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Upgrade all Skills in your hand for the rest of the combat."
+    "DESCRIPTION": "Deal !D! damage. NL Upgrade a random Skill in your hand for the rest of the combat.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Upgrade all Skills in your hand for the rest of the combat."
   },
   "theCatGirl:DefensiveStance": {
     "NAME": "Defensive Stance",
-    "DESCRIPTION": "Gain !M! Evade. Increase the Evade gained by this card by !theCatGirl:SecondMagic!. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Evade. NL Increase this card's Evade by !theCatGirl:SecondMagic! this combat. NL Exhaust."
   },
   "theCatGirl:TwoStep": {
     "NAME": "Two-Step",
-    "DESCRIPTION": "Gain !B! Block. At your next turn, gain !M! Evade."
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Evade."
   },
   "theCatGirl:AdaptivePacing": {
     "NAME": "Adaptive Pacing",
-    "DESCRIPTION": "Gain !B! Block. Reduce this card's cost by !M! this combat."
+    "DESCRIPTION": "Gain !B! Block. NL Reduce this card's cost by !M! this combat."
   },
   "theCatGirl:LearnThePattern": {
     "NAME": "Learn The Pattern",
@@ -73,34 +77,34 @@
   },
   "theCatGirl:EmergencyParry": {
     "NAME": "Emergency Parry",
-    "DESCRIPTION": "Lose all your Evade and gain Block equal to it.",
-    "UPGRADE_DESCRIPTION": "Lose all your Evade and gain Block equal to !M! times the amount."
+    "DESCRIPTION": "Gain Block equal to your Evade. NL Lose all Evade.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to !M! times your Evade. NL Lose all Evade."
   },
   "theCatGirl:ChangeOfPlans": {
     "NAME": "Change Of Plans",
-    "DESCRIPTION": "Draw !M! card. NL Put a card from your hand onto the top of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Put a card from your hand onto the top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card. NL Put a card from your hand to the top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Put a card from your hand to the top of your draw pile. NL Exhaust."
   },
   "theCatGirl:KeepAlert": {
     "NAME": "Keep Alert",
-    "DESCRIPTION": "Your Evade is not lost at the end this turn."
+    "DESCRIPTION": "Evade is not lost at the end of this turn."
   },
   "theCatGirl:AdventurersInsight": {
     "NAME": "Adventurer's Insight",
-    "DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade.",
-    "UPGRADE_DESCRIPTION": "If you attack an enemy that intends to attack, gain !M! Evade. NL Innate."
+    "DESCRIPTION": "Whenever you attack an enemy that intends to attack, gain !M! Evade.",
+    "UPGRADE_DESCRIPTION": "Whenever you attack an enemy that intends to attack, gain !M! Evade. NL Innate."
   },
   "theCatGirl:PoiseStance": {
     "NAME": "Poise Stance",
-    "DESCRIPTION": "At the beginning of your turn, gain !M! Evade."
+    "DESCRIPTION": "At the start of your turn, gain !M! Evade."
   },
   "theCatGirl:Counterattack": {
     "NAME": "Counterattack",
-    "DESCRIPTION": "Whenever you gain Evade, deal !M! damage to all enemies."
+    "DESCRIPTION": "Whenever you gain Evade, deal !M! damage to ALL enemies."
   },
   "theCatGirl:Beastification": {
     "NAME": "Beastification",
-    "DESCRIPTION": "Gain !M! Strength. !theCatGirl:SecondMagic! Dexterity. NL Gain !B! Block. Lose 2 [R] at your next turn."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !theCatGirl:SecondMagic! Dexterity. NL Gain !B! Block. NL Next turn, lose [E] [E]."
   },
   "theCatGirl:BleedingWounds": {
     "NAME": "Bleeding Wounds",
@@ -108,19 +112,19 @@
   },
   "theCatGirl:BloodBath": {
     "NAME": "Blood Bath",
-    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, deal !M! damage to a random enemy."
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, deal !M! damage again to a random enemy."
   },
   "theCatGirl:BloodScent": {
     "NAME": "Blood Scent",
-    "DESCRIPTION": "Gain !M! Strength. Lose all Block and Evade."
+    "DESCRIPTION": "Gain !M! Strength. NL Lose all Block. NL Lose all Evade."
   },
   "theCatGirl:BloodyClaws": {
     "NAME": "Bloody Claws",
-    "DESCRIPTION": "Deal !D! damage !M! times to random enemies. Heal HP equal to unblocked damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Heal HP equal to unblocked damage. NL Exhaust."
   },
   "theCatGirl:Claws": {
     "NAME": "Claws",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. Claws deal 2 more damage to that enemy."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Enemy receives 2 additional damage from Claws."
   },
   "theCatGirl:ClawScratch": {
     "NAME": "Claw Scratch",
@@ -133,19 +137,19 @@
   },
   "theCatGirl:ComboAttack": {
     "NAME": "Combo Attack",
-    "DESCRIPTION": "Deal !D! damage and play the top card of your draw pile if it's an Attack, if not, discard it."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card. NL If it is an Attack, play it. Otherwise, discard it."
   },
   "theCatGirl:Enrage": {
     "NAME": "Enrage",
-    "DESCRIPTION": "At the end of your turn deal !M! damage for each Attack played, to a random enemy."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy for each Attack played this turn."
   },
   "theCatGirl:FinishingMove": {
     "NAME": "Finishing Move",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. If the target has less than !M!% HP, NL deal !theCatGirl:SecondMagic! damage instead."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL If the enemy has less than !M!% HP, deal !theCatGirl:SecondMagic! damage instead."
   },
   "theCatGirl:Growl": {
     "NAME": "Growl",
-    "DESCRIPTION": "Apply 1 Vulnerable !M! times to random enemies."
+    "DESCRIPTION": "Apply 1 Vulnerable to a random enemy !M! times."
   },
   "theCatGirl:Howl": {
     "NAME": "Howl",
@@ -154,37 +158,41 @@
   },
   "theCatGirl:HungerClaw": {
     "NAME": "Hunger Claw",
-    "DESCRIPTION": "Deal !D! damage to the enemy with most stacks of Gash. NL If this kills a non-minion enemy, raise your Max HP by !M!. Exhaust."
+    "DESCRIPTION": "Deal !D! damage to the enemy with the most Gash. NL If this kills a non-minion enemy, raise your Max HP by !M!. NL Exhaust."
   },
   "theCatGirl:Insane": {
     "NAME": "Insane",
-    "DESCRIPTION": "Attacks costs 0 [R] this turn. Whenever you play an Attack, Exhaust it."
+    "DESCRIPTION": "Attacks cost 0 this turn. NL Whenever you play an Attack this turn, Exhaust it."
   },
   "theCatGirl:RageClaws": {
     "NAME": "Rage Claws",
-    "DESCRIPTION": "Deal !D! damage !M! times to random enemies."
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
   },
   "theCatGirl:SevenLives": {
     "NAME": "Seven Lives",
     "DESCRIPTION": "Ignores the next damage if it would kill you. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Ignores the next damage if it would kill you. NL Shuffle a Seven Lives into your deck. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Ignores the next damage if it would kill you. NL Shuffle a Seven Lives card into your draw pile. NL Exhaust."
   },
   "theCatGirl:SmellFear": {
     "NAME": "Smell Fear",
-    "DESCRIPTION": "If the target don't intend to Attack, gain !M! Strength."
+    "DESCRIPTION": "If the target does not intend to Attack, gain !M! Strength."
   },
   "theCatGirl:Stalk": {
     "NAME": "Stalk",
-    "DESCRIPTION": "Gain !B! Block for each debuff on enemies.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block for each debuff on enemies + 4."
+    "DESCRIPTION": "Gain Block equal to !B! times the number of debuffs ALL enemies have.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to !B! times the number of debuffs ALL enemies have, plus 4 Block."
   },
   "theCatGirl:UnrelentingAssault": {
     "NAME": "Unrelenting Assault",
-    "DESCRIPTION": "Draw !M! cards and deal !D! Damage for each Attack draw."
+    "DESCRIPTION": "Draw !M! cards. NL Deal !D! damage for each Attack drawn this way."
+  },
+  "theCatGirl:LuckyBlow": {
+    "NAME": "Lucky Blow",
+    "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, this card damage is increase by !M!."
   },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+    "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
   },
   "theCatGirl:CatGirlCommonSkill": {
     "NAME": "Defend",
@@ -196,17 +204,17 @@
     "UPGRADE_DESCRIPTION": "Gain !M! Keywords."
   },
   "theCatGirl:CatGirlUncommonAttack": {
-    "NAME": "Big slap",
+    "NAME": "Big Slap",
     "DESCRIPTION": "Deal !D! Damage."
   },
   "theCatGirl:CatGirlUncommonSkill": {
     "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+    "DESCRIPTION": "Gain !B! Plated Armor. NL Affected by Block modifiers."
   },
   "theCatGirl:CatGirlUncommonPower": {
     "NAME": "Weirdness",
     "DESCRIPTION": "Gain X Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 Keywords."
+    "UPGRADE_DESCRIPTION": "Gain X+1 Keywords."
   },
   "theCatGirl:CatGirlRareAttack": {
     "NAME": "TOUCH",
@@ -214,8 +222,8 @@
   },
   "theCatGirl:CatGirlRareSkill": {
     "NAME": "For Each Loop x2",
-    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
-    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies twice.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to ALL enemies 3 times."
   },
   "theCatGirl:CatGirlRarePower": {
     "NAME": "In-Progress Form",
@@ -227,7 +235,7 @@
   },
   "theCatGirl:CatGirlSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !theCatGirl:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Apply !theCatGirl:SecondMagic! Poison."
   },
   "theCatGirl:CatGirlOrbSkill": {
     "NAME": "Get Orb",
@@ -235,18 +243,18 @@
   },
   "theCatGirl:MultiHitGashTest": {
     "NAME": "MultiHit Gash Apply Test",
-    "DESCRIPTION": "Applies !M! Gash to everyone."
+    "DESCRIPTION": "Apply !M! Gash to ALL enemies."
   },
   "theCatGirl:MultiHitStrikenTest": {
     "NAME": "MultiHit Striken Apply Test",
-    "DESCRIPTION": "Applies !M! Striken to everyone."
+    "DESCRIPTION": "Apply !M! Striken to ALL enemies."
   },
   "theCatGirl:AllEnemyStrike": {
     "NAME": "All Strike",
-    "DESCRIPTION": "Do !D! Damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "theCatGirl:AllEnemyClaw": {
     "NAME": "All Claw",
-    "DESCRIPTION": "Do !D! Damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   }
 }

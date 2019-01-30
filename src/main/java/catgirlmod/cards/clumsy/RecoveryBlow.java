@@ -1,11 +1,11 @@
-package catgirlmod.cards.adventurer;
+package catgirlmod.cards.clumsy;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.EvadePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
 
-public class Parry extends AbstractDefaultCard {
+public class RecoveryBlow extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -23,7 +23,7 @@ public class Parry extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with Parry
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with RecoveryBlow
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -34,10 +34,10 @@ public class Parry extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("Parry");
+    public static final String ID = CatGirlMod.makeID("RecoveryBlow");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Attack.png"; // "images/cards/Parry.png"
+    public static final String IMG = "images/cards/Attack.png"; // "images/cards/RecoveryBlow.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -55,44 +55,35 @@ public class Parry extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 2;
-
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-
-    private static final int EVADE = 4;
-    private static final int UPGRADE_PLUS_EVADE = 2;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADE_PLUS_DMG = 10;
 
     // /STAT DECLARATION/
 
-    public Parry() {
+    public RecoveryBlow() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = EVADE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block)
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT)
         );
 
-        if ( m.intent == AbstractMonster.Intent.ATTACK ||
-        m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-        m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
+        int counter = 0;
+
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            if (card.cardID.equals(Stumble.ID)) {
+                counter++;
+            }
+        }
+
+        if (counter > 0) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(
-                            p, p, new EvadePower(p, p, magicNumber), magicNumber
-                    )
+                    new DrawCardAction(p, counter, false)
             );
         }
     }
@@ -103,8 +94,6 @@ public class Parry extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_EVADE);
             initializeDescription();
         }
     }

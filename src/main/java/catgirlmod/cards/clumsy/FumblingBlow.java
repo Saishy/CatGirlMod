@@ -81,8 +81,7 @@ public class FumblingBlow extends AbstractDefaultCard {
         );
     }
 
-    @Override
-    public void triggerOnManualDiscard() {
+    private void Clumsy() {
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
         calculateCardDamage(m);
@@ -94,6 +93,16 @@ public class FumblingBlow extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DrawCardAction(AbstractDungeon.player, 1)
         );
+    }
+
+    @Override
+    public void triggerOnManualDiscard() {
+        Clumsy();
+    }
+
+    @Override
+    public void triggerOnExhaust() {
+        Clumsy();
     }
 
     // Upgraded stats.
