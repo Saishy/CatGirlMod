@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class SRankRelic extends CustomRelic {
 
@@ -48,6 +49,11 @@ public class SRankRelic extends CustomRelic {
     public int onAttacked(DamageInfo info, int damageAmount) {
         //CatGirlMod.logger.info("Catgirl info output: " + info.output);
         //CatGirlMod.logger.info("Catgirl type output: " + info.type);
+        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
+                || (info.owner == null) || (info.owner == AbstractDungeon.player)) {
+            return super.onAttacked(info, damageAmount);
+        }
+
         if (info.type == DamageInfo.DamageType.NORMAL) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
