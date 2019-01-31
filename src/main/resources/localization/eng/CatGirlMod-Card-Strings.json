@@ -145,7 +145,7 @@
   },
   "theCatGirl:FinishingMove": {
     "NAME": "Finishing Move",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL If the enemy has less than !M!% HP, deal !theCatGirl:SecondMagic! damage instead."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL If the enemy has less than !M! %HP, deal !theCatGirl:SecondMagic! damage instead."
   },
   "theCatGirl:Growl": {
     "NAME": "Growl",

@@ -63,7 +63,7 @@ public class FinishingMove extends AbstractDefaultCard {
     private static final int UPGRADE_PLUS_BIG_DAMAGE = 5;
 
     private static final int DAMAGE_BONUS_HP_PERCENTAGE = 50;
-    private static final int UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE = 60;
+    private static final int UPGRADE_PLUS_DAMAGE_BONUS_HP_PERCENTAGE = 10;
 
     // /STAT DECLARATION/
 
