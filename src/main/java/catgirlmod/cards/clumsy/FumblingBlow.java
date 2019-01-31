@@ -87,7 +87,7 @@ public class FumblingBlow extends AbstractDefaultCard {
         calculateCardDamage(m);
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT)
+                new DamageAction(m, new DamageInfo(AbstractDungeon.player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT)
         );
 
         AbstractDungeon.actionManager.addToBottom(

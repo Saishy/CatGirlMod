@@ -36,7 +36,7 @@ public class PilingErrorsPower extends AbstractPower {
         bUpgraded = true;
     }
 
-    @Override
+    /*@Override
     public void onInitialApplication() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.cardID.equals(Stumble.ID)) {
@@ -112,7 +112,7 @@ public class PilingErrorsPower extends AbstractPower {
                 }
             }
         }
-    }
+    }*/
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override

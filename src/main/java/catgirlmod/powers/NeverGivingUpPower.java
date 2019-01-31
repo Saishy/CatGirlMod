@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class NeverGivingUpPower extends AbstractPower implements IncrementDiscardSubscriber {
 
-    public static final String POWER_ID = CatGirlMod.makeID("NeverGivingUp");
+    public static final String POWER_ID = CatGirlMod.makeID("NeverGivingUpPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -76,6 +76,6 @@ public class NeverGivingUpPower extends AbstractPower implements IncrementDiscar
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount;
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 }

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
 
-public class CloseYourTeeth extends AbstractDefaultCard {
+public class ClenchYourTeeth extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -23,7 +23,7 @@ public class CloseYourTeeth extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with CloseYourTeeth
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with ClenchYourTeeth
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -34,10 +34,10 @@ public class CloseYourTeeth extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("CloseYourTeeth");
+    public static final String ID = CatGirlMod.makeID("ClenchYourTeeth");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Skill.png"; // "images/cards/CloseYourTeeth.png"
+    public static final String IMG = "images/cards/Skill.png"; // "images/cards/ClenchYourTeeth.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -60,7 +60,7 @@ public class CloseYourTeeth extends AbstractDefaultCard {
 
     // /STAT DECLARATION/
 
-    public CloseYourTeeth() {
+    public ClenchYourTeeth() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseBlock = BLOCK;

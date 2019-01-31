@@ -2,6 +2,7 @@ package catgirlmod.cards.clumsy;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
+import catgirlmod.powers.PilingErrorsPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -42,6 +43,7 @@ public class Stumble extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -63,6 +65,29 @@ public class Stumble extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
+    }
+
+    @Override
+    public void applyPowers() {
+        PilingErrorsPower pPower = (PilingErrorsPower)AbstractDungeon.player.getPower(PilingErrorsPower.POWER_ID);
+
+        if (pPower != null) {
+            retain = true;
+
+            if (pPower.bUpgraded) {
+                modifyCostForCombat(1);
+            } else {
+                modifyCostForCombat(COST);
+            }
+
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        } else {
+            retain = false;
+        }
+
+        super.applyPowers();
+
+        initializeDescription();
     }
 
     private void Clumsy() {

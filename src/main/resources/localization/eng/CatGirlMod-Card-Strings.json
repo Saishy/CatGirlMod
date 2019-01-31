@@ -188,8 +188,8 @@
   },
   "theCatGirl:AccidentalSlap": {
     "NAME": "Accidental Slap",
-    "DESCRIPTION": "Deal damage equal to the number of cards discarded this combat +!M!.",
-    "EXTENDED_DESCRIPTION": [
+    "DESCRIPTION": "Deal damage equal to the number of cards discarded this combat + !M!.",
+    "'": [
       " NL (Deal !D! Damage.)"
     ]
   },
@@ -203,7 +203,7 @@
   },
   "theCatGirl:LuckyBlow": {
     "NAME": "Lucky Blow",
-    "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, this card damage is increase by !M!."
+    "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, this card damage is increased by !M!."
   },
   "theCatGirl:Misfire": {
     "NAME": "Misfire",
@@ -211,7 +211,7 @@
   },
   "theCatGirl:RecoveryBlow": {
     "NAME": "Recovery Blow",
-    "DESCRIPTION": "Deal !B! damage. NL Draw a card for each Stumble on your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card for each Stumble on your hand."
   },
   "theCatGirl:RunningWithDaggers": {
     "NAME": "Running With Daggers",
@@ -233,8 +233,8 @@
     "NAME": "Accidental Headbutt",
     "DESCRIPTION": "Stuns the enemy and ends your turn. NL Exhaust."
   },
-  "theCatGirl:CloseYourTeeth": {
-    "NAME": "Close Your Teeth",
+  "theCatGirl:ClenchYourTeeth": {
+    "NAME": "Clench Your Teeth",
     "DESCRIPTION": "Gain !B! Block. NL Discard 1 card."
   },
   "theCatGirl:DecliningDefenses": {
@@ -255,7 +255,7 @@
   },
   "theCatGirl:Meow": {
     "NAME": "Meow",
-    "DESCRIPTION": "Apply !M! 2 Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Exhaust."
   },
   "theCatGirl:SearchBackpack": {
     "NAME": "Search Backpack",
@@ -268,7 +268,10 @@
   },
   "theCatGirl:Stumble": {
     "NAME": "Stumble",
-    "DESCRIPTION": "Exhaust on discard. NL Clumsy: Deal !D! damage to a random enemy."
+    "DESCRIPTION": "Exhaust on discard. NL Clumsy: Deal !D! damage to a random enemy.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Retain."
+    ]
   },
   "theCatGirl:ThatWasntIt": {
     "NAME": "That Wasn't It",
@@ -277,6 +280,25 @@
   "theCatGirl:TrainWreck": {
     "NAME": "Train Wreck",
     "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
+  },
+  "theCatGirl:GoddessOfMisfortune": {
+    "NAME": "Goddess Of Misfortune",
+    "DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand and lose 2 gold.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand and lose 2 gold. NL Innate."
+  },
+  "theCatGirl:NeverGivingUp": {
+    "NAME": "Never Giving Up",
+    "DESCRIPTION": "Whenever you discard a card a random enemy receives !M! damage.",
+    "UPGRADE_DESCRIPTION": "Whenever you discard a card a random enemy receives !M! damage. NL Innate."
+  },
+  "theCatGirl:PilingErrors": {
+    "NAME": "Piling Errors",
+    "DESCRIPTION": "All Stumbles have Retain.",
+    "UPGRADE_DESCRIPTION": "All Stumbles have Retain and become playable cards with 1 cost."
+  },
+  "theCatGirl:ShockedWitness": {
+    "NAME": "Shocked Witness",
+    "DESCRIPTION": "The first time you Exhaust a card during your turn, apply !M! Vulnerable to ALL enemies."
   },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",

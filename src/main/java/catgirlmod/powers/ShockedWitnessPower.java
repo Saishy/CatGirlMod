@@ -69,6 +69,6 @@ public class ShockedWitnessPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 }

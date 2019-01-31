@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 )
 public class IncrementDiscardPatch {
 
-    public static void Prefix(GameActionManager __instance, boolean endOfTurn) {
+    public static void Postfix(boolean endOfTurn) {
         CatGirlMod.incrementDiscardHook(endOfTurn);
     }
 }

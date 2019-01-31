@@ -1,11 +1,16 @@
 package catgirlmod.cards.clumsy;
 
 import catgirlmod.CatGirlMod;
+import catgirlmod.actions.AccidentalHeadbuttAction;
 import catgirlmod.cards.AbstractDefaultCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.EndTurnAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +18,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
+import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
+import com.megacrit.cardcrawl.vfx.combat.StunStarEffect;
 
 public class AccidentalHeadbutt extends AbstractDefaultCard {
 
@@ -71,9 +79,18 @@ public class AccidentalHeadbutt extends AbstractDefaultCard {
                 new StunMonsterAction(m, p)
         );
 
+        CardCrawlGame.sound.play("BLOCK_BREAK");
+        AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.BorderFlashEffect(com.badlogic.gdx.graphics.Color.GOLD, true));
+
         AbstractDungeon.actionManager.addToBottom(
-                new EndTurnAction()
+                new VFXAction(new StunStarEffect(p.hb.cX, p.hb.cY), 0.25F)
         );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new AccidentalHeadbuttAction(0.25f)
+        );
+
+
     }
 
     // Upgraded stats.

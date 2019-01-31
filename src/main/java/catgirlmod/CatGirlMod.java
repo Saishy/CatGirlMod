@@ -25,10 +25,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import catgirlmod.characters.TheCatGirl;
 import catgirlmod.patches.AbstractCardEnum;
 import catgirlmod.patches.TheCatGirlEnum;
-import catgirlmod.potions.PlaceholderPotion;
 import catgirlmod.variables.DefaultCustomVariable;
 import catgirlmod.variables.DefaultSecondMagicNumber;
-import com.sun.prism.impl.packrect.RectanglePacker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -234,8 +232,8 @@ public class CatGirlMod implements
         BaseMod.addRelicToCustomPool(new MonsterGuideRelic(), AbstractCardEnum.CATGIRL_TEAL);
         BaseMod.addRelicToCustomPool(new ThrowingDaggerRelic(), AbstractCardEnum.CATGIRL_TEAL);
         //Boss Relics
-        //BaseMod.addRelicToCustomPool(new BeginnersLuckRelic(), AbstractCardEnum.CATGIRL_TEAL);
-        //BaseMod.addRelicToCustomPool(new InstinctsRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new BeginnersLuckRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new InstinctsRelic(), AbstractCardEnum.CATGIRL_TEAL);
         BaseMod.addRelicToCustomPool(new SRankRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
       //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCardEnum.CATGIRL_TEAL);
@@ -329,7 +327,7 @@ public class CatGirlMod implements
         BaseMod.addCard(new TryingMyBest());
 
         BaseMod.addCard(new AccidentalHeadbutt());
-        BaseMod.addCard(new CloseYourTeeth());
+        BaseMod.addCard(new ClenchYourTeeth());
         BaseMod.addCard(new DecliningDefenses());
         BaseMod.addCard(new LearnByMistake());
         BaseMod.addCard(new LostTrinket());
@@ -408,6 +406,10 @@ public class CatGirlMod implements
     // ================ HOOKS =====================
 
     public static void incrementDiscardHook(boolean endOfTurn) {
+        if (!endOfTurn) {
+            return;
+        }
+
         totalDiscardedThisCombat++;
 
         boolean bNullExist = false;

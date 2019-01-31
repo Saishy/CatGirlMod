@@ -40,7 +40,7 @@ public class Meow extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("Meow");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Skill.png.png"; // "images/cards/Meow.png"
+    public static final String IMG = "images/cards/Skill.png"; // "images/cards/Meow.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -93,7 +93,7 @@ public class Meow extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_WEAK);
+            upgradeMagicNumber(UPGRADE_PLUS_WEAK);
             initializeDescription();
         }
     }

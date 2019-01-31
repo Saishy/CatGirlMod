@@ -31,7 +31,7 @@ public class ShockedWitness extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("ShockedWitnessPower");
+    public static final String ID = CatGirlMod.makeID("ShockedWitness");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "images/cards/Power.png"; // "images/cards/ShockedWitnessPower.png"

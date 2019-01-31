@@ -76,7 +76,9 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
         super.calculateCardDamage(mo);
 
-        rawDescription += EXTENDED_DESCRIPTION[0];
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+
+        initializeDescription();
     }
 
     @Override
@@ -88,7 +90,8 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
         super.applyPowers();
 
-        rawDescription += EXTENDED_DESCRIPTION[0];
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     // Actions the card should do.
