@@ -51,13 +51,15 @@ public class Stumble extends AbstractDefaultCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = -2;
 
     private static final int DAMAGE = 6;
+
+    private boolean bPowered = false;
 
     // /STAT DECLARATION/
 
@@ -74,20 +76,38 @@ public class Stumble extends AbstractDefaultCard {
         if (pPower != null) {
             retain = true;
 
-            if (pPower.bUpgraded) {
-                modifyCostForCombat(1);
-            } else {
-                modifyCostForCombat(COST);
-            }
-
             rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+
+            //CatGirlMod.logger.debug("Stumble cost before:  " + cost);
+            if (pPower.bUpgraded) {
+               // modifyCostForCombat(COST);
+                costForTurn = 1;
+                cost = 1;
+                isCostModified = true;
+                bPowered = true;
+                exhaust = true;
+                rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + EXTENDED_DESCRIPTION[1];
+                //CatGirlMod.logger.debug("Stumble cost now:  " + cost);
+            } else {
+                cost = COST;
+                costForTurn = COST;
+                isCostModified = false;
+                bPowered = false;
+                //CatGirlMod.logger.debug("Stumble cost now:  " + cost);
+            }
         } else {
             retain = false;
+            bPowered = false;
         }
 
         super.applyPowers();
 
         initializeDescription();
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return (bPowered) && hasEnoughEnergy();
     }
 
     private void Clumsy() {
@@ -114,12 +134,8 @@ public class Stumble extends AbstractDefaultCard {
         Clumsy();
     }
 
-    // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
-        );
+    public void use(AbstractPlayer paramAbstractPlayer, AbstractMonster paramAbstractMonster) {
     }
 
     // Upgraded stats.

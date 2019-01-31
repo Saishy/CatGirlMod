@@ -345,10 +345,10 @@ public class CatGirlMod implements
         BaseMod.addCard(new Stumble());
 
         // Test
-        BaseMod.addCard(new MultiHitStrikenTest());
-        BaseMod.addCard(new MultiHitGashTest());
-        BaseMod.addCard(new AllEnemyStrike());
-        BaseMod.addCard(new AllEnemyClaw());
+        //BaseMod.addCard(new MultiHitStrikenTest());
+        //BaseMod.addCard(new MultiHitGashTest());
+        //BaseMod.addCard(new AllEnemyStrike());
+        //BaseMod.addCard(new AllEnemyClaw());
 
         /*BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         //BaseMod.addCard(new DefaultCommonAttack());

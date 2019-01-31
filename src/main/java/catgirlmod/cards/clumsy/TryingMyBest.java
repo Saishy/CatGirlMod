@@ -87,7 +87,7 @@ public class TryingMyBest extends AbstractDefaultCard {
             }
         }
 
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + attackNumber + EXTENDED_DESCRIPTION[1];
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + attackNumber * damage + EXTENDED_DESCRIPTION[1];
 
         initializeDescription();
     }

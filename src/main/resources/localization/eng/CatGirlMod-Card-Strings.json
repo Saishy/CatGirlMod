@@ -270,7 +270,8 @@
     "NAME": "Stumble",
     "DESCRIPTION": "Exhaust on discard. NL Clumsy: Deal !D! damage to a random enemy.",
     "EXTENDED_DESCRIPTION": [
-      " NL Retain."
+      " NL Retain.",
+      " Exhaust."
     ]
   },
   "theCatGirl:ThatWasntIt": {

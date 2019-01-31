@@ -31,8 +31,8 @@ public class ShockedWitnessPower extends AbstractPower {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        updateDescription();
         this.amount = amount;
+        updateDescription();
         type = PowerType.BUFF;
         isTurnBased = false;
         img = ImageMaster.loadImage(IMG);
