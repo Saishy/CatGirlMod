@@ -22,6 +22,28 @@
     "DESCRIPTION": "Increases your block."
   },
   {
+    "PROPER_NAME": "Clumsy",
+    "NAMES": [
+      "clumsy",
+      "clumsy",
+      "Clumsy",
+      "Clumsy",
+      "Clumsy:"
+    ],
+    "DESCRIPTION": "Trigger when you discard or exhaust this card."
+  },
+  {
+    "PROPER_NAME": "Stumble",
+    "NAMES": [
+      "stumble",
+      "stumbles",
+      "Stumble",
+      "Stumbles",
+      "Stumble:"
+    ],
+    "DESCRIPTION": "Stumbles are unplayable status cards that have Clumsy."
+  },
+  {
     "PROPER_NAME": "Gash",
     "NAMES": [
       "gash",

@@ -1,5 +1,6 @@
 package catgirlmod.actions;
 
+import catgirlmod.cards.clumsy.Stumble;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -27,7 +28,7 @@ public class TryingMyBestAction extends AbstractGameAction {
             int attackNumber = 0;
 
             for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                if (card.type == AbstractCard.CardType.ATTACK) {
+                if (card.type == AbstractCard.CardType.ATTACK || card.cardID.equals(Stumble.ID)) {
                     attackNumber++;
                 }
             }

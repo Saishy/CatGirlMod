@@ -88,13 +88,13 @@ public class ClawScratch extends AbstractDefaultCard {
             }
         }
 
-        this.rawDescription = DESCRIPTION;
-        this.rawDescription = (this.rawDescription + EXTENDED_DESCRIPTION[0] + count);
+        rawDescription = DESCRIPTION;
+        rawDescription = (rawDescription + EXTENDED_DESCRIPTION[0] + count);
 
         if (count == 1) {
-            this.rawDescription += EXTENDED_DESCRIPTION[1];
+            rawDescription += EXTENDED_DESCRIPTION[1];
         } else {
-            this.rawDescription += EXTENDED_DESCRIPTION[2];
+            rawDescription += EXTENDED_DESCRIPTION[2];
         }
 
         initializeDescription();

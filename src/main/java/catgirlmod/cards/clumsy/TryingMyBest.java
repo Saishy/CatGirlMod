@@ -5,6 +5,7 @@ import catgirlmod.actions.TryingMyBestAction;
 import catgirlmod.cards.AbstractDefaultCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -41,6 +42,7 @@ public class TryingMyBest extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -71,6 +73,21 @@ public class TryingMyBest extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new TryingMyBestAction(m, damage)
         );
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        int attackNumber = 0;
+
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            if (card.type == AbstractCard.CardType.ATTACK || card.cardID.equals(Stumble.ID)) {
+                attackNumber++;
+            }
+        }
+
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + attackNumber + EXTENDED_DESCRIPTION[1];
     }
 
     // Upgraded stats.

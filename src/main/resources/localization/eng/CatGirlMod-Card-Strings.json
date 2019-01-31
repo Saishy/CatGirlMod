@@ -186,9 +186,60 @@
     "NAME": "Unrelenting Assault",
     "DESCRIPTION": "Draw !M! cards. NL Deal !D! damage for each Attack drawn this way."
   },
+  "theCatGirl:AccidentalSlap": {
+    "NAME": "Accidental Slap",
+    "DESCRIPTION": "Deal damage equal to the number of cards discarded this combat +!M!.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! Damage.)"
+    ]
+  },
+  "theCatGirl:BodyBlow": {
+    "NAME": "Body Blow",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Discard 1 card at random."
+  },
+  "theCatGirl:FumblingBlow": {
+    "NAME": "Fumbling Blow",
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card. NL Clumsy: Deal !M! damage. NL Draw a card."
+  },
   "theCatGirl:LuckyBlow": {
     "NAME": "Lucky Blow",
     "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, this card damage is increase by !M!."
+  },
+  "theCatGirl:Misfire": {
+    "NAME": "Misfire",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Discard 1 card."
+  },
+  "theCatGirl:RecoveryBlow": {
+    "NAME": "Recovery Blow",
+    "DESCRIPTION": "Deal !B! damage. NL Draw a card for each Stumble on your hand."
+  },
+  "theCatGirl:RunningWithDaggers": {
+    "NAME": "Running With Daggers",
+    "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, NL gain [R] [R]."
+  },
+  "theCatGirl:TripLunge": {
+    "NAME": "Trip Lunge",
+    "DESCRIPTION": "Deal !D! damage. NL Receive 1 Stumble."
+  },
+  "theCatGirl:TryingMyBest": {
+    "NAME": "Trying My Best",
+    "DESCRIPTION": "Discard your hand. NL Deal !D! for every Attack and Stumble discarded this way.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " total Damage.)"
+    ]
+  },
+  "theCatGirl:AccidentalHeadbutt": {
+    "NAME": "Accidental Headbutt",
+    "DESCRIPTION": "Stuns the enemy and ends your turn. NL Exhaust."
+  },
+  "theCatGirl:CloseYourTeeth": {
+    "NAME": "Close Your Teeth",
+    "DESCRIPTION": "Gain !B! Block. NL Discard 1 card."
+  },
+  "theCatGirl:DecliningDefenses": {
+    "NAME": "Declining Defenses",
+    "DESCRIPTION": "Gain !B! Block. Decrease this card's Block by 1 this combat. NL Clumsy: Gain !M! Block."
   },
   "theCatGirl:LearnByMistake": {
     "NAME": "Learn By Mistake",
@@ -197,6 +248,35 @@
     "EXTENDED_DESCRIPTION": [
       " NL (Gains !B! Block.)"
     ]
+  },
+  "theCatGirl:LostTrinket": {
+    "NAME": "Lost Trinket",
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust 1 card."
+  },
+  "theCatGirl:Meow": {
+    "NAME": "Meow",
+    "DESCRIPTION": "Apply !M! 2 Weak to ALL enemies. NL Exhaust."
+  },
+  "theCatGirl:SearchBackpack": {
+    "NAME": "Search Backpack",
+    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
+  },
+  "theCatGirl:Slip": {
+    "NAME": "Slip",
+    "DESCRIPTION": "Gain !M! Evade. NL Discard 1 card.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Evade. NL Discard 1 card. NL Gain 1 Stumble."
+  },
+  "theCatGirl:Stumble": {
+    "NAME": "Stumble",
+    "DESCRIPTION": "Exhaust on discard. NL Clumsy: Deal !D! damage to a random enemy."
+  },
+  "theCatGirl:ThatWasntIt": {
+    "NAME": "That Wasn't It",
+    "DESCRIPTION": "Place a card from your Exhaust pile into your hand. NL Exhaust."
+  },
+  "theCatGirl:TrainWreck": {
+    "NAME": "Train Wreck",
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",

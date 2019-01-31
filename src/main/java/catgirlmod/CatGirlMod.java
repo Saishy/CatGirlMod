@@ -8,6 +8,7 @@ import basemod.interfaces.*;
 import catgirlmod.cards.basic.*;
 import catgirlmod.cards.adventurer.*;
 import catgirlmod.cards.beast.*;
+import catgirlmod.cards.clumsy.*;
 import catgirlmod.cards.test.*;
 import catgirlmod.interfaces.IncrementDiscardSubscriber;
 import catgirlmod.relics.*;
@@ -27,6 +28,7 @@ import catgirlmod.patches.TheCatGirlEnum;
 import catgirlmod.potions.PlaceholderPotion;
 import catgirlmod.variables.DefaultCustomVariable;
 import catgirlmod.variables.DefaultSecondMagicNumber;
+import com.sun.prism.impl.packrect.RectanglePacker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -316,7 +318,33 @@ public class CatGirlMod implements
         BaseMod.addCard(new Enrage());
 
         // Clumsy
+        BaseMod.addCard(new AccidentalSlap());
+        BaseMod.addCard(new BodyBlow());
+        BaseMod.addCard(new FumblingBlow());
+        BaseMod.addCard(new LuckyBlow());
+        BaseMod.addCard(new Misfire());
+        BaseMod.addCard(new RecoveryBlow());
+        BaseMod.addCard(new RunningWithDaggers());
+        BaseMod.addCard(new TripLunge());
+        BaseMod.addCard(new TryingMyBest());
 
+        BaseMod.addCard(new AccidentalHeadbutt());
+        BaseMod.addCard(new CloseYourTeeth());
+        BaseMod.addCard(new DecliningDefenses());
+        BaseMod.addCard(new LearnByMistake());
+        BaseMod.addCard(new LostTrinket());
+        BaseMod.addCard(new Meow());
+        BaseMod.addCard(new SearchBackpack());
+        BaseMod.addCard(new Slip());
+        BaseMod.addCard(new ThatWasntIt());
+        BaseMod.addCard(new TrainWreck());
+
+        BaseMod.addCard(new GoddessOfMisfortune());
+        BaseMod.addCard(new NeverGivingUp());
+        BaseMod.addCard(new PilingErrors());
+        BaseMod.addCard(new ShockedWitness());
+
+        BaseMod.addCard(new Stumble());
 
         // Test
         BaseMod.addCard(new MultiHitStrikenTest());

@@ -42,6 +42,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -63,7 +64,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
     public AccidentalSlap() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = DAMAGE;
     }
 
     @Override
@@ -74,6 +75,20 @@ public class AccidentalSlap extends AbstractDefaultCard {
         }
 
         super.calculateCardDamage(mo);
+
+        rawDescription += EXTENDED_DESCRIPTION[0];
+    }
+
+    @Override
+    public void applyPowers() {
+        baseDamage = CatGirlMod.totalDiscardedThisCombat + DAMAGE;
+        if (upgraded) {
+            baseDamage += UPGRADE_PLUS_DMG;
+        }
+
+        super.applyPowers();
+
+        rawDescription += EXTENDED_DESCRIPTION[0];
     }
 
     // Actions the card should do.
@@ -93,7 +108,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }
