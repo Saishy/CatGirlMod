@@ -289,8 +289,8 @@
   },
   "theCatGirl:NeverGivingUp": {
     "NAME": "Never Giving Up",
-    "DESCRIPTION": "Whenever you discard a card a random enemy receives !M! damage.",
-    "UPGRADE_DESCRIPTION": "Whenever you discard a card a random enemy receives !M! damage. NL Innate."
+    "DESCRIPTION": "Whenever you discard a card, a random enemy receives !M! damage.",
+    "UPGRADE_DESCRIPTION": "Whenever you discard, a card a random enemy receives !M! damage. NL Innate."
   },
   "theCatGirl:PilingErrors": {
     "NAME": "Piling Errors",
