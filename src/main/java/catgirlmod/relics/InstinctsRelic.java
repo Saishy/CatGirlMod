@@ -16,24 +16,28 @@ public class InstinctsRelic extends CustomRelic {
     public static final String IMG = "images/relics/placeholder_relic2.png";
     public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
 
-    public static final int INITIAL_STRENGTH = 2;
+    public static final int INITIAL_STRENGTH = 3;
     public static final int LOSE_STRENGTH = 1;
 
     public InstinctsRelic() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     @Override
     public void obtain() {
+        //CatGirlMod.logger.debug("Starting obtain()");
         if (AbstractDungeon.player.hasRelic(TrainedRelic.ID)) {
+            //CatGirlMod.logger.debug("Has TrainedRelic, amount of relics: " + AbstractDungeon.player.relics.size());
             for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                //CatGirlMod.logger.debug("i = " + i);
                 if (AbstractDungeon.player.relics.get(i).relicId.equals(TrainedRelic.ID)) {
-                    this.counter = AbstractDungeon.player.getRelic(TrainedRelic.ID).counter;
+                    //CatGirlMod.logger.debug("Found TrainedRelic at slot: " + i);
                     instantObtain(AbstractDungeon.player, i, true);
 
                     break;
                 }
             }
+
         } else {
             super.obtain();
         }

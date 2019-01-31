@@ -3,6 +3,7 @@ package catgirlmod.relics;
 import basemod.abstracts.CustomRelic;
 import catgirlmod.CatGirlMod;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -18,20 +19,24 @@ public class BeginnersLuckRelic extends CustomRelic {
     public static final int DRAW_CARD = 1;
 
     public BeginnersLuckRelic() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     @Override
     public void obtain() {
+        //CatGirlMod.logger.debug("Starting obtain()");
         if (AbstractDungeon.player.hasRelic(TrainedRelic.ID)) {
+            //CatGirlMod.logger.debug("Has TrainedRelic, amount of relics: " + AbstractDungeon.player.relics.size());
             for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                //CatGirlMod.logger.debug("i = " + i);
                 if (AbstractDungeon.player.relics.get(i).relicId.equals(TrainedRelic.ID)) {
-                    this.counter = AbstractDungeon.player.getRelic(TrainedRelic.ID).counter;
+                    //CatGirlMod.logger.debug("Found TrainedRelic at slot: " + i);
                     instantObtain(AbstractDungeon.player, i, true);
 
                     break;
                 }
             }
+
         } else {
             super.obtain();
         }

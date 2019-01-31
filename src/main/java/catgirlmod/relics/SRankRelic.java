@@ -21,14 +21,18 @@ public class SRankRelic extends CustomRelic {
     public static final int AMOUNT = 2;
 
     public SRankRelic() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     @Override
     public void obtain() {
+        //CatGirlMod.logger.debug("Starting obtain()");
         if (AbstractDungeon.player.hasRelic(TrainedRelic.ID)) {
+            //CatGirlMod.logger.debug("Has TrainedRelic, amount of relics: " + AbstractDungeon.player.relics.size());
             for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                //CatGirlMod.logger.debug("i = " + i);
                 if (AbstractDungeon.player.relics.get(i).relicId.equals(TrainedRelic.ID)) {
+                    //CatGirlMod.logger.debug("Found TrainedRelic at slot: " + i);
                     this.counter = AbstractDungeon.player.getRelic(TrainedRelic.ID).counter;
                     instantObtain(AbstractDungeon.player, i, true);
 

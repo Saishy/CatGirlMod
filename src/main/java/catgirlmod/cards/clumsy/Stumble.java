@@ -6,6 +6,7 @@ import catgirlmod.powers.PilingErrorsPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -53,7 +54,7 @@ public class Stumble extends AbstractDefaultCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.STATUS;       //
-    public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = -2;
 

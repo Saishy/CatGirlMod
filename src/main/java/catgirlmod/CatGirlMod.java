@@ -1,26 +1,32 @@
 package catgirlmod;
 
 import basemod.BaseMod;
-import basemod.ModLabel;
+import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomUnlockBundle;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import catgirlmod.cards.basic.*;
 import catgirlmod.cards.adventurer.*;
 import catgirlmod.cards.beast.*;
 import catgirlmod.cards.clumsy.*;
-import catgirlmod.cards.test.*;
 import catgirlmod.interfaces.IncrementDiscardSubscriber;
 import catgirlmod.relics.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.AbstractUnlock;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import catgirlmod.characters.TheCatGirl;
 import catgirlmod.patches.AbstractCardEnum;
@@ -33,6 +39,7 @@ import org.apache.logging.log4j.Logger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Properties;
 
 //TODO: FIRST THINGS FIRST: RENAME YOUR PACKAGE AND ID NAMES FIRST-THING!!!
 // Right click the package (folder with black dot on it. the name's at the very top) -> Refactor -> Rename, and name it whatever you wanna call your mod.
@@ -60,7 +67,8 @@ public class CatGirlMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber,
+        SetUnlocksSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(CatGirlMod.class.getName());
@@ -108,6 +116,25 @@ public class CatGirlMod implements
 
     private static ArrayList<IncrementDiscardSubscriber> incrementDiscardSubscribers;
 
+    public static ArrayList<AbstractRelic> shareableRelics = new ArrayList<>();
+
+    public static final String PROP_RELIC_SHARING = "contentSharing_relics";
+    public static final String PROP_POTION_SHARING = "contentSharing_potions";
+    public static final String PROP_EVENT_SHARING = "contentSharing_events";
+    public static final String PROP_UNLOCK_ALL = "unlockEverything";
+
+    public static Properties catgirlDefault = new Properties();
+    public static boolean contentSharing_relics = true;
+    public static boolean contentSharing_potions = true;
+    public static boolean contentSharing_events = true;
+    public static boolean unlockEverything = false;
+
+    private CustomUnlockBundle unlocks0;
+    private CustomUnlockBundle unlocks1;
+    private CustomUnlockBundle unlocks2;
+    private CustomUnlockBundle unlocks3;
+    private CustomUnlockBundle unlocks4;
+
     // =============== /INPUT TEXTURE LOCATION/ =================
 
 
@@ -128,6 +155,12 @@ public class CatGirlMod implements
                 ATTACK_CATGIRL_TEAL_PORTRAIT, SKILL_CATGIRL_TEAL_PORTRAIT, POWER_CATGIRL_TEAL_PORTRAIT,
                 ENERGY_ORB_CATGIRL_TEAL_PORTRAIT, CARD_ENERGY_ORB);
 
+        catgirlDefault.setProperty(PROP_EVENT_SHARING, "FALSE");
+        catgirlDefault.setProperty(PROP_RELIC_SHARING, "FALSE");
+        catgirlDefault.setProperty(PROP_POTION_SHARING, "FALSE");
+        catgirlDefault.setProperty(PROP_UNLOCK_ALL, "FALSE");
+
+        loadConfigData();
         logger.info("Done creating the color");
     }
 
@@ -182,6 +215,7 @@ public class CatGirlMod implements
 
     @Override
     public void receivePostInitialize() {
+        UIStrings configStrings = CardCrawlGame.languagePack.getUIString("catgirlConfigMenuText");
 
         logger.info("Loading badge image and mod options");
         // Load the Mod Badge
@@ -189,13 +223,67 @@ public class CatGirlMod implements
 
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addUIElement(new ModLabel("CatGirlMod doesn't have any settings! An example of those may come later.", 400.0f, 700.0f,
+        /*settingsPanel.addUIElement(new ModLabel("CatGirlMod doesn't have any settings! An example of those may come later.", 400.0f, 700.0f,
                 settingsPanel, (me) -> {
-        }));
+        }));*/
+        ModLabeledToggleButton contentSharingBtnRelics = new ModLabeledToggleButton(configStrings.TEXT[0],
+                350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                contentSharing_relics, settingsPanel, (label) -> {}, (button) -> {
+            contentSharing_relics = button.enabled;
+            adjustRelics();
+            saveData();
+        });
+
+        ModLabeledToggleButton contentSharingBtnEvents = new ModLabeledToggleButton(configStrings.TEXT[2],
+                350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                contentSharing_events, settingsPanel, (label) -> {}, (button) -> {
+            contentSharing_events = button.enabled;
+            saveData();
+        });
+
+        ModLabeledToggleButton contentSharingBtnPotions = new ModLabeledToggleButton(configStrings.TEXT[1],
+                350.0f, 550.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                contentSharing_potions, settingsPanel, (label) -> {}, (button) -> {
+            contentSharing_potions = button.enabled;
+            refreshPotions();
+            saveData();
+        });
+
+        ModLabeledToggleButton unlockEverythingBtn = new ModLabeledToggleButton(configStrings.TEXT[3],
+                350.0f, 450.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                unlockEverything, settingsPanel, (label) -> {}, (button) -> {
+            unlockEverything = button.enabled;
+            unlockEverything();
+            saveData();
+        });
+
+        settingsPanel.addUIElement(unlockEverythingBtn);
+        settingsPanel.addUIElement(contentSharingBtnEvents);
+        settingsPanel.addUIElement(contentSharingBtnPotions);
+        settingsPanel.addUIElement(contentSharingBtnRelics);
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
 
+        addPotions();
+
+    }
+
+    public void refreshPotions(){
+        //BaseMod.removePotion(Potion.POTION_ID);
+
+        addPotions();
+    }
+
+    public void addPotions(){
+        if (contentSharing_potions){
+            //BaseMod.addPotion(Potion.class, Color.FOREST, Color.BLACK, Color.BLACK, Potion.POTION_ID);
+        } else {
+            //BaseMod.addPotion(Potion.class, Color.FOREST, Color.BLACK, Color.BLACK, Potion.POTION_ID, TheCatGirlEnum.THE_CATGIRL);
+        }
+
+        //BaseMod.addPotion(NotSharedPotion.class, Color.GREEN, Color.FOREST, Color.BLACK, NotSharedPotion.POTION_ID, TheCatGirlEnum.THE_CATGIRL);
     }
 
     // =============== / POST-INITIALIZE/ =================
@@ -240,10 +328,35 @@ public class CatGirlMod implements
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
-        BaseMod.addRelic(new AmbushRelic(), RelicType.SHARED);
-        BaseMod.addRelic(new DriedFishRelic(), RelicType.SHARED);
+
+        shareableRelics.add(new AmbushRelic());
+        shareableRelics.add(new DriedFishRelic());
+
+        if (unlocks2 == null){
+            unlocks2 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
+                    LostAndFoundRelic.ID, MonsterGuideRelic.ID, ThrowingDaggerRelic.ID
+            );
+
+            unlocks4 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
+                    BeginnersLuckRelic.ID, InstinctsRelic.ID, SRankRelic.ID
+            );
+        }
+
+        addSharedRelics();
 
         logger.info("Done adding relics!");
+    }
+
+    public void addSharedRelics(){
+        if (contentSharing_relics) {
+            for (AbstractRelic relic : shareableRelics) {
+                BaseMod.addRelic(relic, RelicType.SHARED);
+            }
+        } else {
+            for (AbstractRelic relic : shareableRelics) {
+                BaseMod.addRelicToCustomPool(relic, AbstractCardEnum.CATGIRL_TEAL);
+            }
+        }
     }
 
     // ================ /ADD RELICS/ ===================
@@ -370,31 +483,146 @@ public class CatGirlMod implements
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Evasion.ID);
 
-        // Adventurer
-        //UnlockTracker.unlockCard(Parry.ID);
-        //UnlockTracker.unlockCard(PlayAround.ID);
+        unlocks0 = new CustomUnlockBundle(
+                FocusedStrike.ID, RageClaws.ID, TripLunge.ID
+        );
 
-        // Beast
-        //UnlockTracker.unlockCard(Claws.ID);
+        unlocks1 = new CustomUnlockBundle(
+                Counterattack.ID, Enrage.ID, PilingErrors.ID
+        );
 
-        // Clumsy
-
-        // Test
-
-        /*UnlockTracker.unlockCard(OrbSkill.ID);
-        UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonPower.ID);
-        UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultUncommonPower.ID);
-        UnlockTracker.unlockCard(DefaultRareAttack.ID);
-        UnlockTracker.unlockCard(DefaultRareSkill.ID);
-        UnlockTracker.unlockCard(DefaultRarePower.ID);*/
+        unlocks3 = new CustomUnlockBundle(
+                AdaptivePacing.ID, BloodyClaws.ID, NeverGivingUp.ID
+        );
 
         logger.info("Done adding cards!");
+    }
+
+    public void unlockEverything(){
+        UnlockTracker.unlockCard(AllIn.ID);
+        UnlockTracker.unlockCard(ElegantStrike.ID);
+        UnlockTracker.unlockCard(FocusedStrike.ID);
+        UnlockTracker.unlockCard(Parry.ID);
+        UnlockTracker.unlockCard(PlayAround.ID);
+        UnlockTracker.unlockCard(PoisedAttack.ID);
+        UnlockTracker.unlockCard(QuickStrike.ID);
+        UnlockTracker.unlockCard(SpinningStrike.ID);
+
+        UnlockTracker.unlockCard(AdaptivePacing.ID);
+        UnlockTracker.unlockCard(ChangeOfPlans.ID);
+        UnlockTracker.unlockCard(DefensiveStance.ID);
+        UnlockTracker.unlockCard(EmergencyParry.ID);
+        UnlockTracker.unlockCard(KeepAlert.ID);
+        UnlockTracker.unlockCard(LearnThePattern.ID);
+        UnlockTracker.unlockCard(PerfectBlock.ID);
+        UnlockTracker.unlockCard(Prepared.ID);
+        UnlockTracker.unlockCard(TwoStep.ID);
+
+        UnlockTracker.unlockCard(AdventurersInsight.ID);
+        UnlockTracker.unlockCard(Counterattack.ID);
+        UnlockTracker.unlockCard(PoiseStance.ID);
+
+        // Beast
+        UnlockTracker.unlockCard(BloodBath.ID);
+        UnlockTracker.unlockCard(BloodyClaws.ID);
+        UnlockTracker.unlockCard(Claws.ID);
+        UnlockTracker.unlockCard(ClawScratch.ID);
+        UnlockTracker.unlockCard(ComboAttack.ID);
+        UnlockTracker.unlockCard(FinishingMove.ID);
+        UnlockTracker.unlockCard(HungerClaw.ID);
+        UnlockTracker.unlockCard(RageClaws.ID);
+        UnlockTracker.unlockCard(UnrelentingAssault.ID);
+
+        UnlockTracker.unlockCard(Growl.ID);
+        UnlockTracker.unlockCard(Howl.ID);
+        UnlockTracker.unlockCard(Insane.ID);
+        UnlockTracker.unlockCard(SevenLives.ID);
+        UnlockTracker.unlockCard(SmellFear.ID);
+        UnlockTracker.unlockCard(Stalk.ID);
+
+        UnlockTracker.unlockCard(Beastification.ID);
+        UnlockTracker.unlockCard(BleedingWounds.ID);
+        UnlockTracker.unlockCard(BloodScent.ID);
+        UnlockTracker.unlockCard(Enrage.ID);
+
+        // Clumsy
+        UnlockTracker.unlockCard(AccidentalSlap.ID);
+        UnlockTracker.unlockCard(BodyBlow.ID);
+        UnlockTracker.unlockCard(FumblingBlow.ID);
+        UnlockTracker.unlockCard(LuckyBlow.ID);
+        UnlockTracker.unlockCard(Misfire.ID);
+        UnlockTracker.unlockCard(RecoveryBlow.ID);
+        UnlockTracker.unlockCard(RunningWithDaggers.ID);
+        UnlockTracker.unlockCard(TripLunge.ID);
+        UnlockTracker.unlockCard(TryingMyBest.ID);
+
+        UnlockTracker.unlockCard(AccidentalHeadbutt.ID);
+        UnlockTracker.unlockCard(ClenchYourTeeth.ID);
+        UnlockTracker.unlockCard(DecliningDefenses.ID);
+        UnlockTracker.unlockCard(LearnByMistake.ID);
+        UnlockTracker.unlockCard(LostTrinket.ID);
+        UnlockTracker.unlockCard(Meow.ID);
+        UnlockTracker.unlockCard(SearchBackpack.ID);
+        UnlockTracker.unlockCard(Slip.ID);
+        UnlockTracker.unlockCard(ThatWasntIt.ID);
+        UnlockTracker.unlockCard(TrainWreck.ID);
+
+        UnlockTracker.unlockCard(GoddessOfMisfortune.ID);
+        UnlockTracker.unlockCard(NeverGivingUp.ID);
+        UnlockTracker.unlockCard(PilingErrors.ID);
+        UnlockTracker.unlockCard(ShockedWitness.ID);
+
+        UnlockTracker.unlockCard(Stumble.ID);
+
+        //UnlockTracker.addScore(SlimeboundEnum.SLIMEBOUND, 1000000);
+
+        clearUnlockBundles();
+    }
+
+    @Override
+    public void receiveSetUnlocks() {
+        if (!unlockEverything) {
+            BaseMod.addUnlockBundle(unlocks0, TheCatGirlEnum.THE_CATGIRL, 0);
+
+            BaseMod.addUnlockBundle(unlocks1, TheCatGirlEnum.THE_CATGIRL, 1);
+
+            BaseMod.addUnlockBundle(unlocks2, TheCatGirlEnum.THE_CATGIRL, 2);
+
+            BaseMod.addUnlockBundle(unlocks3, TheCatGirlEnum.THE_CATGIRL, 3);
+
+            BaseMod.addUnlockBundle(unlocks4, TheCatGirlEnum.THE_CATGIRL, 4);
+
+
+            UnlockTracker.addCard(FocusedStrike.ID);
+            UnlockTracker.addCard(RageClaws.ID);
+            UnlockTracker.addCard(TripLunge.ID);
+
+            UnlockTracker.addCard(Counterattack.ID);
+            UnlockTracker.addCard(Enrage.ID);
+            UnlockTracker.addCard(PilingErrors.ID);
+
+            UnlockTracker.addCard(AdaptivePacing.ID);
+            UnlockTracker.addCard(BloodyClaws.ID);
+            UnlockTracker.addCard(NeverGivingUp.ID);
+
+
+            UnlockTracker.addRelic(LostAndFoundRelic.ID);
+            UnlockTracker.addRelic(MonsterGuideRelic.ID);
+            UnlockTracker.addRelic(ThrowingDaggerRelic.ID);
+
+            UnlockTracker.addRelic(BeginnersLuckRelic.ID);
+            UnlockTracker.addRelic(InstinctsRelic.ID);
+            UnlockTracker.addRelic(SRankRelic.ID);
+        }
+    }
+
+    public void clearUnlockBundles(){
+        BaseMod.removeUnlockBundle(TheCatGirlEnum.THE_CATGIRL,0);
+        BaseMod.removeUnlockBundle(TheCatGirlEnum.THE_CATGIRL,1);
+        BaseMod.removeUnlockBundle(TheCatGirlEnum.THE_CATGIRL,2);
+        BaseMod.removeUnlockBundle(TheCatGirlEnum.THE_CATGIRL,3);
+        BaseMod.removeUnlockBundle(TheCatGirlEnum.THE_CATGIRL,4);
+        receiveSetUnlocks();
     }
 
     // There are better ways to do this than listing every single individual card, but I do not want to complicate things
@@ -467,10 +695,62 @@ public class CatGirlMod implements
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 "localization/eng/CatGirlMod-Orb-Strings.json");
 
+        // UIStrings
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                "localization/eng/CatGirlMod-UI-Strings.json");
+
         logger.info("Done edittting strings");
     }
 
     // ================ /LOAD THE TEXT/ ===================
+
+    // ================ SAVE LOAD CONFIGS ===================
+
+    public static void clearData() {
+        saveData();
+    }
+
+    public static void saveData() {
+        try {
+            SpireConfig config = new SpireConfig("CatGirlMod", "CatgirlSaveData", catgirlDefault);
+            config.setBool(PROP_EVENT_SHARING, contentSharing_events);
+            config.setBool(PROP_RELIC_SHARING, contentSharing_relics);
+            config.setBool(PROP_POTION_SHARING, contentSharing_potions);
+            config.setBool(PROP_UNLOCK_ALL, unlockEverything);
+
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void adjustRelics(){
+        // remove all shareable relics wherever they are, then re-add them.
+        // assuming right now that there are no overheated expansion relics shared by other characters.
+        for (AbstractRelic relic : shareableRelics){
+            BaseMod.removeRelic(relic);
+            BaseMod.removeRelicFromCustomPool(relic, AbstractCardEnum.CATGIRL_TEAL);
+        }
+
+        addSharedRelics();
+    }
+
+    public static void loadConfigData() {
+        try {
+            logger.info("CatGirlMod | Loading Config Preferences...");
+            SpireConfig config = new SpireConfig("CatGirlMod", "CatgirlSaveData", catgirlDefault);
+            config.load();
+            contentSharing_events = config.getBool(PROP_EVENT_SHARING);
+            contentSharing_relics = config.getBool(PROP_RELIC_SHARING);
+            contentSharing_potions = config.getBool(PROP_POTION_SHARING);
+            unlockEverything = config.getBool(PROP_UNLOCK_ALL);
+        } catch(Exception e) {
+            e.printStackTrace();
+            clearData();
+        }
+    }
+
+    // ================ /SAVE LOAD CONFIGS/ =================
 
     // ================ LOAD THE KEYWORDS ===================
 
