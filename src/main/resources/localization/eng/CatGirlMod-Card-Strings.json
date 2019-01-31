@@ -51,7 +51,7 @@
   },
   "theCatGirl:DefensiveStance": {
     "NAME": "Defensive Stance",
-    "DESCRIPTION": "Gain !M! Evade. NL Increase this card's Evade by !theCatGirl:SecondMagic! this combat. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Evade. NL Permanently increase this card's Evade by !theCatGirl:SecondMagic!. NL Exhaust."
   },
   "theCatGirl:TwoStep": {
     "NAME": "Two-Step",

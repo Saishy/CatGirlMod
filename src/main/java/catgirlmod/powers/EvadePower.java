@@ -54,17 +54,16 @@ public class EvadePower extends AbstractPower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+    }
+
+    @Override
+    public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.baseBlock > -1) {
             flash();
             AbstractDungeon.actionManager.addToBottom(
                     new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
             );
         }
-    }
-
-    @Override
-    public void onUseCard(final AbstractCard card, final UseCardAction action) {
-
     }
 
     @Override

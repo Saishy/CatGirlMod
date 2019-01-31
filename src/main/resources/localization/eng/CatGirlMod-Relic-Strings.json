@@ -20,7 +20,7 @@
 		"FLAVOR": "The perfect snack for a long adventure.",
 		"DESCRIPTIONS": [
 			"Every time you play #b",
-			" #yAttacks, gain [E] ."
+			" #yAttacks, heal %s."
 		]
 	},
 	"theCatGirl:Instincts": {

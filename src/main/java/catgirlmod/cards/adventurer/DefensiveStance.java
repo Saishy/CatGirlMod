@@ -53,7 +53,7 @@ public class DefensiveStance extends AbstractDefaultCard {
 
     private static final int COST = 2;
 
-    private static final int EVADE = 6;
+    private static final int EVADE = 15;
     private static final int EVADE_INCREASE = 2;
     private static final int UPGRADED_EVADE_INCREASE = 1;
 

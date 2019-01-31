@@ -67,6 +67,7 @@ public class TrainWreck extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = STRENGTH;
+        this.exhaust = true;
     }
 
     // Actions the card should do.

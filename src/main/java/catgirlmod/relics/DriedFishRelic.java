@@ -41,7 +41,7 @@ public class DriedFishRelic extends CustomRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 10 + this.DESCRIPTIONS[1];
+        return DESCRIPTIONS[0] + NUM_CARDS + String.format(DESCRIPTIONS[1], HEAL_AMOUNT);
     }
 
     // Which relic to return on making a copy of this relic.
