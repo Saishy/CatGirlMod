@@ -50,6 +50,25 @@
                 "NAME": "Seven Lives",
                 "DESCRIPTIONS": ["If you would die to the next damage taken, ignore it. NL Lose upon taking damage."]
         },
+        "theCatGirl:GoddessOfMisfortunePower": {
+                "NAME": "Goddess of Misfortune",
+                "DESCRIPTIONS": ["At the start of your turn, add #b%s Stumble into your hand and lose #b%s gold."]
+        },
+        "theCatGirl:NeverGivingUpPower": {
+                "NAME": "Never Giving Up",
+                "DESCRIPTIONS": ["Whenever you discard a card, a random enemy receives #b%s damage."]
+        },
+        "theCatGirl:PilingErrorsPower": {
+                "NAME": "Piling Errors",
+                "DESCRIPTIONS": [
+                        "Your Stumble have Retain.",
+                        "Your Stumble have Retain and are playable cards that cost 1."
+                ]
+        },
+        "theCatGirl:ShockedWitnessPower": {
+                "NAME": "Shocked Witness",
+                "DESCRIPTIONS": ["The first time you Exhaust a card at your turn, apply #b%s Vulnerable to all enemies."]
+        },
         "theCatGirl:CommonPower": {
                 "NAME": "Placeholder Power",
                 "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]

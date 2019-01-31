@@ -1,6 +1,7 @@
 package catgirlmod.powers;
 
 import catgirlmod.CatGirlMod;
+import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -29,18 +30,18 @@ public class SevenLivesPower extends AbstractPower {
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        int damageDealt = damageAmount - owner.currentBlock;
+    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
+        float damageDealt = damage - owner.currentBlock;
 
-        if (owner.currentHealth <= damageDealt) {
-            damageAmount = 0;
+        if (owner.currentHealth + TempHPField.tempHp.get(owner) <= damageDealt) {
+            damage = 0;
         }
 
         AbstractDungeon.actionManager.addToBottom(
                 new RemoveSpecificPowerAction(owner, owner, this)
         );
 
-        return damageAmount;
+        return damage;
     }
 
     @Override

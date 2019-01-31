@@ -1,17 +1,23 @@
-package catgirlmod.cards.adventurer;
+package catgirlmod.cards.clumsy;
 
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
-import catgirlmod.powers.EvadePower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
-public class EmergencyParry extends AbstractDefaultCard {
+public class Meow extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -20,7 +26,7 @@ public class EmergencyParry extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with EmergencyParry
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with Meow
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -31,15 +37,14 @@ public class EmergencyParry extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("EmergencyParry");
+    public static final String ID = CatGirlMod.makeID("Meow");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Skill.png"; // "images/cards/EmergencyParry.png"
+    public static final String IMG = "images/cards/Skill.png.png"; // "images/cards/Meow.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -51,36 +56,34 @@ public class EmergencyParry extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
-    private static final int BLOCK_PER_EVADE_MULTIPLIER = 1;
-    private static final int UPGRADE_PLUS_BLOCK_PER_EVADE_MULTIPLIER = 1;
+    private static final int WEAK = 2;
+    private static final int UPGRADE_PLUS_WEAK = 1;
 
     // /STAT DECLARATION/
 
-    public EmergencyParry() {
+    public Meow() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = 0;
-        this.magicNumber = this.baseMagicNumber = BLOCK_PER_EVADE_MULTIPLIER;
+        this.magicNumber = this.baseMagicNumber = WEAK;
+        this.exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower evadePower = p.getPower(EvadePower.POWER_ID);
+        if (Settings.FAST_MODE) {
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.BLUE_TEXT_COLOR, ShockWaveEffect.ShockWaveType.NORMAL), 0.15F));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.BLUE_TEXT_COLOR, ShockWaveEffect.ShockWaveType.NORMAL), 0.8F));
+        }
 
-        if (evadePower != null) {
-            int evadeAmount = evadePower.amount;
-
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(
-                            p, p, EvadePower.POWER_ID
+                    new ApplyPowerAction(
+                            mo, p, new WeakPower(mo, magicNumber, false), magicNumber
                     )
-            );
-
-            AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, evadeAmount * magicNumber)
             );
         }
     }
@@ -90,8 +93,7 @@ public class EmergencyParry extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_BLOCK_PER_EVADE_MULTIPLIER);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDamage(UPGRADE_PLUS_WEAK);
             initializeDescription();
         }
     }

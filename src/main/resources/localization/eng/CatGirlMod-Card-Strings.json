@@ -190,6 +190,14 @@
     "NAME": "Lucky Blow",
     "DESCRIPTION": "Deal !D! damage. NL If you have discarded a card this turn, this card damage is increase by !M!."
   },
+  "theCatGirl:LearnByMistake": {
+    "NAME": "Learn By Mistake",
+    "DESCRIPTION": "Gain Block equal to the number of cards in your discard pile.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your discard pile +3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
   "theCatGirl:CatGirlCommonAttack": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"

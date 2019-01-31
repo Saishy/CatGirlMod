@@ -9,6 +9,7 @@ import catgirlmod.cards.basic.*;
 import catgirlmod.cards.adventurer.*;
 import catgirlmod.cards.beast.*;
 import catgirlmod.cards.test.*;
+import catgirlmod.interfaces.IncrementDiscardSubscriber;
 import catgirlmod.relics.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -18,6 +19,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import catgirlmod.characters.TheCatGirl;
 import catgirlmod.patches.AbstractCardEnum;
@@ -29,6 +31,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
 
 //TODO: FIRST THINGS FIRST: RENAME YOUR PACKAGE AND ID NAMES FIRST-THING!!!
 // Right click the package (folder with black dot on it. the name's at the very top) -> Refactor -> Rename, and name it whatever you wanna call your mod.
@@ -55,7 +59,8 @@ public class CatGirlMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        PostBattleSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(CatGirlMod.class.getName());
@@ -101,6 +106,8 @@ public class CatGirlMod implements
 
     public static int totalDiscardedThisCombat = 0;
 
+    private static ArrayList<IncrementDiscardSubscriber> incrementDiscardSubscribers;
+
     // =============== /INPUT TEXTURE LOCATION/ =================
 
 
@@ -128,7 +135,28 @@ public class CatGirlMod implements
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
         CatGirlMod catgirlmod = new CatGirlMod();
+        incrementDiscardSubscribers = new ArrayList<>();
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
+    }
+
+    private static <T> void subscribeIfInstance(ArrayList<T> list, ISubscriber sub, Class<T> clazz) {
+        if (clazz.isInstance(sub)) {
+            list.add(clazz.cast(sub));
+        }
+    }
+
+    public static void subscribe(ISubscriber sub) {
+        subscribeIfInstance(incrementDiscardSubscribers, sub, IncrementDiscardSubscriber.class);
+    }
+
+    private static <T> void unsubscribeIfInstance(ArrayList<T> list, ISubscriber sub, Class<T> clazz) {
+        if (clazz.isInstance(sub)) {
+            list.remove(clazz.cast(sub));
+        }
+    }
+
+    public static void unsubscribe(ISubscriber sub) {
+        unsubscribeIfInstance(incrementDiscardSubscribers, sub, IncrementDiscardSubscriber.class);
     }
 
     // ============== /SUBSCRIBE, CREATE THE COLOR, INITIALIZE/ =================
@@ -151,7 +179,6 @@ public class CatGirlMod implements
 
 
     // =============== POST-INITIALIZE =================
-
 
     @Override
     public void receivePostInitialize() {
@@ -354,10 +381,28 @@ public class CatGirlMod implements
 
     public static void incrementDiscardHook(boolean endOfTurn) {
         totalDiscardedThisCombat++;
+
+        boolean bNullExist = false;
+        for (IncrementDiscardSubscriber sub : incrementDiscardSubscribers) {
+            if (sub != null) {
+                sub.receiveIncrementDiscard(endOfTurn);
+            } else {
+                bNullExist = true;
+            }
+        }
+
+        // Powers don't have an universal hook for when they are destroyed, so we have to clean our list
+        if (bNullExist) {
+            incrementDiscardSubscribers.removeAll(Collections.singleton(null));
+        }
     }
 
     public static void clearHook() {
         totalDiscardedThisCombat = 0;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom battleRoom) {
     }
 
     // ================ /HOOKS/ ===================

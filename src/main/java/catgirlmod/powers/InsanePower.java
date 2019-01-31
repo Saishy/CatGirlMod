@@ -40,8 +40,9 @@ public class InsanePower extends AbstractPower {
         }
 
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.type == AbstractCard.CardType.ATTACK)
+            if (c.type == AbstractCard.CardType.ATTACK) {
                 c.modifyCostForTurn(-9);
+            }
         }
 
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {

@@ -57,14 +57,14 @@ public class Stalk extends AbstractDefaultCard {
     private static final int COST = 1;
 
     private static final int BLOCK = 5;
-    private static final int UPGRADE_BONUS_BLOCK = 5;
+    private static final int UPGRADE_BONUS_BLOCK = 4;
 
     // /STAT DECLARATION/
 
     public Stalk() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
+        this.baseBlock = 0;
     }
 
     // Actions the card should do.
@@ -81,7 +81,7 @@ public class Stalk extends AbstractDefaultCard {
         }
 
         AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, upgraded ? (block * count) + UPGRADE_BONUS_BLOCK : block * count)
+                new GainBlockAction(p, p, upgraded ? (BLOCK * count) + UPGRADE_BONUS_BLOCK : BLOCK * count)
         );
     }
 
