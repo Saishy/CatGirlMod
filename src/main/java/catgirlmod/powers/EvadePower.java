@@ -20,6 +20,8 @@ public class EvadePower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = "images/powers/catgirl_evade.png";
 
+    private int amountUsed = 0;
+
     public EvadePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -43,11 +45,12 @@ public class EvadePower extends AbstractPower {
             return blockAmount;
         }
 
-        if ((blockAmount += this.amount) < 0.0F) {
+        if ((blockAmount += amount) < 0.0F) {
             return 0.0F;
         }
 
         //flash();
+        amountUsed = amount;
 
         return blockAmount;
     }
@@ -61,8 +64,10 @@ public class EvadePower extends AbstractPower {
         if (card.baseBlock > -1) {
             flash();
             AbstractDungeon.actionManager.addToBottom(
-                    new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
+                    //new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
+                    new ReducePowerAction(owner, owner, this, amountUsed)
             );
+            amountUsed = 0;
         }
     }
 
