@@ -1,13 +1,69 @@
 
 catgirl.png
-size: 1024,1024
+size: 256,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-catgirl_main
+catgirltempchar/Shadow
+  rotate: false
+  xy: 1, 184
+  size: 132, 30
+  orig: 132, 30
+  offset: 0, 0
+  index: -1
+catgirltempchar/Tail
+  rotate: false
+  xy: 204, 141
+  size: 37, 73
+  orig: 37, 73
+  offset: 0, 0
+  index: -1
+catgirltempchar/UpperPart
+  rotate: false
+  xy: 157, 1
+  size: 75, 68
+  orig: 75, 68
+  offset: 0, 0
+  index: -1
+catgirltempchar/LowerPart
+  rotate: false
+  xy: 157, 71
+  size: 74, 68
+  orig: 74, 68
+  offset: 0, 0
+  index: -1
+catgirltempchar/Boots
+  rotate: false
+  xy: 1, 78
+  size: 100, 75
+  orig: 100, 75
+  offset: 0, 0
+  index: -1
+catgirltempchar/Hands
+  rotate: false
+  xy: 103, 141
+  size: 99, 41
+  orig: 99, 41
+  offset: 0, 0
+  index: -1
+catgirltempchar/Dagger
   rotate: false
   xy: 1, 1
-  size: 512, 512
-  orig: 512, 512
+  size: 154, 75
+  orig: 154, 75
+  offset: 0, 0
+  index: -1
+catgirltempchar/Head
+  rotate: false
+  xy: 103, 78
+  size: 50, 53
+  orig: 50, 53
+  offset: 0, 0
+  index: -1
+catgirltempchar/Ears
+  rotate: false
+  xy: 1, 155
+  size: 38, 21
+  orig: 38, 21
   offset: 0, 0
   index: -1

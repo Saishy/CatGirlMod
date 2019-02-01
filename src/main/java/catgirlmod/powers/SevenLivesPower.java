@@ -30,18 +30,16 @@ public class SevenLivesPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        float damageDealt = damage - owner.currentBlock;
-
-        if (owner.currentHealth + TempHPField.tempHp.get(owner) <= damageDealt) {
-            damage = 0;
+    public int onLoseHp(int damageAmount) {
+        if (owner.currentHealth + TempHPField.tempHp.get(owner) <= damageAmount) {
+            damageAmount = 0;
         }
 
         AbstractDungeon.actionManager.addToBottom(
                 new RemoveSpecificPowerAction(owner, owner, this)
         );
 
-        return damage;
+        return damageAmount;
     }
 
     @Override
