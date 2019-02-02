@@ -56,7 +56,7 @@ public class RecoveryBlow extends AbstractDefaultCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 10;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
 

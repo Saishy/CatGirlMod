@@ -189,7 +189,7 @@
   "theCatGirl:AccidentalSlap": {
     "NAME": "Accidental Slap",
     "DESCRIPTION": "Deal damage equal to the number of cards discarded this combat + !M!.",
-    "'": [
+    "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! Damage.)"
     ]
   },

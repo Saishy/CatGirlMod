@@ -19,7 +19,7 @@
       "Evade",
       "Evade:"
     ],
-    "DESCRIPTION": "Increases your block."
+    "DESCRIPTION": "Increases your next Block. Lose half stacks at the end of your turn."
   },
   {
     "PROPER_NAME": "Clumsy",
@@ -41,7 +41,7 @@
       "Stumbles",
       "Stumble:"
     ],
-    "DESCRIPTION": "Stumbles are unplayable status cards that have Clumsy."
+    "DESCRIPTION": "Stumbles are unplayable status cards that deal damage when discarded or exhausted (Clumsy)."
   },
   {
     "PROPER_NAME": "Gash",
