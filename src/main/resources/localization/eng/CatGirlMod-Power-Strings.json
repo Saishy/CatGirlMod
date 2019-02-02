@@ -21,7 +21,7 @@
         },
         "theCatGirl:AdventurersInsightPower": {
                 "NAME": "Adventurer's Insight",
-                "DESCRIPTIONS": ["At the start of your turn, gain #b%s Evade."]
+                "DESCRIPTIONS": ["Whenever you attack an enemy that intends to attack, gain #b%s #yEvade."]
         },
         "theCatGirl:PoisedPower": {
                 "NAME": "Poised",
