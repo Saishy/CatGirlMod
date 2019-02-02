@@ -70,14 +70,14 @@ public class LuckyBlow extends AbstractDefaultCard {
     }
 
     @Override
-    public void calculateCardDamage(AbstractMonster mo) {
+    public void applyPowers() {
         if (GameActionManager.totalDiscardedThisTurn > 0) {
-            baseDamage = upgraded ? DAMAGE + UPGRADE_PLUS_DMG + DISCARD_DAMAGE + UPGRADE_PLUS_DISCARD_DMG : DAMAGE;
+            baseDamage = upgraded ? DAMAGE + UPGRADE_PLUS_DMG + DISCARD_DAMAGE + UPGRADE_PLUS_DISCARD_DMG : DAMAGE + DISCARD_DAMAGE;
         } else {
             baseDamage = upgraded ? DAMAGE + UPGRADE_PLUS_DMG : DAMAGE;
         }
 
-        super.calculateCardDamage(mo);
+        super.applyPowers();
     }
 
     // Actions the card should do.

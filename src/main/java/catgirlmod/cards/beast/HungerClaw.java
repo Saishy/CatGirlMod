@@ -68,6 +68,8 @@ public class HungerClaw extends AbstractDefaultCard {
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = INCREASE_MAX_HP;
 
+        this.exhaust = true;
+
         this.tags.add(AbstractCardEnum.CLAW);
     }
 
@@ -82,8 +84,14 @@ public class HungerClaw extends AbstractDefaultCard {
             if (gashPower != null) {
                 if (gashPower.amount > currentGashStack) {
                     m = mo;
+                } else if (gashPower.amount == currentGashStack && (Math.random() < 0.5f)) {
+                    m = mo;
                 }
             }
+        }
+
+        if (m == null) {
+            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         }
 
         calculateCardDamage(m);

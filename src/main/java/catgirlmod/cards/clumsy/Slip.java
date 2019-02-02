@@ -56,6 +56,7 @@ public class Slip extends AbstractDefaultCard {
     private static final int COST = 1;
 
     private static final int EVADE = 11;
+    private static final int UPGRADE_PLUS_EVADE = 4;
 
     // /STAT DECLARATION/
 
@@ -90,6 +91,7 @@ public class Slip extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_EVADE);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
