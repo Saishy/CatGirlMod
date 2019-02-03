@@ -20,6 +20,9 @@ public class ThrowingDaggerRelic extends CustomRelic {
     public static final String IMG = "images/relics/placeholder_relic2.png";
     public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
 
+    public static final int ATTACKS = 3;
+    public static final int EVADE = 4;
+
     public ThrowingDaggerRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.CLINK);
 
@@ -47,7 +50,7 @@ public class ThrowingDaggerRelic extends CustomRelic {
                 AbstractPlayer p = AbstractDungeon.player;
                 AbstractDungeon.actionManager.addToBottom(
                         new ApplyPowerAction(
-                                p, p, new EvadePower(p, p, 2), 2
+                                p, p, new EvadePower(p, p, EVADE), EVADE
                         )
                 );
             }
@@ -56,13 +59,13 @@ public class ThrowingDaggerRelic extends CustomRelic {
 
     @Override
     public void onVictory() {
-        this.counter = -1;
+        this.counter = 0;
     }
 
     // Description
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 3 + this.DESCRIPTIONS[1] + 2 + this.DESCRIPTIONS[2];
+        return this.DESCRIPTIONS[0] + ATTACKS + this.DESCRIPTIONS[1] + EVADE + this.DESCRIPTIONS[2];
     }
 
     // Which relic to return on making a copy of this relic.

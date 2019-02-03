@@ -3,6 +3,8 @@ package catgirlmod.cards.adventurer;
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.powers.EvadePower;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -74,13 +76,13 @@ public class EmergencyParry extends AbstractDefaultCard {
             int evadeAmount = evadePower.amount;
 
             AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(
+                    new RemoveSpecificPowerAction(
                             p, p, EvadePower.POWER_ID
                     )
             );
 
             AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, evadeAmount * magicNumber)
+                    new GainBlockAction(p, p, evadeAmount * magicNumber)
             );
         }
     }

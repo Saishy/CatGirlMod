@@ -81,6 +81,8 @@ public class FinishingMove extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int originalBaseDamage = baseDamage;
+
         calculateCardDamage(m);
 
         //CatGirlMod.logger.debug("CatGirl Claws used on: " + m.name + " with " + ((gashPower != null) ? gashPower.amount : 0) + " gash amount.");
@@ -88,12 +90,12 @@ public class FinishingMove extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY)
         );
+
+        baseDamage = originalBaseDamage;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int originalBaseDamage = baseDamage;
-
         float tmp = baseDamage;
 
         if (((float)mo.currentHealth / (float)mo.maxHealth) <= ((float)magicNumber / 100.0f)) {
@@ -111,8 +113,6 @@ public class FinishingMove extends AbstractDefaultCard {
         baseDamage = MathUtils.floor(tmp);
 
         super.calculateCardDamage(mo);
-
-        baseDamage = originalBaseDamage;
     }
 
     // Upgraded stats.

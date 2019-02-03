@@ -56,7 +56,7 @@ public class PlayAround extends AbstractDefaultCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 7;
 
     // /STAT DECLARATION/
 

@@ -77,7 +77,7 @@ public class Howl extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             exhaust = false;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -67,7 +67,7 @@
 		"NAME": "Trained",
 		"FLAVOR": "An adventurer never takes the same attack twice.",
 		"DESCRIPTIONS": [
-			"Whenever you take damage, gain 2 #yEvade."
+			"Whenever you take unblocked damage, gain 2 #yEvade."
 		]
 	},
 	"theCatGirl:PlaceholderRelic": {

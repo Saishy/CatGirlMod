@@ -85,10 +85,6 @@ public class Insane extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new InsanePower(p, p))
         );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
-        );
     }
 
     // Upgraded stats.

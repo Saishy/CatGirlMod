@@ -56,8 +56,8 @@ public class TryingMyBest extends AbstractDefaultCard {
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 11;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     // /STAT DECLARATION/
 
@@ -83,7 +83,9 @@ public class TryingMyBest extends AbstractDefaultCard {
 
         for (AbstractCard card : AbstractDungeon.player.hand.group) {
             if (card.type == AbstractCard.CardType.ATTACK || card.cardID.equals(Stumble.ID)) {
-                attackNumber++;
+                if (card != this) {
+                    attackNumber++;
+                }
             }
         }
 

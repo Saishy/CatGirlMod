@@ -89,8 +89,6 @@ public class AccidentalHeadbutt extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(
                 new AccidentalHeadbuttAction(0.25f)
         );
-
-
     }
 
     // Upgraded stats.

@@ -59,6 +59,8 @@ public class ClawScratch extends AbstractDefaultCard {
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
 
+    private int count = 0;
+
     // /STAT DECLARATION/
 
     public ClawScratch() {
@@ -71,16 +73,18 @@ public class ClawScratch extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamagePerAttackPlayedAction(
-                        m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL
-                )
-        );
+        for (int i = 0; i < count; i++) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamagePerAttackPlayedAction(
+                            m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL
+                    )
+            );
+        }
     }
 
     public void applyPowers() {
         super.applyPowers();
-        int count = 0;
+        count = 0;
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (c.type == AbstractCard.CardType.ATTACK) {
@@ -88,8 +92,7 @@ public class ClawScratch extends AbstractDefaultCard {
             }
         }
 
-        rawDescription = DESCRIPTION;
-        rawDescription = (rawDescription + EXTENDED_DESCRIPTION[0] + count);
+        rawDescription = (DESCRIPTION + EXTENDED_DESCRIPTION[0] + count);
 
         if (count == 1) {
             rawDescription += EXTENDED_DESCRIPTION[1];
@@ -101,7 +104,8 @@ public class ClawScratch extends AbstractDefaultCard {
     }
 
     public void onMoveToDiscard() {
-        this.rawDescription = DESCRIPTION;
+        count = 0;
+        rawDescription = DESCRIPTION;
         initializeDescription();
     }
 

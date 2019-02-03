@@ -54,7 +54,7 @@ public class TwoStep extends AbstractDefaultCard {
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    private static final int EVADE = 5;
+    private static final int EVADE = 7;
     private static final int UPGRADE_PLUS_EVADE = 3;
 
     // /STAT DECLARATION/

@@ -76,7 +76,7 @@ public class ElegantStrike extends AbstractDefaultCard {
         int evadeStack = absPower != null ? absPower.amount : 0;
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, baseMagicNumber * evadeStack, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
+                new DamageAction(m, new DamageInfo(p, magicNumber * evadeStack, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
         );
     }
 
@@ -85,8 +85,8 @@ public class ElegantStrike extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.exhaust = false;
+            rawDescription = UPGRADE_DESCRIPTION;
+            exhaust = false;
             initializeDescription();
         }
     }
