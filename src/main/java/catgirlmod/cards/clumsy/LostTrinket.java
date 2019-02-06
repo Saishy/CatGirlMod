@@ -55,8 +55,8 @@ public class LostTrinket extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DRAW_AMT = 3;
-    private static final int UPGRADE_PLUS_DRAW_AMT = 2;
+    private static final int DRAW_AMT = 2;
+    private static final int UPGRADE_PLUS_DRAW_AMT = 1;
 
     // /STAT DECLARATION/
 

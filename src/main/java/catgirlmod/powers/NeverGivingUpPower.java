@@ -57,8 +57,8 @@ public class NeverGivingUpPower extends AbstractPower implements IncrementDiscar
 
     //No hook for discarding
     @Override
-    public void receiveIncrementDiscard(boolean endOfTurn) {
-        CatGirlMod.logger.debug("CatGirlMod: I'm never giving up! " + endOfTurn);
+    public void receiveIncrementDiscard() {
+        CatGirlMod.logger.debug("CatGirlMod: I'm never giving up!");
 
         if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
             return;

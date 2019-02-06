@@ -25,8 +25,8 @@
   },
   "theCatGirl:ElegantStrike": {
     "NAME": "Elegant Strike",
-    "DESCRIPTION": "Deal !M! damage for each Evade you have. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade you have."
+    "DESCRIPTION": "Deal !M! damage for each Evade you have. NL (!D! Damage). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade you have. NL (!D! Damage)."
   },
   "theCatGirl:AllIn": {
     "NAME": "All In",
@@ -188,7 +188,7 @@
   },
   "theCatGirl:AccidentalSlap": {
     "NAME": "Accidental Slap",
-    "DESCRIPTION": "Deal damage equal to the number of cards discarded this combat + !M!.",
+    "DESCRIPTION": "Deal damage equal to !M! times the number of cards discarded this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! Damage.)"
     ]
@@ -284,8 +284,8 @@
   },
   "theCatGirl:GoddessOfMisfortune": {
     "NAME": "Goddess Of Misfortune",
-    "DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand and lose 2 gold.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand and lose 2 gold. NL Innate."
+    "DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand. NL Innate."
   },
   "theCatGirl:NeverGivingUp": {
     "NAME": "Never Giving Up",

@@ -57,7 +57,7 @@ public class LuckyBlow extends AbstractDefaultCard {
     private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int DISCARD_DAMAGE = 4;
+    private static final int DISCARD_DAMAGE = 6;
     private static final int UPGRADE_PLUS_DISCARD_DMG = 2;
 
     // /STAT DECLARATION/

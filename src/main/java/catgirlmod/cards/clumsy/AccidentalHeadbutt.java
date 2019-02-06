@@ -6,6 +6,7 @@ import catgirlmod.cards.AbstractDefaultCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.EndTurnAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.StunStarEffect;
@@ -88,6 +90,10 @@ public class AccidentalHeadbutt extends AbstractDefaultCard {
 
         AbstractDungeon.actionManager.addToBottom(
                 new AccidentalHeadbuttAction(0.25f)
+        );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1)
         );
     }
 

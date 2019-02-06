@@ -56,6 +56,8 @@ public class PlayAround extends AbstractDefaultCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private static final int INCREASE_STRIKE_DAMAGE = 2;
+
     private static final int DAMAGE = 7;
 
     // /STAT DECLARATION/
@@ -74,7 +76,7 @@ public class PlayAround extends AbstractDefaultCard {
         );
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        m, p, new IncreaseStrikeDamagePower(m, p, 1), 1
+                        m, p, new IncreaseStrikeDamagePower(m, p, INCREASE_STRIKE_DAMAGE), INCREASE_STRIKE_DAMAGE
                 )
         );
     }

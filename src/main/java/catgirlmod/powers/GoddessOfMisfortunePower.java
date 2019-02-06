@@ -20,7 +20,7 @@ public class GoddessOfMisfortunePower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = "images/powers/catgirl_goddessofmisfortune.png";
 
-    public static final int LOST_GOLD = 2;
+    //public static final int LOST_GOLD = 2;
 
     public GoddessOfMisfortunePower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -38,12 +38,12 @@ public class GoddessOfMisfortunePower extends AbstractPower {
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInHandAction(new Stumble(), amount)
         );
-        owner.loseGold(LOST_GOLD * amount);
+        //owner.loseGold(LOST_GOLD * amount);
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount, amount * LOST_GOLD);
+        this.description = String.format(DESCRIPTIONS[0], amount);
     }
 }

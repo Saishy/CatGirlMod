@@ -46,14 +46,14 @@ public class AdventurersInsight extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 1;
 
-    private static final int EVADE_GAIN = 2;
+    private static final int EVADE_GAIN = 1;
 
     // /STAT DECLARATION/
 

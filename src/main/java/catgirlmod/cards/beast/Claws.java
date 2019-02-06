@@ -55,8 +55,10 @@ public class Claws extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 0;
+
+    private static final int INCREASE_CLAW_DAMAGE = 2;
+    private static final int UPGRADE_PLUS_INCREASE_CLAW_DAMAGE = 1;
 
     private static final int DAMAGE = 7;
 
@@ -66,6 +68,7 @@ public class Claws extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = INCREASE_CLAW_DAMAGE;
         this.tags.add(AbstractCardEnum.CLAW);
     }
 
@@ -90,7 +93,7 @@ public class Claws extends AbstractDefaultCard {
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        m, p, new IncreaseClawDamagePower(m, p, 1), 1
+                        m, p, new IncreaseClawDamagePower(m, p, magicNumber), magicNumber
                 )
         );
     }
@@ -100,7 +103,7 @@ public class Claws extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_INCREASE_CLAW_DAMAGE);
             initializeDescription();
         }
     }

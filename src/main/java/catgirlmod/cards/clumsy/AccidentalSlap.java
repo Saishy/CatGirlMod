@@ -56,22 +56,22 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 2;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE_TIMES = 1;
+    private static final int UPGRADE_PLUS_DMG_TIMES = 1;
 
     // /STAT DECLARATION/
 
     public AccidentalSlap() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = DAMAGE;
-        this.baseDamage = this.magicNumber;
+        this.magicNumber = this.baseMagicNumber = DAMAGE_TIMES;
+        this.baseDamage = 0;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        CatGirlMod.logger.debug("totalDiscardedThisCombat: " + CatGirlMod.totalDiscardedThisCombat);
-        baseDamage = CatGirlMod.totalDiscardedThisCombat + magicNumber;
+        //CatGirlMod.logger.debug("totalDiscardedThisCombat: " + CatGirlMod.totalDiscardedThisCombat);
+        baseDamage = CatGirlMod.totalDiscardedThisCombat * magicNumber;
         /*if (upgraded) {
             baseDamage += UPGRADE_PLUS_DMG;
         }*/
@@ -85,7 +85,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
     @Override
     public void applyPowers() {
-        baseDamage = CatGirlMod.totalDiscardedThisCombat + magicNumber;
+        baseDamage = CatGirlMod.totalDiscardedThisCombat * magicNumber;
         /*if (upgraded) {
             baseDamage += UPGRADE_PLUS_DMG;
         }*/
@@ -113,7 +113,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DMG_TIMES);
             initializeDescription();
         }
     }

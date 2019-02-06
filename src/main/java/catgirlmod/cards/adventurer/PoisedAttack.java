@@ -55,7 +55,7 @@ public class PoisedAttack extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 9;
 
     // /STAT DECLARATION/
 
@@ -88,7 +88,7 @@ public class PoisedAttack extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

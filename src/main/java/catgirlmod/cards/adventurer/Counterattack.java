@@ -52,8 +52,8 @@ public class Counterattack extends AbstractDefaultCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 2;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE = 1;
+    private static final int UPGRADE_PLUS_DMG = 1;
 
     // /STAT DECLARATION/
 

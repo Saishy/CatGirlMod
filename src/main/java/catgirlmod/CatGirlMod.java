@@ -643,7 +643,7 @@ public class CatGirlMod implements
         boolean bNullExist = false;
         for (IncrementDiscardSubscriber sub : incrementDiscardSubscribers) {
             if (sub != null) {
-                sub.receiveIncrementDiscard(endOfTurn);
+                sub.receiveIncrementDiscard();
             } else {
                 bNullExist = true;
             }

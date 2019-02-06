@@ -54,7 +54,7 @@ public class TripLunge extends AbstractDefaultCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/

@@ -56,7 +56,7 @@ public class AdaptivePacing extends AbstractDefaultCard {
 
     private static final int REDUCE_COST_PER_USE = 1;
 
-    private static final int BLOCK = 10;
+    private static final int BLOCK = 15;
     private static final int UPGRADE_PLUS_BLOCK = 5;
 
     // /STAT DECLARATION/

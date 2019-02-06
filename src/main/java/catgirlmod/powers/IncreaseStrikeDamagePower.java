@@ -22,7 +22,7 @@ public class IncreaseStrikeDamagePower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = "images/powers/catgirl_strike_dmg_increase.png";
 
-    public static final int DAMAGE_INCREASE_PER_STACK = 2;
+    public static final int DAMAGE_INCREASE_PER_STACK = 1;
 
     public IncreaseStrikeDamagePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;

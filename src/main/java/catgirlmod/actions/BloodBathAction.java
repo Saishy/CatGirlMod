@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-public class BloodBathAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
+public class BloodBathAction extends AbstractGameAction {
     private AbstractCreature secondaryTarget;
     private int secondaryDamage;
     private DamageInfo info;
@@ -53,7 +53,6 @@ public class BloodBathAction extends com.megacrit.cardcrawl.actions.AbstractGame
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
         }
-
 
         tickDuration();
     }

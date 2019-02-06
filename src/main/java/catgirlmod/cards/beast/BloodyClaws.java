@@ -1,6 +1,7 @@
 package catgirlmod.cards.beast;
 
 import catgirlmod.CatGirlMod;
+import catgirlmod.actions.BloodyClawsAction;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -76,20 +77,13 @@ public class BloodyClaws extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        for (int i = 0; i < magicNumber; i ++) {
-            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        calculateCardDamage(m);
 
-            calculateCardDamage(m);
-
-            if (m != null) {
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ScrapeEffect(m.hb.cX, m.hb.cY), 0.1F));
-            }
-
-            AbstractDungeon.actionManager.addToBottom(
-                    new VampireDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE)
-            );
-        }
+        AbstractDungeon.actionManager.addToBottom(
+                new BloodyClawsAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber)
+        );
     }
 
     // Upgraded stats.

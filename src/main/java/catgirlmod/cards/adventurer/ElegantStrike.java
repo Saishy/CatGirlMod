@@ -63,20 +63,34 @@ public class ElegantStrike extends AbstractDefaultCard {
     public ElegantStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = DAMAGE;
         this.exhaust = true;
 
         this.tags.add(CardTags.STRIKE);
     }
 
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        AbstractPower absPower = AbstractDungeon.player.getPower(EvadePower.POWER_ID);
+        baseDamage = absPower != null ? absPower.amount : 0;
+
+        super.calculateCardDamage(mo);
+    }
+
+    @Override
+    public void applyPowers() {
+        AbstractPower absPower = AbstractDungeon.player.getPower(EvadePower.POWER_ID);
+        baseDamage = absPower != null ? absPower.amount : 0;
+
+        super.applyPowers();
+    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower absPower = p.getPower(EvadePower.POWER_ID);
-        int evadeStack = absPower != null ? absPower.amount : 0;
-
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, magicNumber * evadeStack, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL)
         );
     }
 

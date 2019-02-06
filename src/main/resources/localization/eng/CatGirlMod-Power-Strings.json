@@ -78,7 +78,7 @@
         "theCatGirl:GoddessOfMisfortunePower": {
                 "NAME": "Goddess of Misfortune",
                 "DESCRIPTIONS": [
-                        "At the start of your turn, add #b%s Stumble(s) into your hand and lose #b%s gold."
+                        "At the start of your turn, add #b%s Stumble(s) into your hand."
                 ]
         },
         "theCatGirl:NeverGivingUpPower": {

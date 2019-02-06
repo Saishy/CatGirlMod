@@ -55,7 +55,7 @@ public class HungerClaw extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 18;
 
     private static final int INCREASE_MAX_HP = 3;
     private static final int UPGRADE_PLUS_INCREASE_MAX_HP = 1;
