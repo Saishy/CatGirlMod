@@ -74,7 +74,7 @@ public class BloodBath extends AbstractDefaultCard {
         int savedBaseDamage = baseDamage;
         int firstDamage = damage;
 
-        AbstractMonster secondTarget = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        AbstractMonster secondTarget = AbstractDungeon.getMonsters().getRandomMonster(m, true, AbstractDungeon.cardRandomRng);
 
         if (secondTarget != null) {
             baseDamage = secondDamageToApply;

@@ -50,7 +50,7 @@ public class SearchBackpack extends AbstractDefaultCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 1;

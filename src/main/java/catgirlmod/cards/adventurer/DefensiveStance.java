@@ -64,6 +64,7 @@ public class DefensiveStance extends AbstractDefaultCard {
 
         this.magicNumber = this.baseMagicNumber = EVADE;
         this.secondMagicNumber = this.baseSecondMagicNumber = EVADE_INCREASE;
+        this.misc = magicNumber;
 
         this.exhaust = true;
     }

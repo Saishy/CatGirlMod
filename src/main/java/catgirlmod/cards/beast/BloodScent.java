@@ -57,9 +57,9 @@ public class BloodScent extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
-    private static final int STRENGTH = 2;
+    private static final int STRENGTH = 4;
     private static final int UPGRADE_PLUS_STRENGTH = 1;
 
     // /STAT DECLARATION/

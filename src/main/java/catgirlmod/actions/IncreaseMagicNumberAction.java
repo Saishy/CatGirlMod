@@ -19,16 +19,18 @@ public class IncreaseMagicNumberAction extends AbstractGameAction {
     public void update() {
         for (AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.group)
             if (c.uuid.equals(this.uuid)) {
-                c.baseMagicNumber += this.increase;
-                c.magicNumber = c.baseMagicNumber;
+                c.misc += this.increase;
                 c.applyPowers();
+                c.baseMagicNumber = c.misc;
+                c.magicNumber = c.baseMagicNumber;
             }
         for (AbstractCard c : GetAllInBattleInstances.get(this.uuid)) {
-            c.baseMagicNumber += this.increase;
-            c.magicNumber = c.baseMagicNumber;
+            c.misc += this.increase;
             c.applyPowers();
+            c.baseMagicNumber = c.misc;
+            c.magicNumber = c.baseMagicNumber;
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

@@ -65,14 +65,16 @@ public class AccidentalSlap extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = DAMAGE;
+        this.baseDamage = this.magicNumber;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        baseDamage = CatGirlMod.totalDiscardedThisCombat + DAMAGE;
-        if (upgraded) {
+        CatGirlMod.logger.debug("totalDiscardedThisCombat: " + CatGirlMod.totalDiscardedThisCombat);
+        baseDamage = CatGirlMod.totalDiscardedThisCombat + magicNumber;
+        /*if (upgraded) {
             baseDamage += UPGRADE_PLUS_DMG;
-        }
+        }*/
 
         super.calculateCardDamage(mo);
 
@@ -83,10 +85,10 @@ public class AccidentalSlap extends AbstractDefaultCard {
 
     @Override
     public void applyPowers() {
-        baseDamage = CatGirlMod.totalDiscardedThisCombat + DAMAGE;
-        if (upgraded) {
+        baseDamage = CatGirlMod.totalDiscardedThisCombat + magicNumber;
+        /*if (upgraded) {
             baseDamage += UPGRADE_PLUS_DMG;
-        }
+        }*/
 
         super.applyPowers();
 

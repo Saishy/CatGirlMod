@@ -93,7 +93,7 @@ public class EmergencyParry extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_BLOCK_PER_EVADE_MULTIPLIER);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

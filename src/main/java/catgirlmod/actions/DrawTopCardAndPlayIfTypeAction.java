@@ -37,7 +37,7 @@ public class DrawTopCardAndPlayIfTypeAction extends AbstractGameAction {
             }
 
             if (AbstractDungeon.player.drawPile.isEmpty()) {
-                AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(target, exhaustCards));
+                AbstractDungeon.actionManager.addToTop(new DrawTopCardAndPlayIfTypeAction(target, cardType));
                 AbstractDungeon.actionManager.addToTop(new EmptyDeckShuffleAction());
 
                 isDone = true;

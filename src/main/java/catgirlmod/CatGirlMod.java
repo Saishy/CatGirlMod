@@ -634,7 +634,7 @@ public class CatGirlMod implements
     // ================ HOOKS =====================
 
     public static void incrementDiscardHook(boolean endOfTurn) {
-        if (!endOfTurn) {
+        if (endOfTurn) {
             return;
         }
 
