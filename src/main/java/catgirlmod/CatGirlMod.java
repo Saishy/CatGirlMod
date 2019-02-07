@@ -90,27 +90,27 @@ public class CatGirlMod implements
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
 
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_CATGIRL_TEAL = "images/512/bg_attack_catgirl.png";
-    private static final String SKILL_CATGIRL_TEAL = "images/512/bg_skill_catgirl.png";
-    private static final String POWER_CATGIRL_TEAL = "images/512/bg_power_catgirl.png";
-    private static final String ENERGY_ORB_CATGIRL_TEAL = "images/512/card_catgirl_orb.png";
-    private static final String CARD_ENERGY_ORB = "images/512/card_catgirl_small_orb.png";
+    private static final String ATTACK_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_attack_catgirl.pngi");
+    private static final String SKILL_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_skill_catgirl.png");
+    private static final String POWER_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_power_catgirl.png");
+    private static final String ENERGY_ORB_CATGIRL_TEAL = CatGirlMod.makePath("images/512/card_catgirl_orb.png");
+    private static final String CARD_ENERGY_ORB = CatGirlMod.makePath("images/512/card_catgirl_small_orb.png");
 
-    private static final String ATTACK_CATGIRL_TEAL_PORTRAIT = "images/1024/bg_attack_catgirl.png";
-    private static final String SKILL_CATGIRL_TEAL_PORTRAIT = "images/1024/bg_skill_catgirl.png";
-    private static final String POWER_CATGIRL_TEAL_PORTRAIT = "images/1024/bg_power_catgirl.png";
-    private static final String ENERGY_ORB_CATGIRL_TEAL_PORTRAIT = "images/1024/card_catgirl_orb.png";
+    private static final String ATTACK_CATGIRL_TEAL_PORTRAIT = CatGirlMod.makePath("images/1024/bg_attack_catgirl.png");
+    private static final String SKILL_CATGIRL_TEAL_PORTRAIT = CatGirlMod.makePath("images/1024/bg_skill_catgirl.png");
+    private static final String POWER_CATGIRL_TEAL_PORTRAIT = CatGirlMod.makePath("images/1024/bg_power_catgirl.png");
+    private static final String ENERGY_ORB_CATGIRL_TEAL_PORTRAIT = CatGirlMod.makePath("images/1024/card_catgirl_orb.png");
 
     // Character assets
-    private static final String THE_CATGIRL_BUTTON = "images/charSelect/CatGirlCharacterButton.png";
-    private static final String THE_CATGIRL_PORTRAIT = "images/charSelect/CatGirlCharacterPortraitBG.png";
+    private static final String THE_CATGIRL_BUTTON = CatGirlMod.makePath("images/charSelect/CatGirlCharacterButton.png");
+    private static final String THE_CATGIRL_PORTRAIT = CatGirlMod.makePath("images/charSelect/CatGirlCharacterPortraitBG.png");
 
-    public static final String THE_CATGIRL_SHOULDER_1 = "images/char/catgirlCharacter/shoulder.png";
-    public static final String THE_CATGIRL_SHOULDER_2 = "images/char/catgirlCharacter/shoulder2.png";
-    public static final String THE_CATGIRL_CORPSE = "images/char/catgirlCharacter/corpse.png";
+    public static final String THE_CATGIRL_SHOULDER_1 = CatGirlMod.makePath("images/char/catgirlCharacter/shoulder.png");
+    public static final String THE_CATGIRL_SHOULDER_2 = CatGirlMod.makePath("images/char/catgirlCharacter/shoulder2.png");
+    public static final String THE_CATGIRL_CORPSE = CatGirlMod.makePath("images/char/catgirlCharacter/corpse.png");
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "images/Badge.png";
+    public static final String BADGE_IMAGE = CatGirlMod.makePath("images/Badge.png");
 
     public static int totalDiscardedThisCombat = 0;
 
@@ -387,7 +387,7 @@ public class CatGirlMod implements
         BaseMod.addCard(new FocusedStrike());
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new PlayAround());
-        BaseMod.addCard(new PoisedAttack());
+        BaseMod.addCard(new PoisedStrike());
         BaseMod.addCard(new QuickStrike());
         BaseMod.addCard(new SpinningStrike());
 
@@ -411,9 +411,11 @@ public class CatGirlMod implements
         BaseMod.addCard(new Claws());
         BaseMod.addCard(new ClawScratch());
         BaseMod.addCard(new ComboAttack());
+        BaseMod.addCard(new ExtremeSpeed());
         BaseMod.addCard(new FinishingMove());
         BaseMod.addCard(new HungerClaw());
         BaseMod.addCard(new RageClaws());
+        BaseMod.addCard(new ScratchFlurry());
         BaseMod.addCard(new UnrelentingAssault());
 
         BaseMod.addCard(new Growl());
@@ -504,7 +506,7 @@ public class CatGirlMod implements
         UnlockTracker.unlockCard(FocusedStrike.ID);
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(PlayAround.ID);
-        UnlockTracker.unlockCard(PoisedAttack.ID);
+        UnlockTracker.unlockCard(PoisedStrike.ID);
         UnlockTracker.unlockCard(QuickStrike.ID);
         UnlockTracker.unlockCard(SpinningStrike.ID);
 
@@ -528,9 +530,11 @@ public class CatGirlMod implements
         UnlockTracker.unlockCard(Claws.ID);
         UnlockTracker.unlockCard(ClawScratch.ID);
         UnlockTracker.unlockCard(ComboAttack.ID);
+        UnlockTracker.unlockCard(ExtremeSpeed.ID);
         UnlockTracker.unlockCard(FinishingMove.ID);
         UnlockTracker.unlockCard(HungerClaw.ID);
         UnlockTracker.unlockCard(RageClaws.ID);
+        UnlockTracker.unlockCard(ScratchFlurry.ID);
         UnlockTracker.unlockCard(UnrelentingAssault.ID);
 
         UnlockTracker.unlockCard(Growl.ID);
@@ -657,6 +661,8 @@ public class CatGirlMod implements
 
     public static void clearHook() {
         totalDiscardedThisCombat = 0;
+        // This is just because the only power who uses it is not getting cleared on game restart.
+        incrementDiscardSubscribers.clear();
     }
 
     @Override
@@ -673,31 +679,31 @@ public class CatGirlMod implements
 
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "localization/eng/CatGirlMod-Card-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Card-Strings.json"));
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                "localization/eng/CatGirlMod-Power-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Power-Strings.json"));
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                "localization/eng/CatGirlMod-Relic-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Relic-Strings.json"));
 
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                "localization/eng/CatGirlMod-Potion-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Potion-Strings.json"));
 
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                "localization/eng/CatGirlMod-Character-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Character-Strings.json"));
 
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                "localization/eng/CatGirlMod-Orb-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-Orb-Strings.json"));
 
         // UIStrings
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                "localization/eng/CatGirlMod-UI-Strings.json");
+                CatGirlMod.makePath("localization/eng/CatGirlMod-UI-Strings.json"));
 
         logger.info("Done edittting strings");
     }
@@ -757,7 +763,7 @@ public class CatGirlMod implements
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal("localization/eng/CatGirlMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(CatGirlMod.makePath("localization/eng/CatGirlMod-Keyword-Strings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
@@ -775,4 +781,7 @@ public class CatGirlMod implements
         return "theCatGirl:" + idText;
     }
 
+    public static String makePath(String resourcePath) {
+        return "catgirlmod/" + resourcePath;
+    }
 }

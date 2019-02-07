@@ -37,7 +37,7 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
     public static final String ID = CatGirlMod.makeID("UnrelentingAssault");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/UnrelentingAssault.png";
+    public static final String IMG = CatGirlMod.makePath("images/cards/UnrelentingAssault.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -100,7 +100,7 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
     }
 
     @Override
-    public void Execute(AbstractCard cardDraw) {
+    public void ExecuteDrawCardCallback(AbstractCard cardDraw) {
         //CatGirlMod.logger.debug("CardDraw is: " + cardDraw.type);
 
         if (cardDraw.type == CardType.ATTACK && lastTarget != null) {

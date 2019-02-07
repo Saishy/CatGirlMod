@@ -13,8 +13,8 @@ public class DriedFishRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("DriedFish");
-    public static final String IMG = "images/relics/placeholder_relic2.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
 
     private static final int NUM_CARDS = 10;
     public static final int HEAL_AMOUNT = 2;

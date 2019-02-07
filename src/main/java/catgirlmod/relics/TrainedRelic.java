@@ -15,8 +15,8 @@ public class TrainedRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("TrainedRelic");
-    public static final String IMG = "images/relics/placeholder_relic.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic.png");
 
     public static final int AMOUNT = 2;
 
@@ -25,23 +25,26 @@ public class TrainedRelic extends CustomRelic {
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        //CatGirlMod.logger.info("Catgirl info output: " + info.output);
-        //CatGirlMod.logger.info("Catgirl type output: " + info.type);
-        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
-                || (info.owner == null) || (info.owner == AbstractDungeon.player)) {
-            return super.onAttacked(info, damageAmount);
+    public int onAttackedMonster(DamageInfo info, int damageAmount) {
+        CatGirlMod.logger.info("Catgirl info owner: " + info.owner);
+        CatGirlMod.logger.info("Catgirl type output: " + info.type);
+        CatGirlMod.logger.info("Catgirl type output: " + info.type);
+
+        if (AbstractDungeon.getCurrRoom() == null
+                || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
+                || (info.owner == null)) {
+            return super.onAttackedMonster(info, damageAmount);
         }
 
         if (info.output > 0 && info.type == DamageInfo.DamageType.NORMAL && (damageAmount > AbstractDungeon.player.currentBlock)) {
             AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        AbstractDungeon.player, AbstractDungeon.player, new EvadePower(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
-                )
+                    new ApplyPowerAction(
+                            AbstractDungeon.player, AbstractDungeon.player, new EvadePower(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
+                    )
             );
         }
 
-        return super.onAttacked(info, damageAmount);
+        return super.onAttackedMonster(info, damageAmount);
     }
 
     // Description

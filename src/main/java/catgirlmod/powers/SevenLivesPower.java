@@ -2,6 +2,8 @@ package catgirlmod.powers;
 
 import catgirlmod.CatGirlMod;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,12 +19,13 @@ public class SevenLivesPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = "images/powers/catgirl_sevenlives.png";
+    public static final String IMG = CatGirlMod.makePath("images/powers/catgirl_sevenlives.png");
 
-    public SevenLivesPower(final AbstractCreature owner) {
+    public SevenLivesPower(final AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
+        this.amount = amount;
         updateDescription();
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
@@ -31,19 +34,29 @@ public class SevenLivesPower extends AbstractPower {
 
     @Override
     public int onLoseHp(int damageAmount) {
-        if (owner.currentHealth + TempHPField.tempHp.get(owner) <= damageAmount) {
-            damageAmount = 0;
+        if (damageAmount <= 0) {
+            return damageAmount;
         }
 
         AbstractDungeon.actionManager.addToBottom(
-                new RemoveSpecificPowerAction(owner, owner, this)
+                new ReducePowerAction(owner, owner, this, 1)
         );
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(owner, owner, new EvadePower(owner, owner, damageAmount), damageAmount)
+        );
+
+        damageAmount = 0;
 
         return damageAmount;
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if (amount <= 1) {
+            description = DESCRIPTIONS[0];
+        } else {
+            description = String.format(DESCRIPTIONS[1], amount);
+        }
     }
 }

@@ -15,8 +15,8 @@ public class SRankRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("SRank");
-    public static final String IMG = "images/relics/placeholder_relic2.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
 
     public static final int AMOUNT = 2;
 
@@ -24,7 +24,7 @@ public class SRankRelic extends CustomRelic {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
-    @Override
+    /*@Override
     public void obtain() {
         //CatGirlMod.logger.debug("Starting obtain()");
         if (AbstractDungeon.player.hasRelic(TrainedRelic.ID)) {
@@ -42,12 +42,12 @@ public class SRankRelic extends CustomRelic {
         } else {
             super.obtain();
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic(TrainedRelic.ID);
-    }
+    }*/
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {

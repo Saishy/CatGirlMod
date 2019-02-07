@@ -15,8 +15,8 @@ public class LostAndFoundRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("LostAndFound");
-    public static final String IMG = "images/relics/placeholder_relic2.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
 
     public LostAndFoundRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.CLINK);

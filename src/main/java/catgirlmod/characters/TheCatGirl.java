@@ -57,8 +57,8 @@ public class TheCatGirl extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
 
     // Atlas and JSON files for the Animations
-    public static final String THE_CATGIRL_SKELETON_ATLAS = "images/char/catgirlCharacter/dragonbones/catgirl.atlas";
-    public static final String THE_CATGIRL_SKELETON_JSON = "images/char/catgirlCharacter/dragonbones/catgirl.json";
+    public static final String THE_CATGIRL_SKELETON_ATLAS = CatGirlMod.makePath("images/char/catgirlCharacter/dragonbones/catgirl.atlas");
+    public static final String THE_CATGIRL_SKELETON_JSON = CatGirlMod.makePath("images/char/catgirlCharacter/dragonbones/catgirl.json");
 
     // =============== /STRINGS/ =================
 
@@ -66,17 +66,17 @@ public class TheCatGirl extends CustomPlayer {
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
     public static final String[] orbTextures = {
-            "images/char/catgirlCharacter/orb/layer1.png",
-            "images/char/catgirlCharacter/orb/layer2.png",
-            "images/char/catgirlCharacter/orb/layer3.png",
-            "images/char/catgirlCharacter/orb/layer4.png",
-            "images/char/catgirlCharacter/orb/layer5.png",
-            "images/char/catgirlCharacter/orb/layer6.png",
-            "images/char/catgirlCharacter/orb/layer1d.png",
-            "images/char/catgirlCharacter/orb/layer2d.png",
-            "images/char/catgirlCharacter/orb/layer3d.png",
-            "images/char/catgirlCharacter/orb/layer4d.png",
-            "images/char/catgirlCharacter/orb/layer5d.png",};
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer1.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer2.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer3.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer4.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer5.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer6.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer1d.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer2d.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer3d.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer4d.png"),
+            CatGirlMod.makePath("images/char/catgirlCharacter/orb/layer5d.png"),};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -84,7 +84,7 @@ public class TheCatGirl extends CustomPlayer {
     // =============== CHARACTER CLASS START =================
 
     public TheCatGirl(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures, "images/char/catgirlCharacter/orb/vfx.png", (String) null, (String) null);
+        super(name, setClass, orbTextures, CatGirlMod.makePath("images/char/catgirlCharacter/orb/vfx.png"), (String) null, (String) null);
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -214,10 +214,11 @@ public class TheCatGirl extends CustomPlayer {
     public String getLocalizedCharacterName() {
         return NAMES[0];
     }
+
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new ClawStrike();
     }
 
     // The class name as it appears next to your player name in-game

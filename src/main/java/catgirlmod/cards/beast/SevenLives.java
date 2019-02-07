@@ -39,7 +39,7 @@ public class SevenLives extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("SevenLives");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG =  "images/cards/SevenLives.png";
+    public static final String IMG =  CatGirlMod.makePath("images/cards/SevenLives.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -58,10 +58,15 @@ public class SevenLives extends AbstractDefaultCard {
 
     private static final int COST = 3;
 
+    private static final int TIMES = 1;
+    private static final int UPGRADE_PLUS_TIMES = 1;
+
     // /STAT DECLARATION/
 
     public SevenLives() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.magicNumber = this.baseMagicNumber = TIMES;
 
         this.exhaust = true;
     }
@@ -71,15 +76,9 @@ public class SevenLives extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new SevenLivesPower(p)
+                        p, p, new SevenLivesPower(p, magicNumber), magicNumber
                 )
         );
-
-        if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(makeCopy(), 1, true, true)
-            );
-        }
     }
 
     // Upgraded stats.
@@ -87,7 +86,8 @@ public class SevenLives extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_TIMES);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

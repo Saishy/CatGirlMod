@@ -17,8 +17,8 @@ public class ThrowingDaggerRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("ThrowingDagger");
-    public static final String IMG = "images/relics/placeholder_relic2.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic2.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
 
     public static final int ATTACKS = 3;
     public static final int EVADE = 4;

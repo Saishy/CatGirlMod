@@ -18,7 +18,7 @@ public class AdventurersInsightPower extends AbstractPower implements OnReceiveP
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = "images/powers/catgirl_adventurersinsight.png";
+    public static final String IMG = CatGirlMod.makePath("images/powers/catgirl_adventurersinsight.png");
 
     public AdventurersInsightPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -38,11 +38,12 @@ public class AdventurersInsightPower extends AbstractPower implements OnReceiveP
         }
 
         if (power instanceof EvadePower) {
-            AbstractDungeon.actionManager.addToBottom(
+            power.amount++;
+            /*AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
                             owner, owner, new EvadePower(owner, owner, amount), amount
                     )
-            );
+            );*/
         }
 
         return true;

@@ -1,10 +1,12 @@
-package catgirlmod.cards.adventurer;
+package catgirlmod.cards.beast;
 
 import catgirlmod.CatGirlMod;
-import catgirlmod.actions.UpgradeCardTypeInHandAction;
 import catgirlmod.cards.AbstractDefaultCard;
+import catgirlmod.powers.EvadePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,8 +14,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class PoisedAttack extends AbstractDefaultCard {
+public class ExtremeSpeed extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -22,7 +25,7 @@ public class PoisedAttack extends AbstractDefaultCard {
      * Copy all of the code here (Ctrl+A > Ctrl+C)
      * Ctrl+Shift+A and search up "file and code template"
      * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with PoisedAttack
+     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with ExtremeSpeed
      * And then you can do custom ones like $ {DAMAGE} and $ {TARGET} if you want.
      * I'll leave some comments on things you might consider replacing with what.
      *
@@ -33,36 +36,40 @@ public class PoisedAttack extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("PoisedAttack");
+    public static final String ID = CatGirlMod.makeID("ExtremeSpeed");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/PoisedAttack.png";
+    public static final String IMG = CatGirlMod.makePath("images/cards/ExtremeSpeed.png"); // "images/cards/ExtremeSpeed.png"
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DMG = 1;
+
+    private static final int EVADE_COST = 3;
+    private static final int UPGRADE_MINUS_EVADE_COST = -1;
 
     // /STAT DECLARATION/
 
-    public PoisedAttack() {
+    public ExtremeSpeed() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = EVADE_COST;
     }
 
     // Actions the card should do.
@@ -72,13 +79,14 @@ public class PoisedAttack extends AbstractDefaultCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)
         );
 
-        if (upgraded) {
+        AbstractPower power = p.getPower(EvadePower.POWER_ID);
+        if (power != null && power.amount >= 3) {
             AbstractDungeon.actionManager.addToBottom(
-                    new UpgradeCardTypeInHandAction(CardType.SKILL, UpgradeCardTypeInHandAction.UpgradeType.ALL, 1)
+                    new ReducePowerAction(p, p, power, magicNumber)
             );
-        } else {
+
             AbstractDungeon.actionManager.addToBottom(
-                    new UpgradeCardTypeInHandAction(CardType.SKILL, UpgradeCardTypeInHandAction.UpgradeType.AMOUNT, 1)
+                    new DrawCardAction(p, 1)
             );
         }
     }
@@ -88,7 +96,8 @@ public class PoisedAttack extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_MINUS_EVADE_COST);
             initializeDescription();
         }
     }

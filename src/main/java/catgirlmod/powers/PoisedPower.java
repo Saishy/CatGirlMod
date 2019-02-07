@@ -16,7 +16,7 @@ public class PoisedPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = "images/powers/catgirl_poised.png";
+    public static final String IMG = CatGirlMod.makePath("images/powers/catgirl_poised.png");
 
     public PoisedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;

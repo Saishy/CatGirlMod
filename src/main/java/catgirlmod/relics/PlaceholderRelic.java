@@ -18,8 +18,8 @@ public class PlaceholderRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("PlaceholderRelic");
-    public static final String IMG = "images/relics/placeholder_relic.png";
-    public static final String OUTLINE = "images/relics/outline/placeholder_relic.png";
+    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic.png");
 
     public PlaceholderRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.MAGICAL);

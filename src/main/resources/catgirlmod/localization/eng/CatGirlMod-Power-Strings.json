@@ -72,7 +72,8 @@
         "theCatGirl:SevenLivesPower": {
                 "NAME": "Seven Lives",
                 "DESCRIPTIONS": [
-                        "If you would die to the next damage taken, ignore it. NL Lose upon taking damage."
+                        "Ignore the next damage you would take, gain that much Evade instead.",
+                        "Ignore the next %s times you would take damage, gain that much Evade instead."
                 ]
         },
         "theCatGirl:GoddessOfMisfortunePower": {

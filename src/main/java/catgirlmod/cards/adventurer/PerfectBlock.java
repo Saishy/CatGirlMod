@@ -35,7 +35,7 @@ public class PerfectBlock extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("PerfectBlock");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG =  "images/cards/PerfectBlock.png";
+    public static final String IMG =  CatGirlMod.makePath("images/cards/PerfectBlock.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -51,10 +51,10 @@ public class PerfectBlock extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
-    private static final int BLOCK = 25;
-    private static final int UPGRADE_PLUS_BLOCK = 10;
+    private static final int BLOCK = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
 

@@ -3,6 +3,7 @@ package catgirlmod.cards.adventurer;
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.powers.EvadeDontDecayPower;
+import catgirlmod.powers.EvadePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,7 +35,7 @@ public class KeepAlert extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("KeepAlert");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG =  "images/cards/KeepAlert.png";
+    public static final String IMG =  CatGirlMod.makePath("images/cards/KeepAlert.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -53,15 +54,25 @@ public class KeepAlert extends AbstractDefaultCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private static final int EVADE = 8;
+
     // /STAT DECLARATION/
 
     public KeepAlert() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.magicNumber = this.baseMagicNumber = EVADE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(
+                        p, p, new EvadePower(p, p, magicNumber), magicNumber
+                )
+        );
+
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
                         p, p, new EvadeDontDecayPower(p, p, 1), 1

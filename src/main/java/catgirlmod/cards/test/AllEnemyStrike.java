@@ -35,7 +35,7 @@ public class AllEnemyStrike extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("AllEnemyStrike");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Test_Attack.png"; // "images/cards/AllEnemyStrike.png"
+    public static final String IMG = CatGirlMod.makePath("images/cards/Test_Attack.png"); // CatGirlMod.makePath("images/cards/AllEnemyStrike.png")
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;

@@ -4,10 +4,12 @@ import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.powers.InsanePower;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,6 +19,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import catgirlmod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
+
+import java.util.ArrayList;
 
 public class Insane extends AbstractDefaultCard {
 
@@ -41,7 +45,7 @@ public class Insane extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("Insane");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG =  "images/cards/Insane.png";
+    public static final String IMG =  CatGirlMod.makePath("images/cards/Insane.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -58,12 +62,19 @@ public class Insane extends AbstractDefaultCard {
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    //private static final int UPGRADED_COST = 2;
+
+    private static final int MOVED_CARDS_COST = 1;
+    private static final int UPGRADE_MINUS_MOVED_CARDS_COST = -1;
 
     // /STAT DECLARATION/
 
     public Insane() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.magicNumber = this.baseMagicNumber = MOVED_CARDS_COST;
+
+        this.exhaust = true;
     }
 
     // Actions the card should do.
@@ -78,12 +89,14 @@ public class Insane extends AbstractDefaultCard {
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new BorderLongFlashEffect(Color.MAGENTA), 0.0F, true));
 
-        if (p.hasPower(InsanePower.POWER_ID)) {
-            return;
-        }
-
+        //NOOOO LAMBDA!!! I HATE UUU
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new InsanePower(p, p))
+                new MoveCardsAction(p.hand, p.exhaustPile, p.exhaustPile.size(), cards -> {
+                    for (AbstractCard c : cards) {
+                        // set cost for turn
+                        c.setCostForTurn(magicNumber);
+                    }
+                })
         );
     }
 
@@ -92,7 +105,8 @@ public class Insane extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_MINUS_MOVED_CARDS_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

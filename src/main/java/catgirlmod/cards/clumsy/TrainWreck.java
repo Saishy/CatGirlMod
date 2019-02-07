@@ -40,7 +40,7 @@ public class TrainWreck extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("TrainWreck");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG =  "images/cards/TrainWreck.png";
+    public static final String IMG = CatGirlMod.makePath("images/cards/TrainWreck.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;

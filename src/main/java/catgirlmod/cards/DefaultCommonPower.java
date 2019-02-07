@@ -29,7 +29,7 @@ public class DefaultCommonPower extends CustomCard {
     public static final String ID = CatGirlMod.makeID("CatGirlCommonPower");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/Power.png";
+    public static final String IMG = CatGirlMod.makePath("images/cards/Power.png");
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

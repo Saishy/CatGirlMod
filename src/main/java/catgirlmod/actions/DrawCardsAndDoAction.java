@@ -12,7 +12,7 @@ public class DrawCardsAndDoAction extends AbstractGameAction {
     private IDrawCardsAndDoCallback callback;
 
     public interface IDrawCardsAndDoCallback {
-        void Execute(AbstractCard cardDraw);
+        void ExecuteDrawCardCallback(AbstractCard cardDraw);
     }
 
     public DrawCardsAndDoAction(IDrawCardsAndDoCallback command, int amountToDraw) {
@@ -67,7 +67,7 @@ public class DrawCardsAndDoAction extends AbstractGameAction {
             AbstractDungeon.player.draw();
             AbstractDungeon.player.hand.refreshHandLayout();
 
-            callback.Execute(card);
+            callback.ExecuteDrawCardCallback(card);
         }
 
         this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();

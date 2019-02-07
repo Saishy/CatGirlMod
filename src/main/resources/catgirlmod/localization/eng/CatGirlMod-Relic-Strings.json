@@ -50,7 +50,7 @@
 		"NAME": "S-Rank",
 		"FLAVOR": "You're in the top 1% of adventurers.",
 		"DESCRIPTIONS": [
-			"Replaces #rTrained. Whenever you are attacked, gain #b",
+			"Whenever you are attacked, gain #b",
 			" #yEvade."
 		]
 	},

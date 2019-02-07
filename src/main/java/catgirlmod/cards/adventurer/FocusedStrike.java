@@ -36,7 +36,7 @@ public class FocusedStrike extends AbstractDefaultCard {
     public static final String ID = CatGirlMod.makeID("FocusedStrike");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "images/cards/FocusedStrike.png";
+    public static final String IMG = CatGirlMod.makePath("images/cards/FocusedStrike.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
@@ -54,11 +54,11 @@ public class FocusedStrike extends AbstractDefaultCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int ENERGY_GAIN = 1;
-    private static final int CARD_DRAW = 1;
+    //private static final int CARD_DRAW = 1;
 
     // /STAT DECLARATION/
 
@@ -67,7 +67,7 @@ public class FocusedStrike extends AbstractDefaultCard {
 
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = ENERGY_GAIN;
-        this.secondMagicNumber = this.baseSecondMagicNumber = CARD_DRAW;
+        //this.secondMagicNumber = this.baseSecondMagicNumber = CARD_DRAW;
 
         this.tags.add(CardTags.STRIKE);
     }
@@ -82,9 +82,9 @@ public class FocusedStrike extends AbstractDefaultCard {
             AbstractDungeon.actionManager.addToBottom(
                     new com.megacrit.cardcrawl.actions.common.GainEnergyAction(magicNumber)
             );
-            AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.DrawCardAction(p, secondMagicNumber)
-            );
+            /*AbstractDungeon.actionManager.addToBottom(
+                    new DrawCardAction(p, secondMagicNumber)
+            );*/
         }
     }
 
