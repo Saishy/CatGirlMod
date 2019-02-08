@@ -55,7 +55,7 @@ public class ExtremeSpeed extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 1;
@@ -80,7 +80,7 @@ public class ExtremeSpeed extends AbstractDefaultCard {
         );
 
         AbstractPower power = p.getPower(EvadePower.POWER_ID);
-        if (power != null && power.amount >= 3) {
+        if (power != null && power.amount >= magicNumber) {
             AbstractDungeon.actionManager.addToBottom(
                     new ReducePowerAction(p, p, power, magicNumber)
             );
