@@ -55,7 +55,7 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     private static final int DRAW_CARDS = 6;

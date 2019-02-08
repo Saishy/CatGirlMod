@@ -84,6 +84,13 @@ public class DefensiveStance extends AbstractDefaultCard {
         );
     }
 
+    @Override
+    public void applyPowers() {
+        magicNumber = baseMagicNumber = misc;
+        super.applyPowers();
+        initializeDescription();
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {

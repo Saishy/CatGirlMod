@@ -46,6 +46,13 @@
 			"The first time you would gain a #ydebuff in each combat, reflect it."
 		]
 	},
+	"theCatGirl:NepetasHat": {
+		"NAME": "Nepeta's Hat",
+		"FLAVOR": "It smells like sugar and tea...",
+		"DESCRIPTIONS": [
+			"Whenever you attack an enemy that has #yBlock, remove 2 of their #yBlock and apply 2 #yPoison."
+		]
+	},
 	"theCatGirl:SRank": {
 		"NAME": "S-Rank",
 		"FLAVOR": "You're in the top 1% of adventurers.",
@@ -67,7 +74,7 @@
 		"NAME": "Trained",
 		"FLAVOR": "An adventurer is always able to exploit opportunities.",
 		"DESCRIPTIONS": [
-			"Whenever you attack an enemy that intends to attack, gain 2 #yEvade."
+			"Whenever you attack an enemy that intends to attack, gain 1 #yEvade."
 		]
 	},
 	"theCatGirl:PlaceholderRelic": {

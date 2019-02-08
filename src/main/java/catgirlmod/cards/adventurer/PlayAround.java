@@ -65,7 +65,8 @@ public class PlayAround extends AbstractDefaultCard {
     public PlayAround() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = INCREASE_STRIKE_DAMAGE;
     }
 
     // Actions the card should do.
@@ -76,7 +77,7 @@ public class PlayAround extends AbstractDefaultCard {
         );
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        m, p, new IncreaseStrikeDamagePower(m, p, INCREASE_STRIKE_DAMAGE), INCREASE_STRIKE_DAMAGE
+                        m, p, new IncreaseStrikeDamagePower(m, p, magicNumber), magicNumber
                 )
         );
     }

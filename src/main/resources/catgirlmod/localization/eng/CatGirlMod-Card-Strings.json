@@ -21,12 +21,12 @@
   },
   "theCatGirl:PlayAround": {
     "NAME": "Play Around",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy receives 2 additional damage from Strikes."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy receives !M! additional damage from Strike cards."
   },
   "theCatGirl:ElegantStrike": {
     "NAME": "Elegant Strike",
-    "DESCRIPTION": "Deal !M! damage for each Evade you have. NL (!D! Damage). NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade you have. NL (!D! Damage)."
+    "DESCRIPTION": "Deal !M! damage for each Evade you have. NL ( !D! Damage). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !M! damage for each Evade you have. NL ( !D! Damage)."
   },
   "theCatGirl:AllIn": {
     "NAME": "All In",
@@ -128,7 +128,7 @@
   },
   "theCatGirl:Claws": {
     "NAME": "Claws",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Enemy receives 2 additional damage from Claws."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Enemy receives !M! additional damage from Claw cards."
   },
   "theCatGirl:ClawScratch": {
     "NAME": "Claw Scratch",

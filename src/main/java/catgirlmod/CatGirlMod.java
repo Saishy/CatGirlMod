@@ -331,6 +331,7 @@ public class CatGirlMod implements
 
         shareableRelics.add(new AmbushRelic());
         shareableRelics.add(new DriedFishRelic());
+        shareableRelics.add(new NepetasHat());
 
         if (unlocks2 == null){
             unlocks2 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
@@ -614,6 +615,7 @@ public class CatGirlMod implements
 
             UnlockTracker.addRelic(LostAndFoundRelic.ID);
             UnlockTracker.addRelic(MonsterGuideRelic.ID);
+            UnlockTracker.addRelic(NepetasHat.ID);
             UnlockTracker.addRelic(ThrowingDaggerRelic.ID);
 
             UnlockTracker.addRelic(BeginnersLuckRelic.ID);

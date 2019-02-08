@@ -125,9 +125,19 @@ public class Stumble extends AbstractDefaultCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        AbstractDungeon.actionManager.addToBottom(
-                new ExhaustSpecificCardAction(this,  AbstractDungeon.player.discardPile)
-        );
+        if (AbstractDungeon.player.discardPile.contains(this)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ExhaustSpecificCardAction(this,  AbstractDungeon.player.discardPile)
+            );
+        } else if (AbstractDungeon.player.limbo.contains(this)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ExhaustSpecificCardAction(this,  AbstractDungeon.player.limbo)
+            );
+        } else if (AbstractDungeon.player.hand.contains(this)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ExhaustSpecificCardAction(this,  AbstractDungeon.player.hand)
+            );
+        }
     }
 
     @Override
