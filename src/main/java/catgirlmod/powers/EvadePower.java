@@ -1,10 +1,12 @@
 package catgirlmod.powers;
 
 import catgirlmod.CatGirlMod;
+import catgirlmod.cards.adventurer.AdventurersInsight;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,13 +33,33 @@ public class EvadePower extends AbstractPower {
         type = PowerType.BUFF;
         isTurnBased = true;
         img = ImageMaster.loadImage(IMG);
+
+        checkForAdventurersInsight();
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+
+        checkForAdventurersInsight();
+    }
+
+    void checkForAdventurersInsight() {
+        AbstractPower power = owner.getPower(AdventurersInsightPower.POWER_ID);
+
+        if (power != null) {
+            amount += power.amount;
+        }
     }
 
     @Override
     public float modifyBlock(float blockAmount) {
         //CatGirlMod.logger.debug("EvadePower::modifyBlock " + blockAmount);
+        if (owner.hasPower(AngryFormPower.POWER_ID)) {
+            return blockAmount;
+        }
 
-        if (blockAmount <= 0.0f) {
+        if (blockAmount < 0.0f) {
             return blockAmount;
         }
 
@@ -56,18 +78,48 @@ public class EvadePower extends AbstractPower {
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+    public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
+        if (!owner.hasPower(AngryFormPower.POWER_ID)) {
+            return damage;
+        }
+
+        if (type != DamageInfo.DamageType.NORMAL) {
+            return damage;
+        }
+
+        if (damage < 0.0f) {
+            return damage;
+        }
+
+        if ((damage += amount) < 0.0f) {
+            return 0.0f;
+        }
+
+        amountUsed = amount;
+
+        return damage;
     }
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (card.baseBlock > -1) {
-            flash();
-            AbstractDungeon.actionManager.addToBottom(
-                    //new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
-                    new ReducePowerAction(owner, owner, this, amountUsed)
-            );
-            amountUsed = 0;
+        if (owner.hasPower(AngryFormPower.POWER_ID)) {
+            if (card.baseDamage > -1) {
+                flash();
+                AbstractDungeon.actionManager.addToBottom(
+                        //new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
+                        new ReducePowerAction(owner, owner, this, amountUsed)
+                );
+                amountUsed = 0;
+            }
+        } else {
+            if (card.baseBlock > -1) {
+                flash();
+                AbstractDungeon.actionManager.addToBottom(
+                        //new RemoveSpecificPowerAction(owner, owner, EvadePower.POWER_ID)
+                        new ReducePowerAction(owner, owner, this, amountUsed)
+                );
+                amountUsed = 0;
+            }
         }
     }
 

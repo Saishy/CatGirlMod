@@ -1,10 +1,12 @@
 package catgirlmod.patches;
 
+import catgirlmod.powers.EvadePower;
 import catgirlmod.powers.IncreaseClawDamagePower;
 import catgirlmod.powers.IncreaseStrikeDamagePower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;

@@ -87,12 +87,12 @@
   },
   "theCatGirl:KeepAlert": {
     "NAME": "Keep Alert",
-    "DESCRIPTION": "Evade is not lost at the end of this turn."
+    "DESCRIPTION": "Gain !M! Evade. NL Evade is not lost at the end of this turn."
   },
   "theCatGirl:AdventurersInsight": {
     "NAME": "Adventurer's Insight",
-    "DESCRIPTION": "Whenever you attack an enemy that intends to attack, gain !M! Evade.",
-    "UPGRADE_DESCRIPTION": "Whenever you attack an enemy that intends to attack, gain !M! Evade. NL Innate."
+    "DESCRIPTION": "Whenever you would gain Evade, gain !M! more.",
+    "UPGRADE_DESCRIPTION": "Whenever you would gain Evade, gain !M! more. NL Innate."
   },
   "theCatGirl:PoiseStance": {
     "NAME": "Poise Stance",
@@ -105,6 +105,10 @@
   "theCatGirl:Beastification": {
     "NAME": "Beastification",
     "DESCRIPTION": "Gain !M! Strength. NL Gain !theCatGirl:SecondMagic! Dexterity. NL Gain !B! Block. NL Next turn, lose [E] [E]."
+  },
+  "theCatGirl:AngryForm": {
+    "NAME": "Angry Form",
+    "DESCRIPTION": "Evade will increase the next damage instead of Block."
   },
   "theCatGirl:BleedingWounds": {
     "NAME": "Bleeding Wounds",

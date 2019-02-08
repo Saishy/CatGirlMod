@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AdventurersInsightPower extends AbstractPower implements OnReceivePowerPower {
+public class AdventurersInsightPower extends AbstractPower {
 
     public static final String POWER_ID = CatGirlMod.makeID("AdventurersInsightPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -31,7 +31,7 @@ public class AdventurersInsightPower extends AbstractPower implements OnReceiveP
         img = ImageMaster.loadImage(IMG);
     }
 
-    @Override
+    /*@Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (target != owner) {
             return true;
@@ -43,11 +43,11 @@ public class AdventurersInsightPower extends AbstractPower implements OnReceiveP
                     new ApplyPowerAction(
                             owner, owner, new EvadePower(owner, owner, amount), amount
                     )
-            );*/
+            );*//*
         }
 
         return true;
-    }
+    }*/
 
     /*@Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {

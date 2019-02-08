@@ -6,8 +6,10 @@ import catgirlmod.powers.EvadePower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -25,7 +27,7 @@ public class TrainedRelic extends CustomRelic {
     }
 
     @Override
-    public int onAttackedMonster(DamageInfo info, int damageAmount) {
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         CatGirlMod.logger.info("Catgirl info owner: " + info.owner);
         CatGirlMod.logger.info("Catgirl type output: " + info.type);
         CatGirlMod.logger.info("Catgirl type output: " + info.type);
@@ -33,18 +35,21 @@ public class TrainedRelic extends CustomRelic {
         if (AbstractDungeon.getCurrRoom() == null
                 || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
                 || (info.owner == null)) {
-            return super.onAttackedMonster(info, damageAmount);
+            return;
         }
 
-        if (info.output > 0 && info.type == DamageInfo.DamageType.NORMAL && (damageAmount > AbstractDungeon.player.currentBlock)) {
+        AbstractMonster m = (AbstractMonster)target;
+
+        if ( m.intent == AbstractMonster.Intent.ATTACK ||
+                m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEFEND ) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
                             AbstractDungeon.player, AbstractDungeon.player, new EvadePower(AbstractDungeon.player, AbstractDungeon.player, AMOUNT), AMOUNT
                     )
             );
         }
-
-        return super.onAttackedMonster(info, damageAmount);
     }
 
     // Description

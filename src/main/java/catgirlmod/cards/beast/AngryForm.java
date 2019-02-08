@@ -4,12 +4,10 @@ import basemod.helpers.BaseModCardTags;
 import catgirlmod.CatGirlMod;
 import catgirlmod.cards.AbstractDefaultCard;
 import catgirlmod.patches.AbstractCardEnum;
+import catgirlmod.powers.AngryFormPower;
 import catgirlmod.powers.BeastificationPower;
-import catgirlmod.powers.EvadePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Beastification extends AbstractDefaultCard {
+public class AngryForm extends AbstractDefaultCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -38,14 +36,15 @@ public class Beastification extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = CatGirlMod.makeID("Beastification");
+    public static final String ID = CatGirlMod.makeID("AngryForm");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = CatGirlMod.makePath("images/cards/Beastification.png");
+    public static final String IMG = CatGirlMod.makePath("images/cards/AngryForm.png");
     // This does mean that you will need to have an image with the same name as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -58,24 +57,14 @@ public class Beastification extends AbstractDefaultCard {
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
     private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
 
-    private static final int BLOCK = 15;
-
-    private static final int ENERGY_LOST = 2;
-
-    private static final int STRENGTH = 3;
-    private static final int UPGRADE_PLUS_STRENGTH = 1;
-
-    private static final int DEXTERITY = 3;
-    private static final int UPGRADE_PLUS_DEXTERITY = 1;
     // /STAT DECLARATION/
 
-    public Beastification() {
+    public AngryForm() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = STRENGTH;
-        this.secondMagicNumber = this.baseSecondMagicNumber = DEXTERITY;
+        this.tags.add(BaseModCardTags.FORM);
     }
 
     // Actions the card should do.
@@ -83,23 +72,7 @@ public class Beastification extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new StrengthPower(p, magicNumber), magicNumber
-                )
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        p, p, new DexterityPower(p, secondMagicNumber), secondMagicNumber
-                )
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, block)
-        );
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(
-                        p, p, new BeastificationPower(p, p, ENERGY_LOST), ENERGY_LOST
+                        p, p, new AngryFormPower(p, p)
                 )
         );
     }
@@ -109,8 +82,7 @@ public class Beastification extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
-            upgradeSecondMagicNumber(UPGRADE_PLUS_DEXTERITY);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

@@ -90,7 +90,7 @@ public class CatGirlMod implements
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
 
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_attack_catgirl.pngi");
+    private static final String ATTACK_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_attack_catgirl.png");
     private static final String SKILL_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_skill_catgirl.png");
     private static final String POWER_CATGIRL_TEAL = CatGirlMod.makePath("images/512/bg_power_catgirl.png");
     private static final String ENERGY_ORB_CATGIRL_TEAL = CatGirlMod.makePath("images/512/card_catgirl_orb.png");
@@ -425,6 +425,7 @@ public class CatGirlMod implements
         BaseMod.addCard(new SmellFear());
         BaseMod.addCard(new Stalk());
 
+        BaseMod.addCard(new AngryForm());
         BaseMod.addCard(new Beastification());
         BaseMod.addCard(new BleedingWounds());
         BaseMod.addCard(new BloodScent());
@@ -544,6 +545,7 @@ public class CatGirlMod implements
         UnlockTracker.unlockCard(SmellFear.ID);
         UnlockTracker.unlockCard(Stalk.ID);
 
+        UnlockTracker.unlockCard(AngryForm.ID);
         UnlockTracker.unlockCard(Beastification.ID);
         UnlockTracker.unlockCard(BleedingWounds.ID);
         UnlockTracker.unlockCard(BloodScent.ID);

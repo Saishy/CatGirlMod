@@ -65,9 +65,9 @@
 	},
 	"theCatGirl:TrainedRelic": {
 		"NAME": "Trained",
-		"FLAVOR": "An adventurer never takes the same attack twice.",
+		"FLAVOR": "An adventurer is always able to exploit opportunities.",
 		"DESCRIPTIONS": [
-			"Whenever you take unblocked damage, gain 2 #yEvade."
+			"Whenever you attack an enemy that intends to attack, gain 2 #yEvade."
 		]
 	},
 	"theCatGirl:PlaceholderRelic": {

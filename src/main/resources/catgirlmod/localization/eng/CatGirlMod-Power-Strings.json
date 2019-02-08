@@ -35,7 +35,7 @@
         "theCatGirl:AdventurersInsightPower": {
                 "NAME": "Adventurer's Insight",
                 "DESCRIPTIONS": [
-                        "Whenever you attack an enemy that intends to attack, gain #b%s #yEvade."
+                        "Whenever you would gain #yEvade, gain #b%s more."
                 ]
         },
         "theCatGirl:PoisedPower": {
@@ -49,6 +49,12 @@
                 "DESCRIPTIONS": [
                         "Whenever you gain #yEvade, deal #b",
                         " damage to ALL enemies."
+                ]
+        },
+        "theCatGirl:AngryFormPower": {
+                "NAME": "Angry Form",
+                "DESCRIPTIONS": [
+                        "Evade now increases your next damage instead of Block."
                 ]
         },
         "theCatGirl:BeastificationPower": {
