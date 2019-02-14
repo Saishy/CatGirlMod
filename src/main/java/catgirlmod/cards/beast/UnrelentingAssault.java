@@ -78,11 +78,11 @@ public class UnrelentingAssault extends AbstractDefaultCard implements DrawCards
     public void use(AbstractPlayer p, AbstractMonster m) {
         //attackDraws = 0;
 
-        if (AbstractDungeon.player.drawPile.size() < DRAW_CARDS) {
+        /*if (AbstractDungeon.player.drawPile.size() < DRAW_CARDS) {
             AbstractDungeon.actionManager.addToBottom(
                     new com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction()
             );
-        }
+        }*/
 
         lastTarget = m;
 

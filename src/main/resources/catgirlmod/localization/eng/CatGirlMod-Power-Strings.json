@@ -54,7 +54,7 @@
         "theCatGirl:AngryFormPower": {
                 "NAME": "Angry Form",
                 "DESCRIPTIONS": [
-                        "Evade now increases your next damage instead of Block."
+                        "Evade now increases your next damage by 2 times the Evade amount, instead of increasing Block."
                 ]
         },
         "theCatGirl:BeastificationPower": {

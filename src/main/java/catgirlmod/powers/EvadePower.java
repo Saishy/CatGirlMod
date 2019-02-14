@@ -44,7 +44,7 @@ public class EvadePower extends AbstractPower {
         checkForAdventurersInsight();
     }
 
-    void checkForAdventurersInsight() {
+    private void checkForAdventurersInsight() {
         AbstractPower power = owner.getPower(AdventurersInsightPower.POWER_ID);
 
         if (power != null) {
@@ -91,7 +91,7 @@ public class EvadePower extends AbstractPower {
             return damage;
         }
 
-        if ((damage += amount) < 0.0f) {
+        if ((damage += (amount * 2)) < 0.0f) {
             return 0.0f;
         }
 

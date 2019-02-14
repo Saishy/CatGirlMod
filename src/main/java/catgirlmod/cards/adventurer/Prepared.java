@@ -71,7 +71,7 @@ public class Prepared extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new com.megacrit.cardcrawl.powers.BurstPower(p, this.magicNumber), this.magicNumber
+                        p, p, new com.megacrit.cardcrawl.powers.BurstPower(p, magicNumber), magicNumber
                 )
         );
     }
@@ -82,7 +82,7 @@ public class Prepared extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_SKILLS_PLAYED);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

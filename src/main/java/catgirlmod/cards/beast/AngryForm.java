@@ -56,8 +56,8 @@ public class AngryForm extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
+    //private static final int UPGRADED_COST = 2;
 
     // /STAT DECLARATION/
 
@@ -81,8 +81,10 @@ public class AngryForm extends AbstractDefaultCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            isInnate = true;
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
+            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

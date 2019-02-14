@@ -108,7 +108,8 @@
   },
   "theCatGirl:AngryForm": {
     "NAME": "Angry Form",
-    "DESCRIPTION": "Evade will increase the next damage instead of Block."
+    "DESCRIPTION": "Evade will increase your damage by 2 times the Evade amount. NL Evade will not increase Block anymore.",
+    "UPGRADE_DESCRIPTION": "Evade will increase your damage by 2 times the Evade amount. NL Evade will not increase Block anymore. NL Innate."
   },
   "theCatGirl:BleedingWounds": {
     "NAME": "Bleeding Wounds",
@@ -243,7 +244,7 @@
   },
   "theCatGirl:AccidentalHeadbutt": {
     "NAME": "Accidental Headbutt",
-    "DESCRIPTION": "Stuns the enemy and ends your turn. NL Exhaust."
+    "DESCRIPTION": "Stuns the enemy and ends your turn. Gain 1 Intangible. NL Exhaust."
   },
   "theCatGirl:ClenchYourTeeth": {
     "NAME": "Clench Your Teeth",
@@ -276,7 +277,7 @@
   "theCatGirl:Slip": {
     "NAME": "Slip",
     "DESCRIPTION": "Gain !M! Evade. NL Discard 1 card.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Evade. NL Discard 1 card. NL Gain 1 Stumble."
+    "UPGRADE_DESCRIPTION": "Gain !M! Evade. NL Discard 1 card. NL Add 1 Stumble into your hand."
   },
   "theCatGirl:Stumble": {
     "NAME": "Stumble",
