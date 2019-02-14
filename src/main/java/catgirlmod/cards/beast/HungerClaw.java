@@ -79,6 +79,10 @@ public class HungerClaw extends AbstractDefaultCard {
         int currentGashStack = 0;
 
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo.isDeadOrEscaped()) {
+                continue;
+            }
+
             AbstractPower gashPower = mo.getPower(IncreaseClawDamagePower.POWER_ID);
 
             if (gashPower != null) {

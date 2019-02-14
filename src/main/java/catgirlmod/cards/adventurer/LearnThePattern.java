@@ -52,7 +52,7 @@ public class LearnThePattern extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     // /STAT DECLARATION/
 
@@ -67,9 +67,9 @@ public class LearnThePattern extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower evadePower = p.getPower(EvadePower.POWER_ID);
 
-        int evadeAmount = evadePower.amount;
-
         if (evadePower != null) {
+            int evadeAmount = evadePower.amount;
+
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(
                             p, p, new EvadePower(p, p, evadeAmount), evadeAmount

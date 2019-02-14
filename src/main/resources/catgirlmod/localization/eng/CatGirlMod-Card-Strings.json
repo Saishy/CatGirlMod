@@ -232,7 +232,7 @@
   },
   "theCatGirl:TripLunge": {
     "NAME": "Trip Lunge",
-    "DESCRIPTION": "Deal !D! damage. NL Receive 1 Stumble."
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 Stumble into your hand."
   },
   "theCatGirl:TryingMyBest": {
     "NAME": "Trying My Best",
