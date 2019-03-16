@@ -83,9 +83,9 @@ public class LearnThePattern extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.exhaust = false;
+            exhaust = false;
         }
     }
 }

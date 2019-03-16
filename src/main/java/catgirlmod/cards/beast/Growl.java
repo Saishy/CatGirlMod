@@ -56,7 +56,7 @@ public class Growl extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int VULNERABLE = 1;
     private static final int TIMES_TO_APPLY = 3;

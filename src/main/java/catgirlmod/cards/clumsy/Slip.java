@@ -53,9 +53,9 @@ public class Slip extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
-    private static final int EVADE = 11;
+    private static final int EVADE = 9;
     private static final int UPGRADE_PLUS_EVADE = 4;
 
     // /STAT DECLARATION/

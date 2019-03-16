@@ -38,6 +38,7 @@ public abstract class AbstractDefaultCard extends CustomCard {
             isSecondMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
         }
 
+        super.displayUpgrades();
     }
 
     public void upgradeSecondMagicNumber(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and the this one is what you will usually use - change the integer by how much you want to upgrade.

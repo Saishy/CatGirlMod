@@ -1,127 +1,127 @@
 {
-        "theCatGirl:GashPower": {
-                "NAME": "Gash",
-                "DESCRIPTIONS": [
-                        "Increase all Claw damage received by "
-                ]
-        },
-        "theCatGirl:StrikenPower": {
-                "NAME": "Striken",
-                "DESCRIPTIONS": [
-                        "Increase all Strike damage received by "
-                ]
-        },
-        "theCatGirl:EvadePower": {
-                "NAME": "Evade",
-                "DESCRIPTIONS": [
-                        "Increase your next block by ",
-                        ". Lost upon use.",
-                        " NL Lose half stacks at the end of your turn."
-                ]
-        },
-        "theCatGirl:NextTurnEvadePower": {
-                "NAME": "Next Turn Evade",
-                "DESCRIPTIONS": [
-                        "Gain #b",
-                        " #yEvade next turn."
-                ]
-        },
-        "theCatGirl:EvadeDontDecayPower": {
-                "NAME": "Keep Evade",
-                "DESCRIPTIONS": [
-                        "Evade is not lost at the end of your turn."
-                ]
-        },
-        "theCatGirl:AdventurersInsightPower": {
-                "NAME": "Adventurer's Insight",
-                "DESCRIPTIONS": [
-                        "Whenever you would gain #yEvade, gain #b%s more."
-                ]
-        },
-        "theCatGirl:PoisedPower": {
-                "NAME": "Poised",
-                "DESCRIPTIONS": [
-                        "At the start of your turn, gain #b%s Evade."
-                ]
-        },
-        "theCatGirl:CounterattackPower": {
-                "NAME": "Counterattack",
-                "DESCRIPTIONS": [
-                        "Whenever you gain #yEvade, deal #b",
-                        " damage to ALL enemies."
-                ]
-        },
-        "theCatGirl:AngryFormPower": {
-                "NAME": "Angry Form",
-                "DESCRIPTIONS": [
-                        "Evade now increases your next damage by 2 times the Evade amount, instead of increasing Block."
-                ]
-        },
-        "theCatGirl:BeastificationPower": {
-                "NAME": "Beastification",
-                "DESCRIPTIONS": [
-                        "Start your next turn with #b%s less Energy."
-                ]
-        },
-        "theCatGirl:EnragePower": {
-                "NAME": "Enrage",
-                "DESCRIPTIONS": [
-                        "At the end of your turn, deal #b%s Damage for each Attack played, to a random enemy."
-                ]
-        },
-        "theCatGirl:InsanePower": {
-                "NAME": "Insane",
-                "DESCRIPTIONS": [
-                        "Whenever you play an Attack, Exhaust it."
-                ]
-        },
-        "theCatGirl:SevenLivesPower": {
-                "NAME": "Seven Lives",
-                "DESCRIPTIONS": [
-                        "Ignore the next damage you would take, gain that much Evade instead.",
-                        "Ignore the next %s times you would take damage, gain that much Evade instead."
-                ]
-        },
-        "theCatGirl:GoddessOfMisfortunePower": {
-                "NAME": "Goddess of Misfortune",
-                "DESCRIPTIONS": [
-                        "At the start of your turn, add #b%s Stumble(s) into your hand."
-                ]
-        },
-        "theCatGirl:NeverGivingUpPower": {
-                "NAME": "Never Giving Up",
-                "DESCRIPTIONS": [
-                        "Whenever you discard a card, a random enemy receives #b%s damage."
-                ]
-        },
-        "theCatGirl:PilingErrorsPower": {
-                "NAME": "Piling Errors",
-                "DESCRIPTIONS": [
-                        "Your Stumbles have Retain.",
-                        "Your Stumbles have Retain and are playable cards that cost 1."
-                ]
-        },
-        "theCatGirl:ShockedWitnessPower": {
-                "NAME": "Shocked Witness",
-                "DESCRIPTIONS": [
-                        "The first time you Exhaust a card during your turn, apply #b",
-                        " Vulnerable to all enemies."
-                ]
-        },
-        "theCatGirl:CommonPower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": [
-                        "You applied ",
-                        " keyword.",
-                        " keywords."
-                ]
-        },
-        "theCatGirl:RarePower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": [
-                        "At the start of your turn, TOUCH ",
-                        " enemy.",
-                        " enemies."
-                ]
-        }
+    "theCatGirl:GashPower": {
+        "NAME": "Gash",
+        "DESCRIPTIONS": [
+            "Increase all #yClaw damage received by #b"
+        ]
+    },
+    "theCatGirl:StrikenPower": {
+        "NAME": "Striken",
+        "DESCRIPTIONS": [
+            "Increase all #yStrike damage received by #b"
+        ]
+    },
+    "theCatGirl:EvadePower": {
+        "NAME": "Evade",
+        "DESCRIPTIONS": [
+            "Increase your next #yBlock by ",
+            ". Lost upon use.",
+            " NL Lose half stacks at the end of your turn."
+        ]
+    },
+    "theCatGirl:NextTurnEvadePower": {
+        "NAME": "Next Turn Evade",
+        "DESCRIPTIONS": [
+            "Gain #b",
+            " #yEvade next turn."
+        ]
+    },
+    "theCatGirl:EvadeDontDecayPower": {
+        "NAME": "Keep Evade",
+        "DESCRIPTIONS": [
+            "#yEvade is not lost at the end of your turn."
+        ]
+    },
+    "theCatGirl:AdventurersInsightPower": {
+        "NAME": "Adventurer's Insight",
+        "DESCRIPTIONS": [
+            "Whenever you would gain #yEvade, gain #b%s more."
+        ]
+    },
+    "theCatGirl:PoisedPower": {
+        "NAME": "Poised",
+        "DESCRIPTIONS": [
+            "At the start of your turn, gain #b%s Evade."
+        ]
+    },
+    "theCatGirl:CounterattackPower": {
+        "NAME": "Counterattack",
+        "DESCRIPTIONS": [
+            "Whenever you gain #yEvade, deal #b",
+            " damage to ALL enemies."
+        ]
+    },
+    "theCatGirl:AngryFormPower": {
+        "NAME": "Angry Form",
+        "DESCRIPTIONS": [
+            "#yEvade now increases your next damage by 2 times the #yEvade amount, instead of increasing #yBlock."
+        ]
+    },
+    "theCatGirl:BeastificationPower": {
+        "NAME": "Beastification",
+        "DESCRIPTIONS": [
+            "Start your next turn with #b%s less Energy."
+        ]
+    },
+    "theCatGirl:EnragePower": {
+        "NAME": "Enrage",
+        "DESCRIPTIONS": [
+            "At the end of your turn, deal #b%s damage for each attack played, to a random enemy."
+        ]
+    },
+    "theCatGirl:InsanePower": {
+        "NAME": "Insane",
+        "DESCRIPTIONS": [
+            "Whenever you play an attack, #yExhaust it."
+        ]
+    },
+    "theCatGirl:SevenLivesPower": {
+        "NAME": "Seven Lives",
+        "DESCRIPTIONS": [
+            "Ignore the next damage you would take, gain that much #yEvade instead.",
+            "Ignore the next %s times you would take damage, gain that much #yEvade instead."
+        ]
+    },
+    "theCatGirl:GoddessOfMisfortunePower": {
+        "NAME": "Goddess of Misfortune",
+        "DESCRIPTIONS": [
+            "At the start of your turn, add #b%s Stumble(s) into your hand."
+        ]
+    },
+    "theCatGirl:NeverGivingUpPower": {
+        "NAME": "Never Giving Up",
+        "DESCRIPTIONS": [
+            "Whenever you discard a card, a random enemy receives #b%s damage."
+        ]
+    },
+    "theCatGirl:PilingErrorsPower": {
+        "NAME": "Piling Errors",
+        "DESCRIPTIONS": [
+            "Your Stumbles have #yRetain.",
+            "Your Stumbles have #yRetain and are playable cards that cost 1."
+        ]
+    },
+    "theCatGirl:ShockedWitnessPower": {
+        "NAME": "Shocked Witness",
+        "DESCRIPTIONS": [
+            "The first time you #yExhaust a card during your turn, apply #b",
+            " Vulnerable to ALL enemies."
+        ]
+    },
+    "theCatGirl:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": [
+            "You applied ",
+            " keyword.",
+            " keywords."
+        ]
+    },
+    "theCatGirl:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": [
+            "At the start of your turn, TOUCH ",
+            " enemy.",
+            " enemies."
+        ]
+    }
 }
