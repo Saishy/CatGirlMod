@@ -33,8 +33,6 @@ public class BloodBathAction extends AbstractGameAction {
 
     public void update() {
         if ((this.duration == 0.1F) && (this.target != null)) {
-            this.target.damageFlash = true;
-            this.target.damageFlashFrames = 4;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.SLASH_VERTICAL));
 
             this.target.damage(this.info);

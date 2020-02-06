@@ -1,12 +1,12 @@
 {
   "modid": "catgirlmod",
-  "name": "Catgirl Mod",
+  "name": "${project.name}",
   "author_list": ["saishy"],
   "description": "Adds a new playable catgirl as a character.",
   "credits": "Contributors: Taxouck. \nBeta Testers: Yun, Graham, The Golden Fairy, Skyson. \nLocalization: BDWSSBB",
-  "version": "0.8.3",
-  "sts_version": "01-23-2019",
-  "mts_version": "3.8.3",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
   "dependencies": ["basemod", "stslib"],
-  "update_json": "https://api.github.com/repos/kiooeht/ExampleMod/releases/latest"
+  "update_json": "https://api.github.com/repos/Saishy/CatGirlMod/releases/latest"
 }
