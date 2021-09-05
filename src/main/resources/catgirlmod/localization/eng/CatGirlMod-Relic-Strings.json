@@ -45,7 +45,8 @@
 		"NAME": "Lost and Found",
 		"FLAVOR": "Something ventured, something found.",
 		"DESCRIPTIONS": [
-			"Whenever you #yExhaust a card, gain #yEvade equal to it's cost."
+			"Whenever you #yExhaust a card, gain #b",
+			" #yEvade."
 		]
 	},
 	"theCatGirl:MonsterGuide": {

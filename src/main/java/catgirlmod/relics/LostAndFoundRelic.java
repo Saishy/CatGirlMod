@@ -18,22 +18,24 @@ public class LostAndFoundRelic extends CustomRelic {
     public static final String IMG = CatGirlMod.makePath("images/relics/lost_and_found_relic.png");
     public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/lost_and_found_relic_outline.png");
 
+    public static final int EVADE_GIVEN = 2;
+
     public LostAndFoundRelic() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.CLINK);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override
     public void onExhaust(AbstractCard card) {
         AbstractPlayer p = AbstractDungeon.player;
 
-        int evadeGiven = card.cost * 2;
-        if (evadeGiven <= 0) {
-            evadeGiven = 1;
-        }
+//        int evadeGiven = card.cost * 2;
+//        if (evadeGiven <= 0) {
+//            evadeGiven = 1;
+//        }
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new EvadePower(p, p, evadeGiven), evadeGiven
+                        p, p, new EvadePower(p, p, EVADE_GIVEN), EVADE_GIVEN
                 )
         );
     }
@@ -41,7 +43,7 @@ public class LostAndFoundRelic extends CustomRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return this.DESCRIPTIONS[0] + EVADE_GIVEN + this.DESCRIPTIONS[1];
     }
 
     // Which relic to return on making a copy of this relic.

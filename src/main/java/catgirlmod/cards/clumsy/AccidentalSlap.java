@@ -54,7 +54,7 @@ public class AccidentalSlap extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int DAMAGE_TIMES = 1;
     private static final int UPGRADE_PLUS_DMG_TIMES = 1;

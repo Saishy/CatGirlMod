@@ -77,8 +77,8 @@
     },
     "theCatGirl:EmergencyParry": {
         "NAME": "Emergency Parry",
-        "DESCRIPTION": "Gain Block equal to your Evade. NL Lose all Evade.",
-        "UPGRADE_DESCRIPTION": "Gain Block equal to !M! times your Evade. NL Lose all Evade."
+        "DESCRIPTION": "Lose all Evade and gain Block equal to the amount lost.",
+        "UPGRADE_DESCRIPTION": "Lose all Evade and gain Block equal to !M! times the amount lost."
     },
     "theCatGirl:ChangeOfPlans": {
         "NAME": "Change Of Plans",
