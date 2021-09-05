@@ -13,8 +13,8 @@ public class InstinctsRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("Instincts");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/instincts_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/instincts_relic_outline.png");
 
     public static final int INITIAL_STRENGTH = 3;
     public static final int LOSE_STRENGTH = 1;

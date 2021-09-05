@@ -15,8 +15,8 @@ public class LostAndFoundRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("LostAndFound");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/lost_and_found_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/lost_and_found_relic_outline.png");
 
     public LostAndFoundRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.CLINK);
@@ -26,13 +26,14 @@ public class LostAndFoundRelic extends CustomRelic {
     public void onExhaust(AbstractCard card) {
         AbstractPlayer p = AbstractDungeon.player;
 
-        if (card.cost <= 0) {
-            return;
+        int evadeGiven = card.cost * 2;
+        if (evadeGiven <= 0) {
+            evadeGiven = 1;
         }
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(
-                        p, p, new EvadePower(p, p, card.cost), card.cost
+                        p, p, new EvadePower(p, p, evadeGiven), evadeGiven
                 )
         );
     }

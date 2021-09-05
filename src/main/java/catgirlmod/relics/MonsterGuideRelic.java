@@ -16,8 +16,8 @@ public class MonsterGuideRelic extends CustomRelic implements OnReceivePowerReli
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("MonsterGuide");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/monster_guide_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/monster_guide_relic_outline.png");
 
     private boolean bHasTriggered = false;
 

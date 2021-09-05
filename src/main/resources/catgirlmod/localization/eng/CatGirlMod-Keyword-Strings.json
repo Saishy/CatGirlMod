@@ -19,7 +19,7 @@
       "Evade",
       "Evade:"
     ],
-    "DESCRIPTION": "Increases your next Block. Lose half stacks at the end of your turn."
+    "DESCRIPTION": "Spends all Evade to increase your next Block. Lose half stacks at the end of your turn."
   },
   {
     "PROPER_NAME": "Clumsy",
@@ -30,7 +30,7 @@
       "Clumsy",
       "Clumsy:"
     ],
-    "DESCRIPTION": "Trigger when you discard or exhaust this card."
+    "DESCRIPTION": "Triggers when you discard or exhaust this card."
   },
   {
     "PROPER_NAME": "Stumble",

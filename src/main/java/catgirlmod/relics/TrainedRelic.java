@@ -17,8 +17,8 @@ public class TrainedRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("TrainedRelic");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/trained_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/trained_relic_outline.png");
 
     public static final int AMOUNT = 1;
 
@@ -28,9 +28,9 @@ public class TrainedRelic extends CustomRelic {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        CatGirlMod.logger.info("Catgirl info owner: " + info.owner);
-        CatGirlMod.logger.info("Catgirl type output: " + info.type);
-        CatGirlMod.logger.info("Catgirl target: " + target);
+        //CatGirlMod.logger.info("Catgirl info owner: " + info.owner);
+        //CatGirlMod.logger.info("Catgirl type output: " + info.type);
+        //CatGirlMod.logger.info("Catgirl target: " + target);
 
         if (AbstractDungeon.getCurrRoom() == null
                 || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT

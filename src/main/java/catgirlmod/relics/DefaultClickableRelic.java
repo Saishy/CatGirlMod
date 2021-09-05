@@ -26,7 +26,7 @@ public class DefaultClickableRelic extends CustomRelic implements ClickableRelic
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("DefaultClickableRelic");
     public static final String IMG = CatGirlMod.makePath("images/relics/default_clickable_relic.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/default_clickable_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/default_clickable_relic_outline.png");
 
     private boolean usedThisTurn = false; // You can also have a relic be only usable once per combat. Check out Hubris for more examples, including other StSlib things.
 

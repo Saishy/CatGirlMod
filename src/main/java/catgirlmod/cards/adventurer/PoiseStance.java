@@ -50,10 +50,10 @@ public class PoiseStance extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = AbstractCardEnum.CATGIRL_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int EVADE = 2;
-    private static final int UPGRADE_PLUS_EVADE = 1;
+    private static final int UPGRADE_PLUS_EVADE = 2;
 
     // /STAT DECLARATION/
 

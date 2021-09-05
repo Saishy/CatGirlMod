@@ -2,7 +2,7 @@ package catgirlmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -83,7 +83,7 @@ public class DrawTopCardAndPlayIfTypeAction extends AbstractGameAction {
                     }
                 } else {
                     card.applyPowers();
-                    AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
+                    AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(card, target));
                     AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
 
                     if (!Settings.FAST_MODE) {

@@ -1,7 +1,16 @@
 {
+
+	"theCatGirl:AdventurerTag": {
+		"NAME": "Adventurer's Tag",
+		"FLAVOR": "A tag with your name made with a fantastical metal.",
+		"DESCRIPTIONS": [
+			"Whenever you are attacked, gain #b",
+			" #yEvade."
+		]
+	},
 	"theCatGirl:Ambush": {
 		"NAME": "Ambush",
-		"FLAVOR": "I've never saw a monster yelling 'unfair'.",
+		"FLAVOR": "I've never heard a monster yelling 'unfair'.",
 		"DESCRIPTIONS": [
 			"At the start of the combat, remove #b",
 			" #yArtifact from enemies."
@@ -28,13 +37,13 @@
 		"FLAVOR": "You're slowly losing sanity.",
 		"DESCRIPTIONS": [
 			"Replaces #rTrained. At the start of combat, gain #b",
-			" #yStrength, lose #b.",
+			" #yStrength, lose #b",
 			" #yStrength at the end of your first turn."
 		]
 	},
 	"theCatGirl:LostAndFound": {
 		"NAME": "Lost and Found",
-		"FLAVOR": "I've never heard a monster yelling 'unfair'.",
+		"FLAVOR": "Something ventured, something found.",
 		"DESCRIPTIONS": [
 			"Whenever you #yExhaust a card, gain #yEvade equal to it's cost."
 		]
@@ -50,20 +59,12 @@
 		"NAME": "Nepeta's Hat",
 		"FLAVOR": "It smells like sugar and tea...",
 		"DESCRIPTIONS": [
-			"Whenever you attack an enemy that has #yBlock, remove 2 of their #yBlock and apply 2 #yPoison."
-		]
-	},
-	"theCatGirl:SRank": {
-		"NAME": "S-Rank",
-		"FLAVOR": "You're in the top 1% of adventurers.",
-		"DESCRIPTIONS": [
-			"Whenever you are attacked, gain #b",
-			" #yEvade."
+			"Whenever you attack an enemy that has #yBlock, remove #b2 of their #yBlock and apply #b2 #yPoison."
 		]
 	},
 	"theCatGirl:ThrowingDagger": {
 		"NAME": "Throwing Dagger",
-		"FLAVOR": "Any seasoned adventurer know a trick or two.",
+		"FLAVOR": "Any seasoned adventurer knows a trick or two.",
 		"DESCRIPTIONS": [
 			"Every time you play #b",
 			" #yAttacks in a single turn, gain #b",
@@ -74,7 +75,7 @@
 		"NAME": "Trained",
 		"FLAVOR": "An adventurer is always able to exploit opportunities.",
 		"DESCRIPTIONS": [
-			"Whenever you attack an enemy that intends to attack, gain 1 #yEvade."
+			"Whenever you attack an enemy that intends to attack, gain #b1 #yEvade."
 		]
 	},
 	"theCatGirl:PlaceholderRelic": {

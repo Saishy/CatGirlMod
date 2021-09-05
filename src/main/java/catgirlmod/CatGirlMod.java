@@ -322,7 +322,7 @@ public class CatGirlMod implements
         //Boss Relics
         BaseMod.addRelicToCustomPool(new BeginnersLuckRelic(), AbstractCardEnum.CATGIRL_TEAL);
         BaseMod.addRelicToCustomPool(new InstinctsRelic(), AbstractCardEnum.CATGIRL_TEAL);
-        BaseMod.addRelicToCustomPool(new SRankRelic(), AbstractCardEnum.CATGIRL_TEAL);
+        BaseMod.addRelicToCustomPool(new AdventurerTagRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
       //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCardEnum.CATGIRL_TEAL);
 
@@ -339,7 +339,7 @@ public class CatGirlMod implements
             );
 
             unlocks4 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
-                    BeginnersLuckRelic.ID, InstinctsRelic.ID, SRankRelic.ID
+                    BeginnersLuckRelic.ID, InstinctsRelic.ID, AdventurerTagRelic.ID
             );
         }
 
@@ -620,7 +620,7 @@ public class CatGirlMod implements
 
             UnlockTracker.addRelic(BeginnersLuckRelic.ID);
             UnlockTracker.addRelic(InstinctsRelic.ID);
-            UnlockTracker.addRelic(SRankRelic.ID);
+            UnlockTracker.addRelic(AdventurerTagRelic.ID);
         }
     }
 

@@ -12,8 +12,8 @@ public class BeginnersLuckRelic extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("BeginnersLuck");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/beginners_luck_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/beginners_luck_relic_outline.png");
 
     public static final int MAX_STACKS = 3;
     public static final int DRAW_CARD = 1;

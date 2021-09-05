@@ -38,11 +38,11 @@ public class SevenLivesPower extends AbstractPower {
             return damageAmount;
         }
 
-        AbstractDungeon.actionManager.addToBottom(
+        AbstractDungeon.actionManager.addToTop(
                 new ReducePowerAction(owner, owner, this, 1)
         );
 
-        AbstractDungeon.actionManager.addToBottom(
+        AbstractDungeon.actionManager.addToTop(
                 new ApplyPowerAction(owner, owner, new EvadePower(owner, owner, damageAmount), damageAmount)
         );
 

@@ -63,6 +63,7 @@ public class TripLunge extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
+        this.cardsToPreview = new Stumble();
     }
 
     // Actions the card should do.

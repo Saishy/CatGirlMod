@@ -20,8 +20,8 @@ public class NepetasHat extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = CatGirlMod.makeID("NepetasHat");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String IMG = CatGirlMod.makePath("images/relics/nepetas_hat_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/nepetas_hat_relic_outline.png");
 
     public static final int BLOCK_REMOVAL = 2;
     public static final int POISON_APPLY = 2;

@@ -14,8 +14,8 @@
     "theCatGirl:EvadePower": {
         "NAME": "Evade",
         "DESCRIPTIONS": [
-            "Increase your next #yBlock by ",
-            ". Lost upon use.",
+            "Spends all Evade to increase your next #yBlock by ",
+            ".",
             " NL Lose half stacks at the end of your turn."
         ]
     },
@@ -54,7 +54,7 @@
     "theCatGirl:AngryFormPower": {
         "NAME": "Angry Form",
         "DESCRIPTIONS": [
-            "#yEvade now increases your next damage by 2 times the #yEvade amount, instead of increasing #yBlock."
+            "#yEvade now increases your next damage by #b2 times the #yEvade amount, instead of increasing #yBlock."
         ]
     },
     "theCatGirl:BeastificationPower": {
@@ -66,7 +66,7 @@
     "theCatGirl:EnragePower": {
         "NAME": "Enrage",
         "DESCRIPTIONS": [
-            "At the end of your turn, deal #b%s damage for each attack played, to a random enemy."
+            "At the end of your turn, deal #b%s damage to a random enemy for each Attack played."
         ]
     },
     "theCatGirl:InsanePower": {
@@ -78,14 +78,14 @@
     "theCatGirl:SevenLivesPower": {
         "NAME": "Seven Lives",
         "DESCRIPTIONS": [
-            "Ignore the next damage you would take, gain that much #yEvade instead.",
-            "Ignore the next %s times you would take damage, gain that much #yEvade instead."
+            "Ignore the next attack that would deal damage to you, gain that much #yEvade instead.",
+            "Ignore the next #b%s attacks that would deal damage to you, gain that much #yEvade instead. Ignore the next !M! times you would be attacked, gain that much Evade instead. Multi-hits attacks are counted as a single attack, but will remove multiple stacks."
         ]
     },
     "theCatGirl:GoddessOfMisfortunePower": {
         "NAME": "Goddess of Misfortune",
         "DESCRIPTIONS": [
-            "At the start of your turn, add #b%s Stumble(s) into your hand."
+            "At the start of your turn, add #b%s Stumble into your hand."
         ]
     },
     "theCatGirl:NeverGivingUpPower": {
@@ -98,7 +98,7 @@
         "NAME": "Piling Errors",
         "DESCRIPTIONS": [
             "Your Stumbles have #yRetain.",
-            "Your Stumbles have #yRetain and are playable cards that cost 1."
+            "Your Stumbles have #yRetain and are playable cards that cost #b1."
         ]
     },
     "theCatGirl:ShockedWitnessPower": {

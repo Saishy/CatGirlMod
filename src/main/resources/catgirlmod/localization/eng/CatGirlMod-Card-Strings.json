@@ -21,7 +21,7 @@
     },
     "theCatGirl:PlayAround": {
         "NAME": "Play Around",
-        "DESCRIPTION": "Deal !D! damage. NL Enemy receives !M! additional damage from Strike cards."
+        "DESCRIPTION": "Deal !D! damage and applies !M! stacks of Striken."
     },
     "theCatGirl:ElegantStrike": {
         "NAME": "Elegant Strike",
@@ -92,7 +92,7 @@
     "theCatGirl:AdventurersInsight": {
         "NAME": "Adventurer's Insight",
         "DESCRIPTION": "Whenever you would gain Evade, gain !M! more.",
-        "UPGRADE_DESCRIPTION": "Whenever you would gain Evade, gain !M! more. NL Innate."
+        "UPGRADE_DESCRIPTION": "Innate. NL Whenever you would gain Evade, gain !M! more."
     },
     "theCatGirl:PoiseStance": {
         "NAME": "Poise Stance",
@@ -109,7 +109,7 @@
     "theCatGirl:AngryForm": {
         "NAME": "Angry Form",
         "DESCRIPTION": "Evade will increase your damage by 2 times the Evade amount. NL Evade will not increase Block anymore.",
-        "UPGRADE_DESCRIPTION": "Evade will increase your damage by 2 times the Evade amount. NL Evade will not increase Block anymore. NL Innate."
+        "UPGRADE_DESCRIPTION": "Innate. NL Evade will increase your damage by 2 times the Evade amount. NL Evade will not increase Block anymore."
     },
     "theCatGirl:BleedingWounds": {
         "NAME": "Bleeding Wounds",
@@ -129,7 +129,7 @@
     },
     "theCatGirl:Claws": {
         "NAME": "Claws",
-        "DESCRIPTION": "Deal !D! damage to a random enemy. NL Enemy receives !M! additional damage from Claw cards."
+        "DESCRIPTION": "Deal !D! damage to a random enemy and applies !M! stacks of Gash."
     },
     "theCatGirl:ClawScratch": {
         "NAME": "Claw Scratch",
@@ -167,7 +167,7 @@
     },
     "theCatGirl:HungerClaw": {
         "NAME": "Hunger Claw",
-        "DESCRIPTION": "Deal !D! damage to the enemy with the most Gash. NL If this kills a non-minion enemy, raise your Max HP by !M!. NL Exhaust."
+        "DESCRIPTION": "Deal !D! damage to the enemy with the most stacks of Gash. NL If this kills a non-minion enemy, raise your Max HP by !M!. NL Exhaust."
     },
     "theCatGirl:Insane": {
         "NAME": "Insane",
@@ -183,8 +183,8 @@
     },
     "theCatGirl:SevenLives": {
         "NAME": "Seven Lives",
-        "DESCRIPTION": "Ignore the next damage you would take, gain that much Evade instead. NL Exhaust.",
-        "UPGRADE_DESCRIPTION": "Ignore the next !M! times you would take damage, gain that much Evade instead. NL Exhaust."
+        "DESCRIPTION": "Ignore the next attack that would deal damage to you, gain that much Evade instead. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": "Ignore the next !M! attacks that would deal damage to you, gain that much Evade instead. Multi-hits attacks are counted as a single attack, but will remove multiple stacks. NL Exhaust."
     },
     "theCatGirl:SmellFear": {
         "NAME": "Smell Fear",
@@ -298,17 +298,17 @@
     "theCatGirl:GoddessOfMisfortune": {
         "NAME": "Goddess Of Misfortune",
         "DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand.",
-        "UPGRADE_DESCRIPTION": "At the start of your turn, add 1 Stumble into your hand. NL Innate."
+        "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add 1 Stumble into your hand."
     },
     "theCatGirl:NeverGivingUp": {
         "NAME": "Never Giving Up",
         "DESCRIPTION": "Whenever you discard a card, deals !M! damage to a random enemy.",
-        "UPGRADE_DESCRIPTION": "Whenever you discard a card, deals !M! damage to a random enemy. NL Innate."
+        "UPGRADE_DESCRIPTION": "Innate. NL Whenever you discard a card, deals !M! damage to a random enemy."
     },
     "theCatGirl:PilingErrors": {
         "NAME": "Piling Errors",
         "DESCRIPTION": "All Stumbles have Retain.",
-        "UPGRADE_DESCRIPTION": "All Stumbles Retain. NL Stumbles can now be played for 1 Energy. Whenever you play a Stumble, Exhaust it."
+        "UPGRADE_DESCRIPTION": "All Stumbles Retain. NL Stumbles can now be played for 1 [E]. Whenever you play a Stumble, Exhaust it."
     },
     "theCatGirl:ShockedWitness": {
         "NAME": "Shocked Witness",

@@ -3,7 +3,7 @@
   "name": "${project.name}",
   "author_list": ["saishy"],
   "description": "Adds a new playable catgirl as a character.",
-  "credits": "Contributors: Taxouck. \nBeta Testers: Yun, Graham, The Golden Fairy, Skyson. \nLocalization: BDWSSBB",
+  "credits": "Contributors: Taxouck. \nBeta Testers: Yun, Graham, The Golden Fairy, Skyson. \nLocalization: BDWSSBB, ",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",

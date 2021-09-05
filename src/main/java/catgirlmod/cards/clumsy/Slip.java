@@ -64,6 +64,7 @@ public class Slip extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = baseMagicNumber = EVADE;
+        this.cardsToPreview = new Stumble();
     }
 
     // Actions the card should do.

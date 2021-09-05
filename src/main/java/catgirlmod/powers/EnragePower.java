@@ -51,6 +51,10 @@ public class EnragePower extends AbstractPower {
         if (isPlayer && counter > 0) {
             AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
+            if (m == null) {
+                return;
+            }
+
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(owner, amount * counter, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)
             );

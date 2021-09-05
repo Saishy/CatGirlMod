@@ -11,16 +11,16 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class SRankRelic extends CustomRelic {
+public class AdventurerTagRelic extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = CatGirlMod.makeID("SRank");
-    public static final String IMG = CatGirlMod.makePath("images/relics/placeholder_relic2.png");
-    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/placeholder_relic2.png");
+    public static final String ID = CatGirlMod.makeID("AdventurerTag");
+    public static final String IMG = CatGirlMod.makePath("images/relics/adventurer_tag_relic.png");
+    public static final String OUTLINE = CatGirlMod.makePath("images/relics/outline/adventurer_tag_relic_outline.png");
 
-    public static final int AMOUNT = 2;
+    public static final int AMOUNT = 4;
 
-    public SRankRelic() {
+    public AdventurerTagRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
@@ -78,6 +78,6 @@ public class SRankRelic extends CustomRelic {
     // Which relic to return on making a copy of this relic.
     @Override
     public AbstractRelic makeCopy() {
-        return new SRankRelic();
+        return new AdventurerTagRelic();
     }
 }

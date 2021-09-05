@@ -62,6 +62,8 @@ public class PilingErrors extends AbstractDefaultCard {
 
     public PilingErrors() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.cardsToPreview = new Stumble();
     }
 
     // Actions the card should do.

@@ -61,6 +61,8 @@ public class GoddessOfMisfortune extends AbstractDefaultCard {
 
     public GoddessOfMisfortune() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.cardsToPreview = new Stumble();
     }
 
     // Actions the card should do.
