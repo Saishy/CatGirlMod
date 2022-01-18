@@ -599,6 +599,7 @@ public class CatGirlMod implements
 
             BaseMod.addUnlockBundle(unlocks4, TheCatGirlEnum.THE_CATGIRL, 4);
 
+            // Cards
 
             UnlockTracker.addCard(FocusedStrike.ID);
             UnlockTracker.addCard(RageClaws.ID);
@@ -612,10 +613,10 @@ public class CatGirlMod implements
             UnlockTracker.addCard(BloodyClaws.ID);
             UnlockTracker.addCard(NeverGivingUp.ID);
 
+            // Relics
 
             UnlockTracker.addRelic(LostAndFoundRelic.ID);
             UnlockTracker.addRelic(MonsterGuideRelic.ID);
-            UnlockTracker.addRelic(NepetasHat.ID);
             UnlockTracker.addRelic(ThrowingDaggerRelic.ID);
 
             UnlockTracker.addRelic(BeginnersLuckRelic.ID);
@@ -677,37 +678,81 @@ public class CatGirlMod implements
 
     // ================ LOAD THE TEXT ===================
 
+    public static String getLangString() {
+        String lang = Settings.language.name().toLowerCase();
+
+        return lang;
+    }
+
+    public static String makeLocalizationPath(String resourcePath) {
+        return makePath("localization/" + getLangString() + "/" + resourcePath);
+    }
+
     @Override
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings");
 
-        // CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Card-Strings.json"));
+        try {
+            logger.info("Localization set to " + getLangString());
 
-        // PowerStrings
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Power-Strings.json"));
+            // CardStrings
+            BaseMod.loadCustomStringsFile(CardStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Card-Strings.json"));
 
-        // RelicStrings
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Relic-Strings.json"));
+            // PowerStrings
+            BaseMod.loadCustomStringsFile(PowerStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Power-Strings.json"));
 
-        // PotionStrings
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Potion-Strings.json"));
+            // RelicStrings
+            BaseMod.loadCustomStringsFile(RelicStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Relic-Strings.json"));
 
-        // CharacterStrings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Character-Strings.json"));
+            // PotionStrings
+            BaseMod.loadCustomStringsFile(PotionStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Potion-Strings.json"));
 
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-Orb-Strings.json"));
+            // CharacterStrings
+            BaseMod.loadCustomStringsFile(CharacterStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Character-Strings.json"));
 
-        // UIStrings
-        BaseMod.loadCustomStringsFile(UIStrings.class,
-                CatGirlMod.makePath("localization/eng/CatGirlMod-UI-Strings.json"));
+            // OrbStrings
+            BaseMod.loadCustomStringsFile(OrbStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-Orb-Strings.json"));
+
+            // UIStrings
+            BaseMod.loadCustomStringsFile(UIStrings.class,
+                    CatGirlMod.makeLocalizationPath("CatGirlMod-UI-Strings.json"));
+        } catch(Exception e) {
+            logger.info("No localization files found for lang " + getLangString() + ". Loading eng files.");
+
+            // CardStrings
+            BaseMod.loadCustomStringsFile(CardStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Card-Strings.json"));
+
+            // PowerStrings
+            BaseMod.loadCustomStringsFile(PowerStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Power-Strings.json"));
+
+            // RelicStrings
+            BaseMod.loadCustomStringsFile(RelicStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Relic-Strings.json"));
+
+            // PotionStrings
+            BaseMod.loadCustomStringsFile(PotionStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Potion-Strings.json"));
+
+            // CharacterStrings
+            BaseMod.loadCustomStringsFile(CharacterStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Character-Strings.json"));
+
+            // OrbStrings
+            BaseMod.loadCustomStringsFile(OrbStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-Orb-Strings.json"));
+
+            // UIStrings
+            BaseMod.loadCustomStringsFile(UIStrings.class,
+                    CatGirlMod.makePath("localization/eng/CatGirlMod-UI-Strings.json"));
+        }
 
         logger.info("Done edittting strings");
     }
@@ -766,15 +811,35 @@ public class CatGirlMod implements
 
     @Override
     public void receiveEditKeywords() {
-        Gson gson = new Gson();
-        String json = Gdx.files.internal(CatGirlMod.makePath("localization/eng/CatGirlMod-Keyword-Strings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+        logger.info("Beginning to edit keywords");
 
-        if (keywords != null) {
-            for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+        try {
+            logger.info("Loading keywords in lang " + getLangString());
+
+            Gson gson = new Gson();
+            String json = Gdx.files.internal(CatGirlMod.makeLocalizationPath("CatGirlMod-Keyword-Strings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
+            com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+
+            if (keywords != null) {
+                for (Keyword keyword : keywords) {
+                    BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+                }
+            }
+        } catch(Exception e) {
+            logger.info("No keywords files found for lang " + getLangString() + ". Loading eng keywords.");
+
+            Gson gson = new Gson();
+            String json = Gdx.files.internal(CatGirlMod.makePath("localization/eng/CatGirlMod-Keyword-Strings.json")).readString(String.valueOf(StandardCharsets.UTF_8));
+            com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+
+            if (keywords != null) {
+                for (Keyword keyword : keywords) {
+                    BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+                }
             }
         }
+
+        logger.info("Done editting keywords");
     }
 
     // ================ /LOAD THE KEYWORDS/ ===================    

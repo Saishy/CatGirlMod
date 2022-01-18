@@ -1,0 +1,111 @@
+{
+    "theCatGirl:AdventurerTag": {
+		"NAME": "Значок авантрюриста",
+		"FLAVOR": "Значёк с твоим именем из фантастического металла.",
+		"DESCRIPTIONS": [
+			"Даёт #b",
+			" #yУворота, когда вас атакуют."
+		]
+	},
+	"theCatGirl:Ambush": {
+		"NAME": "Засада",
+		"FLAVOR": "Я никогда не слышала о монстре, который кричал бы «Несправедливо».",
+		"DESCRIPTIONS": [
+			"Враги теряют #b",
+			" #yАртефакта в начале боя."
+		]
+	},
+	"theCatGirl:BeginnersLuck": {
+		"NAME": "Удача новичка",
+		"FLAVOR": "Я и вправду хороша в костях!",
+		"DESCRIPTIONS": [
+			"Заменяет #r«Натасканность». Получает #b",
+			" заряда в начале каждого вашего хода. NL Вы берёте карту и тратите #b1 заряд, когда сбрасывается карта."
+		]
+	},
+	"theCatGirl:DriedFish": {
+		"NAME": "Сушёная рыбка",
+		"FLAVOR": "Прекрасная закуска для долгого путешествия.",
+		"DESCRIPTIONS": [
+			"Разыгрывая #b",
+			" #yАтаки, вы восполняете %s ОЗ."
+		]
+	},
+	"theCatGirl:Instincts": {
+		"NAME": "Инстинкты",
+		"FLAVOR": "Вы медленно теряете рассудок.",
+		"DESCRIPTIONS": [
+			"Заменяет #r«Натасканность». Даёт #b",
+			" #yСилы в начале боя. Отнимает #b.",
+			" #yСилы в конце первого хода."
+		]
+	},
+	"theCatGirl:LostAndFound": {
+		"NAME": "Бюро находок",
+		"FLAVOR": "Что то затеривается, что то находится.",
+		"DESCRIPTIONS": [
+			"Даёт #b", 
+            " #yУворота, когда #yСжигается карта."
+		]
+	},
+	"theCatGirl:MonsterGuide": {
+		"NAME": "Справочник по монстрам",
+		"FLAVOR": "Содержит детальную информацию о каждом монстре.",
+		"DESCRIPTIONS": [
+			"Отражает первый #yотриц. #yэффект в каждом бою."
+		]
+	},
+	"theCatGirl:NepetasHat": {
+		"NAME": "Шапка Непето",
+		"FLAVOR": "Пахнет сахаром и чаем...",
+		"DESCRIPTIONS": [
+			"Накладывает #b2 #yЯда и снимает #b2 #yЗащиты, когда вы наносите урон по #yЗащите."
+		]
+	},
+	"theCatGirl:SRank": {
+		"NAME": "Ранг S",
+		"FLAVOR": "Вы среди 1% самых успешных авантюристов.",
+		"DESCRIPTIONS": [
+			"Даёт #b",
+			" #yУворота, когда вы получаете урон от атак."
+		]
+	},
+	"theCatGirl:ThrowingDagger": {
+		"NAME": "Метательный кинжал",
+		"FLAVOR": "Любой опытный авантюрист знает парочку трюков.",
+		"DESCRIPTIONS": [
+			"Разыгрывая #b",
+			" #yАтаки за ход, вы получаете #b",
+			" #yУворота."
+		]
+	},
+	"theCatGirl:TrainedRelic": {
+		"NAME": "Натасканность",
+		"FLAVOR": "Авантюрист всегда способен использовать удачный случай.",
+		"DESCRIPTIONS": [
+			"Даёт #b1 #yУворота, когда вы наносите урон врагу, который собирается атаковать."
+		]
+	},
+	"theCatGirl:PlaceholderRelic": {
+		"NAME": "Placeholder Energy Relic",
+		"FLAVOR": "The snake is a friend.",
+		"DESCRIPTIONS": [
+			"Gain +1 [R] ."
+		]
+	},
+	"theCatGirl:PlaceholderRelic2": {
+		"NAME": "Placeholder Relic 2",
+		"FLAVOR": "You feel stronger.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain +1 Strength."
+		]
+	},
+	"theCatGirl:DefaultClickableRelic": {
+		"NAME": "Right-Clicky Relic",
+		"FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+		"DESCRIPTIONS": [
+			"[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+			"YOU ARE MINE!"
+		]
+	}
+}

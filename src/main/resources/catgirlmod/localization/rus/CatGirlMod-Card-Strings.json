@@ -1,0 +1,384 @@
+{
+    "theCatGirl:Strike": {
+        "NAME": "Удар",
+        "DESCRIPTION": "Наносит !D! урона."
+    },
+    "theCatGirl:Defend": {
+        "NAME": "Оборона",
+        "DESCRIPTION": "Даёт !B! Защиты."
+    },
+    "theCatGirl:ClawStrike": {
+        "NAME": "Удар когтями",
+        "DESCRIPTION": "Наносит !D! урона !M! раза."
+    },
+    "theCatGirl:Evasion": {
+        "NAME": "Увиливание",
+        "DESCRIPTION": "Даёт !M! Уворота."
+    },
+    "theCatGirl:Parry": {
+        "NAME": "Парировать",
+        "DESCRIPTION": "Даёт !B! Защиты. NL Наносит !D! урона. NL Даёт !M! Уворота, если выбранный враг собирается атаковать."
+    },
+    "theCatGirl:PlayAround": {
+        "NAME": "Играться",
+        "DESCRIPTION": "Наносит !D! урона и накладывает !M! Пробивания."
+    },
+    "theCatGirl:ElegantStrike": {
+        "NAME": "Элегантный удар",
+        "DESCRIPTION": "Наносит !M! урона за каждый имеющийся Уворот. NL (Наносит !D! урона). NL Сжигается.",
+        "UPGRADE_DESCRIPTION": "Наносит !M! за каждый имеющийся Уворот. NL (Наносит !D! урона)."
+    },
+    "theCatGirl:AllIn": {
+        "NAME": "Ва-банк",
+        "DESCRIPTION": "Наносит !D! урона. NL Накладывает !M! Уязвимости, если выбранный враг собирается атаковать."
+    },
+    "theCatGirl:FocusedStrike": {
+        "NAME": "Сфокусированный удар",
+        "DESCRIPTION": "Наносит !D! урона. Даёт !M! [E] , если у вас есть Уворот."
+    },
+    "theCatGirl:QuickStrike": {
+        "NAME": "Быстрый удар",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте 1 карту."
+    },
+    "theCatGirl:SpinningStrike": {
+        "NAME": "Круговой удар",
+        "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам."
+    },
+    "theCatGirl:PoisedStrike": {
+        "NAME": "Уравновешенный удар",
+        "DESCRIPTION": "Наносит !D! урона. NL Улучшает случ. Навык в руке до конца боя.",
+        "UPGRADE_DESCRIPTION": "Наносит !D! урона. NL Улучшает ВСЕ Навыки в руке до конца боя."
+    },
+    "theCatGirl:DefensiveStance": {
+        "NAME": "Оборонительная стойка",
+        "DESCRIPTION": "Даёт !M! Уворота. NL Навсегда повышает даваемую этой картой Защиту на !theCatGirl:SecondMagic!. NL Сжигается."
+    },
+    "theCatGirl:TwoStep": {
+        "NAME": "В два шага",
+        "DESCRIPTION": "Даёт !B! Защиты. NL Даёт !M! Уворота в след. ходу."
+    },
+    "theCatGirl:AdaptivePacing": {
+        "NAME": "Адаптивная ходьба",
+        "DESCRIPTION": "Даёт !B! Защиты. NL Снижает свою стоимость на !M! в этом бою."
+    },
+    "theCatGirl:LearnThePattern": {
+        "NAME": "Выучить шаблон",
+        "DESCRIPTION": "Удваивает ваш Уворот. NL Сжигается.",
+        "UPGRADE_DESCRIPTION": "Удваивает ваш Уворот."
+    },
+    "theCatGirl:PerfectBlock": {
+        "NAME": "Совершенная защита",
+        "DESCRIPTION": "Даёт !B! Защиты."
+    },
+    "theCatGirl:Prepared": {
+        "NAME": "Приготовиться",
+        "DESCRIPTION": "В этом ходу следующий Навык разыгрывается дважды.",
+        "UPGRADE_DESCRIPTION": "В этом ходу следующие !M! Навыка разыгрываются дважды."
+    },
+    "theCatGirl:EmergencyParry": {
+        "NAME": "Срочное парирование",
+        "DESCRIPTION": "Даёт Защиту равную вашему Увороту. NL Отнимает весь Уворот.",
+        "UPGRADE_DESCRIPTION": "Даёт !M! Защиты за каждый Уворот. NL Отнимает весь Уворот."
+    },
+    "theCatGirl:ChangeOfPlans": {
+        "NAME": "Смена планов",
+        "DESCRIPTION": "Вы берёте !M! карту. NL Кладёт карту в руке на верх стопки добора. NL Сжигается.",
+        "UPGRADE_DESCRIPTION": "Вы берёте !M! карты. NL Кладёт карту в руке на верх стопки добора. NL Сжигается."
+    },
+    "theCatGirl:KeepAlert": {
+        "NAME": "Сохранять бдительность",
+        "DESCRIPTION": "Даёт !M! Уворота. NL Вы не потеряете Уворот в конце этого хода."
+    },
+    "theCatGirl:AdventurersInsight": {
+        "NAME": "Интуиция авантюриста",
+        "DESCRIPTION": "Даёт ещё !M! Уворота, когда вы уворачиваетесь.",
+        "UPGRADE_DESCRIPTION": "Начальная. NL Даёт ещё !M! Уворота, когда вы уворачиваетесь."
+    },
+    "theCatGirl:PoiseStance": {
+        "NAME": "Стойка равновесия",
+        "DESCRIPTION": "Даёт !M! Уворота в начале каждого вашего хода."
+    },
+    "theCatGirl:Counterattack": {
+        "NAME": "Контратака",
+        "DESCRIPTION": "Наносит !M! урона ВСЕМ врагам, когда вы получаете Уворот."
+    },
+    "theCatGirl:Beastification": {
+        "NAME": "Озвереть",
+        "DESCRIPTION": "Даёт !M! Силы. NL Даёт !theCatGirl:SecondMagic! Ловкости. NL Даёт !B! Защиты. NL Отнимает [E] [E] в следующем ходу."
+    },
+    "theCatGirl:AngryForm": {
+        "NAME": "Облик Гнева",
+        "DESCRIPTION": "Каждые 2 Уворота будут повышать урон атак на 1, но он больше не работает на Защиту.",
+        "UPGRADE_DESCRIPTION": "Начальная. NL Каждые 2 Уворота будут повышать урон атак на 1, но он больше не работает на Защиту."
+    },
+    "theCatGirl:BleedingWounds": {
+        "NAME": "Кровоточящие раны",
+        "DESCRIPTION": "Накладывает 1 Яда, когда вы наносите урон по ОЗ."
+    },
+    "theCatGirl:BloodBath": {
+        "NAME": "Кровавая баня",
+        "DESCRIPTION": "Наносит !D! урона. NL Наносит !M! урона случайному врагу, если убивает врага."
+    },
+    "theCatGirl:BloodScent": {
+        "NAME": "Учуять кровь",
+        "DESCRIPTION": "Даёт !M! Силы. NL Отнимает всю Защиту и Уворот."
+    },
+    "theCatGirl:BloodyClaws": {
+        "NAME": "Кровавые когти",
+        "DESCRIPTION": "Наносит !D! урона случайному врагу !M! раза. NL Восполняет ОЗ за весь урон по ОЗ врагов. NL Сжигается."
+    },
+    "theCatGirl:Claws": {
+        "NAME": "Когти",
+        "DESCRIPTION": "Наносит !D! урона и накладывает !M! Пореза на случайного врага."
+    },
+    "theCatGirl:ClawScratch": {
+        "NAME": "Царапать когтями",
+        "DESCRIPTION": "Наносит !D! урона за каждую разыгранную в этом ходу Атаку.",
+        "EXTENDED_DESCRIPTION": [
+            " NL (Разыграно Атак: ",
+            ".)",
+            ".)"
+        ]
+    },
+    "theCatGirl:ComboAttack": {
+        "NAME": "Комбо атака",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту и разыгрываете её, если это Атака, иначе сбрасывает."
+    },
+    "theCatGirl:Enrage": {
+        "NAME": "Бешенство",
+        "DESCRIPTION": "В конце каждого вашего хода наносит !M! урона случайному врагу за каждую разыгранную Атаку в этом ходу."
+    },
+    "theCatGirl:ExtremeSpeed": {
+        "NAME": "Экстремальная скорость",
+        "DESCRIPTION": "Наносит !D! урона. NL Если у вас есть не меньше !M! Уворота, вы теряете !M! Уворота и берёте карту."
+    },
+    "theCatGirl:FinishingMove": {
+        "NAME": "Финальное движение",
+        "DESCRIPTION": "Эфирная. NL Наносит !D! урона. NL Наносит !theCatGirl:SecondMagic! урона, если у врага меньше !M! % ОЗ."
+    },
+    "theCatGirl:Growl": {
+        "NAME": "Рычать",
+        "DESCRIPTION": "Накладывает 1 Уязвимости на случайного врага !M! раза."
+    },
+    "theCatGirl:Howl": {
+        "NAME": "Завывать",
+        "DESCRIPTION": "Удваивает вашу текущую Силу. NL Сжигается.",
+        "UPGRADE_DESCRIPTION": "Удваивает вашу текущую Силу."
+    },
+    "theCatGirl:HungerClaw": {
+        "NAME": "Когти голода",
+        "DESCRIPTION": "Наносит !D! урона врагу с наибольшим Порезом. NL Повышает Макс. ОЗ на !M! если Казнит врага. NL Сжигается."
+    },
+    "theCatGirl:Insane": {
+        "NAME": "Умалишение",
+        "DESCRIPTION": "Кладёт все сожжённые карты в руку. Они стоят !M! в этом ходу. NL Сжигается."
+    },
+    "theCatGirl:RageClaws": {
+        "NAME": "Когти ярости",
+        "DESCRIPTION": "Наносит !D! урона случайному врагу !M! раза."
+    },
+    "theCatGirl:ScratchFlurry": {
+        "NAME": "Шквал ссадин",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте 3 карты сбрасывая те из них, что не содержат \"Когт\" в названии."
+    },
+    "theCatGirl:SevenLives": {
+        "NAME": "Семь жизней",
+        "DESCRIPTION": "Вместо след. потери ОЗ вы получите столько же Уворота. NL Сжигается.",
+        "UPGRADE_DESCRIPTION": "Вместо !M! след. потерь ОЗ вы получите столько же Уворота. NL Сжигается."
+    },
+    "theCatGirl:SmellFear": {
+        "NAME": "Учуять страх",
+        "DESCRIPTION": "Даёт !M! Силы, если враг не собирается атаковать."
+    },
+    "theCatGirl:Stalk": {
+        "NAME": "Выслеживать",
+        "DESCRIPTION": "Даёт !B! Защиты за КАЖДЫЙ отриц. эффект на врагах.",
+        "UPGRADE_DESCRIPTION": "Даёт !B! Защиты за КАЖДЫЙ отриц. эффект на врагах, плюс 4 Защиты."
+    },
+    "theCatGirl:UnrelentingAssault": {
+        "NAME": "Беспощадный штурм",
+        "DESCRIPTION": "Вы берёте !M! карты. NL Наносит !D! урона за каждую взятую Атаку."
+    },
+    "theCatGirl:AccidentalSlap": {
+        "NAME": "Случайная оплеуха",
+        "DESCRIPTION": "Наносит !M! урона за каждую сброшенную в этом бою карту.",
+        "EXTENDED_DESCRIPTION": [
+            " NL (Наносит !D! урона.)" 
+        ]
+    },
+    "theCatGirl:BodyBlow": {
+        "NAME": "Разнос телом",
+        "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Сбрасывает 1 случайную карту."
+    },
+    "theCatGirl:FumblingBlow": {
+        "NAME": "Неловкий замах",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте 1 карту. NL Неуклюжевание - Наносит !M! урона. NL Вы берёте карту."
+    },
+    "theCatGirl:LuckyBlow": {
+        "NAME": "Удачный разнос",
+        "DESCRIPTION": "Наносит !D! урона. NL Увеличевает свой урон на !M! , если вы сбрасывали карты в этом ходу."
+    },
+    "theCatGirl:Misfire": {
+        "NAME": "Осечка",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте 1 карту и сбрасываете 1 карту."
+    },
+    "theCatGirl:RecoveryBlow": {
+        "NAME": "Оживляющий разнос",
+        "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту за каждую Запинку в руке."
+    },
+    "theCatGirl:RunningWithDaggers": {
+        "NAME": "Бег с кинжалами",
+        "DESCRIPTION": "Наносит !D! урона. NL Даёт [E] [E] , если вы сбрасывали карты в этом ходу."
+    },
+    "theCatGirl:TripLunge": {
+        "NAME": "Выпад с запинкой",
+        "DESCRIPTION": "Наносит !D! урона. NL Добавляет 1 Запинку в руку."
+    },
+    "theCatGirl:TryingMyBest": {
+        "NAME": "Стараться изо всех сил",
+        "DESCRIPTION": "Сбрасывает все карты в руке и наносит !D! урона за каждую сброшенную Атаку или Запинку.",
+        "EXTENDED_DESCRIPTION": [
+            " NL (Наносит ",
+            " урона.)"
+        ]
+    },
+    "theCatGirl:AccidentalHeadbutt": {
+        "NAME": "Случ. таран головой",
+        "DESCRIPTION": "Оглушает врага и завершает ваш ход. NL Даёт 1 Неосязаемости. NL Сжигается."
+    },
+    "theCatGirl:ClenchYourTeeth": {
+        "NAME": "Стиснуть зубы",
+        "DESCRIPTION": "Даёт !B! Защиты и сбрасывает 1 карту."
+    },
+    "theCatGirl:DecliningDefenses": {
+        "NAME": "Падающая оборона",
+        "DESCRIPTION": "Даёт !B! Защиты. Защита, даваемая этой картой, снижается на 1 в этом бою. NL Неуклюжевание - Даёт !M! Защиты."
+    },
+    "theCatGirl:LearnByMistake": {
+        "NAME": "Случайное обучение",
+        "DESCRIPTION": "Даёт Защиту равную количеству карт в стопке сброса.",
+        "UPGRADE_DESCRIPTION": "Даёт Защиту равную количеству карт в стопке сброса +3.",
+        "EXTENDED_DESCRIPTION": [
+            " NL (Даёт !B! Защиты.)"
+        ]
+    },
+    "theCatGirl:LostTrinket": {
+        "NAME": "Мелочная потеря",
+        "DESCRIPTION": "Вы берёте !M! карты. NL Сжигает 1 карту."
+    },
+    "theCatGirl:Meow": {
+        "NAME": "Мяу",
+        "DESCRIPTION": "Накладывает !M! Слабости на ВСЕХ врагов. NL Сжигается."
+    },
+    "theCatGirl:SearchBackpack": {
+        "NAME": "Поискать рюкзак",
+        "DESCRIPTION": "Вы берёте !M! карту и сбрасываете 1 карту."
+    },
+    "theCatGirl:Slip": {
+        "NAME": "Ускользнуть",
+        "DESCRIPTION": "Даёт !M! Уворота. NL Сбрасывает 1 карту.",
+        "UPGRADE_DESCRIPTION": "Даёт !M! Уворота. NL Сбрасывает 1 карту. NL Добавляет 1 Запинку в руку."
+    },
+    "theCatGirl:Stumble": {
+        "NAME": "Запинка",
+        "DESCRIPTION": "Сжигается, когда сбрасывается. NL Неуклюжевание - Наносит !D! урона случайному врагу.",
+        "EXTENDED_DESCRIPTION": [
+            " NL Оставляется.",
+            " Сжигается."
+        ]
+    },
+    "theCatGirl:ThatWasntIt": {
+        "NAME": "Перехотелось",
+        "DESCRIPTION": "Вы кладёте в руку выбранную Сожжённую карту. NL Сжигается."
+    },
+    "theCatGirl:TrainWreck": {
+        "NAME": "Съехать с рельс",
+        "DESCRIPTION": "ВСЕ враги теряют !M! Силы до конца своего хода. NL Сжигается."
+    },
+    "theCatGirl:GoddessOfMisfortune": {
+        "NAME": "Богиня неудачи",
+        "DESCRIPTION": "Добавляет 1 Запинку в руку в начале каждого вашего хода.",
+        "UPGRADE_DESCRIPTION": "Начальная. NL Добавляет 1 Запинку в руку в начале каждого вашего хода."
+    },
+    "theCatGirl:NeverGivingUp": {
+        "NAME": "Никогда не сдаваться",
+        "DESCRIPTION": "Наносит !M! урона случайному врагу за каждую сбрасываемую карту.",
+        "UPGRADE_DESCRIPTION": "Начальная. NL Наносит !M! урона случайному врагу за каждую сбрасываемую карту."
+    },
+    "theCatGirl:PilingErrors": {
+        "NAME": "Накопление ошибок",
+        "DESCRIPTION": "Запинки теперь Оставляются.",
+        "UPGRADE_DESCRIPTION": "Запинки теперь Оставляются, могут быть разыграны за 1 [E] и Сжигаются при разыгрывании."
+    },
+    "theCatGirl:ShockedWitness": {
+        "NAME": "Потрясённый очевидец",
+        "DESCRIPTION": "Накладывает !M! Уязвимости на ВСЕХ врагов, при первом сжигании карты в ходу."
+    },
+    "theCatGirl:CatGirlCommonAttack": {
+        "NAME": "Strike",
+        "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+    },
+    "theCatGirl:CatGirlCommonSkill": {
+        "NAME": "Defend",
+        "DESCRIPTION": "Gain !B! Block."
+    },
+    "theCatGirl:CatGirlCommonPower": {
+        "NAME": "Hold Place",
+        "DESCRIPTION": "Gain !M! Keyword.",
+        "UPGRADE_DESCRIPTION": "Gain !M! Keywords."
+    },
+    "theCatGirl:CatGirlUncommonAttack": {
+        "NAME": "Big Slap",
+        "DESCRIPTION": "Deal !D! Damage."
+    },
+    "theCatGirl:CatGirlUncommonSkill": {
+        "NAME": "A Better Defend",
+        "DESCRIPTION": "Gain !B! Plated Armor. NL Affected by Block modifiers."
+    },
+    "theCatGirl:CatGirlUncommonPower": {
+        "NAME": "Weirdness",
+        "DESCRIPTION": "Gain X Keywords.",
+        "UPGRADE_DESCRIPTION": "Gain X+1 Keywords."
+    },
+    "theCatGirl:CatGirlRareAttack": {
+        "NAME": "TOUCH",
+        "DESCRIPTION": "Deal !D! Damage."
+    },
+    "theCatGirl:CatGirlRareSkill": {
+        "NAME": "For Each Loop x2",
+        "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies twice.",
+        "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to ALL enemies 3 times."
+    },
+    "theCatGirl:CatGirlRarePower": {
+        "NAME": "In-Progress Form",
+        "DESCRIPTION": "At the start of your turn, play a TOUCH."
+    },
+    "theCatGirl:CatGirlAttackWithVariable": {
+        "NAME": "Special Strike",
+        "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theCatGirl:ENERGY_DAMAGE! damage total.)"
+    },
+    "theCatGirl:CatGirlSecondMagicNumberSkill": {
+        "NAME": "Cool 2 Number Card",
+        "DESCRIPTION": "Apply !M! Vulnerable. NL Apply !theCatGirl:SecondMagic! Poison."
+    },
+    "theCatGirl:CatGirlOrbSkill": {
+        "NAME": "Get Orb",
+        "DESCRIPTION": "Channel 1 Default Orb."
+    },
+    "theCatGirl:MultiHitGashTest": {
+        "NAME": "MultiHit Gash Apply Test",
+        "DESCRIPTION": "Apply !M! Gash to ALL enemies."
+    },
+    "theCatGirl:MultiHitStrikenTest": {
+        "NAME": "MultiHit Striken Apply Test",
+        "DESCRIPTION": "Apply !M! Striken to ALL enemies."
+    },
+    "theCatGirl:AllEnemyStrike": {
+        "NAME": "All Strike",
+        "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    },
+    "theCatGirl:AllEnemyClaw": {
+        "NAME": "All Claw",
+        "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    }
+}

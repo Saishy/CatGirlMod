@@ -1,0 +1,127 @@
+{
+    "theCatGirl:GashPower": {
+        "NAME": "Порез",
+        "DESCRIPTIONS": [
+            "Увеличивает получаемый урон от всех #yКогтей на #b"
+        ]
+    },
+    "theCatGirl:StrikenPower": {
+        "NAME": "Пробивание",
+        "DESCRIPTIONS": [
+            "Увеличивает получаемый урон от всех #yУдаров на #b"
+        ]
+    },
+    "theCatGirl:EvadePower": {
+        "NAME": "Уворот",
+        "DESCRIPTIONS": [
+            "Увеличевает получаемую #yЗащиту от следующей карты на ",
+            ". Вы теряете весь #yУворот при использовании.",
+            " NL Половина потеряется в конце вашего хода."
+        ]
+    },
+    "theCatGirl:NextTurnEvadePower": {
+        "NAME": "Уворот на след. ход",
+        "DESCRIPTIONS": [
+            "Даёт #b",
+            " #yУворота в следующем ходу."
+        ]
+    },
+    "theCatGirl:EvadeDontDecayPower": {
+        "NAME": "Сохранение Уворота",
+        "DESCRIPTIONS": [
+            "Вы не потеряете #yУворот в конце этого хода."
+        ]
+    },
+    "theCatGirl:AdventurersInsightPower": {
+        "NAME": "Интуиция авантюриста",
+        "DESCRIPTIONS": [
+            "Даёт #b%s #yУворота, когда вы уворачиваетесь."
+        ]
+    },
+    "theCatGirl:PoisedPower": {
+        "NAME": "Равновесие",
+        "DESCRIPTIONS": [
+            "Даёт #b%s #yУворота в начале каждого вашего хода."
+        ]
+    },
+    "theCatGirl:CounterattackPower": {
+        "NAME": "Контратака",
+        "DESCRIPTIONS": [
+            "Наносит #b",
+            " урона ВСЕМ врагам, когда вы получаете #yУворот."
+        ]
+    },
+    "theCatGirl:AngryFormPower": {
+        "NAME": "Облик Гнева",
+        "DESCRIPTIONS": [
+            "Каждые #b2 #yУворота теперь увеличивают урон #yАтак на #b1 вместо увеличения #yЗащиты."
+        ]
+    },
+    "theCatGirl:BeastificationPower": {
+        "NAME": "Озверение",
+        "DESCRIPTIONS": [
+            "Отнимает #b%s [E] в следующем ходу."
+        ]
+    },
+    "theCatGirl:EnragePower": {
+        "NAME": "Бешенство",
+        "DESCRIPTIONS": [
+            "В конце каждого вашего хода наносит #b%s урона случайному врагу за каждую разыгранную #yАтаку."
+        ]
+    },
+    "theCatGirl:InsanePower": {
+        "NAME": "Умалишение",
+        "DESCRIPTIONS": [
+            "#yСжигает каждую разыгрываемую #yАтаку." 
+        ]
+    },
+    "theCatGirl:SevenLivesPower": {
+        "NAME": "Семь жизней",
+        "DESCRIPTIONS": [
+            "Вместо #b%s след. потери ОЗ вы получите столько же #yУворота.",
+            "Вместо #b%s след. потерь ОЗ вы получите столько же #yУворота."
+        ]
+    },
+    "theCatGirl:GoddessOfMisfortunePower": {
+        "NAME": "Богиня неудачи",
+        "DESCRIPTIONS": [
+            "Добавляет #b%s #yЗапинку(и) в руку в начале каждого вашего хода."
+        ]
+    },
+    "theCatGirl:NeverGivingUpPower": {
+        "NAME": "Никогда не сдаваться",
+        "DESCRIPTIONS": [
+            "Наносит #b%s урона случайному врагу за каждую сбрасываемую карту."
+        ]
+    },
+    "theCatGirl:PilingErrorsPower": {
+        "NAME": "Накопление ошибок",
+        "DESCRIPTIONS": [
+            "#yЗапинки теперь #yОставляются.",
+            "#yЗапинки теперь #yОставляются и разыгрываются за #b1 [E] ."
+        ]
+    },
+    "theCatGirl:ShockedWitnessPower": {
+        "NAME": "Потрясённый очевидец",
+        "DESCRIPTIONS": [
+            "Накладывает #b",
+            " #yУязвимости на ВСЕХ врагов, когда вы #yСжигаете первую карту в ходу."
+        ]
+    },
+    "theCatGirl:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": [
+            "You applied ",
+            " keyword.",
+            " keywords."
+        ]
+    },
+    "theCatGirl:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": [
+            "At the start of your turn, TOUCH ",
+            " enemy.",
+            " enemies."
+        ]
+    }
+}

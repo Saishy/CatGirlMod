@@ -3,7 +3,7 @@
     <groupId>catgirlmod</groupId>
     <artifactId>CatGirlMod</artifactId>
     <!--<version>1.2.0</version>-->
-    <version>0.9.0</version>
+    <version>0.9.1</version>
     <name>CatGirl Mod</name>
 
     <properties>
