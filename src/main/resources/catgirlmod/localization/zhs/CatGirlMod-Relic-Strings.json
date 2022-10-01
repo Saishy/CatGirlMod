@@ -1,0 +1,104 @@
+{
+
+	"theCatGirl:AdventurerTag": {
+		"NAME": "冒险者标牌",
+		"FLAVOR": "一块写有你名字的标牌，由一块神奇的金属制成。",
+		"DESCRIPTIONS": [
+			"每当你受到攻击时，获得 #b",
+			" 层 #y闪避 。"
+		]
+	},
+	"theCatGirl:Ambush": {
+		"NAME": "埋伏",
+		"FLAVOR": "我从来没有听见有一个怪物叫唤过“这不公平”。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，从所有敌人身上移除 #b",
+			" 层 #y人工制品 。"
+		]
+	},
+	"theCatGirl:BeginnersLuck": {
+		"NAME": "新手的好运",
+		"FLAVOR": "我这人啊，真的很擅长投骰子！",
+		"DESCRIPTIONS": [
+			"替换 #r训练有素 。每回合开始时具有 #b",
+			" 层。 NL 每当你丢弃一张牌，失去一层并抽一张牌。"
+		]
+	},
+	"theCatGirl:DriedFish": {
+		"NAME": "鱼干",
+		"FLAVOR": "作为长期冒险的风味小吃再好不过了。",
+		"DESCRIPTIONS": [
+			"你每打出 #b",
+			" 张 #y攻击牌 ，回复 %s 点生命。"
+		]
+	},
+	"theCatGirl:Instincts": {
+		"NAME": "本能",
+		"FLAVOR": "你渐渐失去了理智。",
+		"DESCRIPTIONS": [
+			"替换 #r训练有素 。每场战斗开始时，获得 #b",
+			" 点 #y力量 ，第一回合结束时失去 #b",
+			" 点 #y力量 。"
+		]
+	},
+	"theCatGirl:LostAndFound": {
+		"NAME": "失物招领",
+		"FLAVOR": "不入虎穴，焉得虎子。",
+		"DESCRIPTIONS": [
+			"每当你 #y消耗 一张牌，获得 #b",
+			" 层 #y闪避 。"
+		]
+	},
+	"theCatGirl:MonsterGuide": {
+		"NAME": "怪物指南",
+		"FLAVOR": "涵盖了关于每一个怪物的详细信息。",
+		"DESCRIPTIONS": [
+			"每场战斗中，当你第一次获得 #y负面效果 时，如果有来源，反弹它；否则抵消它。"
+		]
+	},
+	"theCatGirl:NepetasHat": {
+		"NAME": "猫薄荷帽子",
+		"FLAVOR": "闻起来像糖又像茶……",
+		"DESCRIPTIONS": [
+			"每当你攻击一名具有 #y格挡 的敌人后，移除其 #b2 点 #y格挡 并给予 #b2 层 #y中毒 。"
+		]
+	},
+	"theCatGirl:ThrowingDagger": {
+		"NAME": "投掷匕首",
+		"FLAVOR": "任何经年累月的冒险者都略知一两个把戏。",
+		"DESCRIPTIONS": [
+			"你每在同一回合内打出 #b",
+			" 张 #y攻击牌 ，获得 #b",
+			" 层 #y闪避 。"
+		]
+	},
+	"theCatGirl:TrainedRelic": {
+		"NAME": "训练有素",
+		"FLAVOR": "善于利用时机的冒险者才是好的冒险者。",
+		"DESCRIPTIONS": [
+			"每当你攻击一名意图攻击的敌人，获得 #b1 层 #y闪避 。"
+		]
+	},
+	"theCatGirl:PlaceholderRelic": {
+		"NAME": "Placeholder Energy Relic",
+		"FLAVOR": "The snake is a friend.",
+		"DESCRIPTIONS": [
+			"Gain +1 [R] ."
+		]
+	},
+	"theCatGirl:PlaceholderRelic2": {
+		"NAME": "Placeholder Relic 2",
+		"FLAVOR": "You feel stronger.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain +1 Strength."
+		]
+	},
+	"theCatGirl:DefaultClickableRelic": {
+		"NAME": "Right-Clicky Relic",
+		"FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+		"DESCRIPTIONS": [
+			"[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+			"YOU ARE MINE!"
+		]
+	}
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "PROPER_NAME": "Placeholder",
+    "NAMES": [
+      "keyword",
+      "keywords",
+      "Keyword",
+      "Keywords",
+      "Keyword:"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "闪避",
+    "NAMES": [
+      "闪避",
+      "闪避",
+      "闪避",
+      "闪避",
+      "闪避"
+    ],
+    "DESCRIPTION": "消耗所有闪避以增加你下一次获得的 #y格挡 量。在你的回合结束时，闪避的层数减少一半。"
+  },
+  {
+    "PROPER_NAME": "笨拙",
+    "NAMES": [
+      "笨拙",
+      "笨拙",
+      "笨拙",
+      "笨拙",
+      "笨拙"
+    ],
+    "DESCRIPTION": "每当你丢弃或 #y消耗 这张牌时，触发笨拙效果。"
+  },
+  {
+    "PROPER_NAME": "磕绊",
+    "NAMES": [
+      "磕绊",
+      "磕绊",
+      "磕绊",
+      "磕绊",
+      "磕绊"
+    ],
+    "DESCRIPTION": "磕绊是 #y绝对不能被打出 的 #y状态牌 ，当被丢弃或 #y消耗 时造成伤害（也就是笨拙的效果）。"
+  },
+  {
+    "PROPER_NAME": "重创",
+    "NAMES": [
+      "重创",
+      "重创",
+      "重创",
+      "重创",
+      "重创"
+    ],
+    "DESCRIPTION": "增加爪击牌造成的伤害。"
+  },
+  {
+    "PROPER_NAME": "袭击",
+    "NAMES": [
+      "袭击",
+      "袭击",
+      "袭击",
+      "袭击",
+      "袭击"
+    ],
+    "DESCRIPTION": "增加打击牌造成的伤害。"
+  }
+]
+
+
